@@ -179,3 +179,7 @@ select.form-control:not([size]):not([multiple]) {
 .modal-btn {
     font-weight: bold;
 }
+
+#confirm-number-value {
+    color: #54cfff;
+}

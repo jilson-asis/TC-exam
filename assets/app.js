@@ -52,6 +52,7 @@ function submitAppForm() {
         console.log(error);
     });
 
+    $('#confirm-number-value').html(formValues.phone);
     $('#confirmNumber').modal('show');
 }
 
