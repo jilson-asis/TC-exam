@@ -4,8 +4,8 @@
     window.addEventListener('load', function() {
         var form = document.getElementById('app-form');
         form.addEventListener('submit', function(event) {
+            event.preventDefault();
             if (form.checkValidity() === false) {
-                event.preventDefault();
                 event.stopPropagation();
             } else {
                 submitAppForm();
