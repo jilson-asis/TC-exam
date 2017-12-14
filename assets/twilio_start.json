@@ -1,0 +1,8 @@
+{
+  "carrier": "Tele communications inc.",
+  "is_cellphone": true,
+  "message": "Text message sent to +63 999-999-9999.",
+  "seconds_to_expire": 599,
+  "uuid": "XXXXXXXXXXXXX",
+  "success": true
+}

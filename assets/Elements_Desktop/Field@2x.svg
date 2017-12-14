@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="520px" height="60px" viewBox="0 0 520 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>Field@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="460" y="320" width="520" height="60" rx="6"></rect>
+    </defs>
+    <g id="Step-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-460.000000, -320.000000)">
+        <g id="Field">
+            <use fill="#F2F6FB" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <rect stroke="#C6D0D8" stroke-width="1" x="460.5" y="320.5" width="519" height="59" rx="6"></rect>
+        </g>
+    </g>
+</svg>

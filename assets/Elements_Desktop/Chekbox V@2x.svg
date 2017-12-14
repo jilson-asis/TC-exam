@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>Chekbox V@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Step-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-460.000000, -890.000000)">
+        <g id="Chekbox-V" transform="translate(460.000000, 890.000000)">
+            <rect id="Rectangle-28" fill="#54D0FF" x="0" y="0" width="28" height="28" rx="3"></rect>
+            <path d="M10.750101,17.9528043 L11.8210678,19 L22,9.04778837 L20.9282251,8 L10.750101,17.9528043 Z M7,14.2859401 L10.750101,17.9528043 L11.8210678,16.9050159 L8.07177491,13.2379541 L7,14.2859401 Z" id="Page-1" stroke="#FFFFFF" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

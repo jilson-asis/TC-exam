@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Step-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-941.000000, -346.000000)">
+        <g id="Arrow" transform="translate(947.000000, 350.000000) rotate(-270.000000) translate(-947.000000, -350.000000) translate(944.000000, 344.000000)" fill="#C6D0D8" fill-rule="nonzero" stroke="#C6D0D8">
+            <path d="M5.90746133,5.49892597 L0.54926834,0.0954195383 C0.423109198,-0.0318065128 0.220778499,-0.0318065128 0.0946193565,0.0954195383 C-0.0315397855,0.222645589 -0.0315397855,0.426687369 0.0946193565,0.55391342 L5.22429768,5.72697267 L0.0946193565,10.9000319 C-0.0315397855,11.027258 -0.0315397855,11.2312997 0.0946193565,11.3585258 C0.156508747,11.4209386 0.239821388,11.4545455 0.320753668,11.4545455 C0.401685947,11.4545455 0.484998588,11.4233391 0.546887979,11.3585258 L5.90508097,5.95501936 C6.03124012,5.8301938 6.03124012,5.62375153 5.90746133,5.49892597 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

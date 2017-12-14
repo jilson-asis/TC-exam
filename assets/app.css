@@ -1,0 +1,181 @@
+body {
+    background-color: #405F70;
+    color: #354650;
+    font-family: 'Lato', sans-serif;
+}
+
+#form-body {
+    background: #FFF;
+    min-height: 500px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.nav-arrow .nav-link {
+    padding: 0;
+    height: 50px;
+    color: #96A2A9;
+    vertical-align: middle;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.nav-arrow .step {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.nav-arrow a:first-child > span {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.nav-arrow > a > span:after {
+    width: 0;
+    height: 0;
+    border-top: 25px inset transparent;
+    border-bottom: 25px inset transparent;
+    border-left: 6px solid #ffffff;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -6px;
+    z-index: 2;
+}
+
+.nav-arrow > a:not(:first-child) > span:before {
+    width: 0;
+    height: 0;
+    border-top: 25px inset transparent;
+    border-bottom: 25px inset transparent;
+    border-left: 6px solid #557380;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+}
+
+.nav-arrow > a.active > span:after {
+    border-left-color: #84DDFF;
+}
+
+.nav-arrow .step {
+    margin-right: 2px;
+}
+
+.nav-arrow .nav-item {
+    background: none;
+}
+
+.nav-arrow .nav-link.active {
+    background: none;
+}
+
+.nav-arrow .nav-link.active .step {
+    background-color: #84DDFF;
+}
+
+.nav-arrow .nav-link .step {
+    background-color: #FFFFFF;
+}
+
+.heading-title {
+    color: #354650;
+    font-weight: bold;
+}
+
+.app-custom-checkbox-indicator {
+    width: 2rem;
+    height: 2rem;
+}
+
+.app-custom-checkbox {
+    padding-left: 3rem;
+}
+
+.bg-app-light-blue {
+    background-color: #55d0ff !important;
+}
+
+.border-app-light-blue {
+    border-color: #55d0ff !important;
+}
+
+.custom-control-input:checked~.custom-control-indicator {
+    background-color: #55d0ff;
+}
+
+.app-form label {
+    font-size: 18px;
+}
+
+.app-form > input, .app-form > select {
+    color: #354650;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(3rem + 2px);
+}
+
+.app-form .form-control {
+    line-height: 2.5rem;
+}
+
+.app-form button {
+    cursor: pointer;
+}
+
+.bg-app-light-gray {
+    background-color: #F2F6FB;
+}
+
+.confirm-number .modal-content {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.confirm-number h2, .confirm-number h1 {
+    font-weight: bold;
+}
+
+
+.confirm-number-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+}
+
+.confirm-number .modal-content {
+    max-width: 400px;
+    margin: auto;
+}
+
+.resend-code {
+    color: #54cfff;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.confirm-disabled-input {
+    text-align: center;
+    color: #354650;
+    height: 60px;
+    font-size: 25px;
+}
+
+.btn-pointer {
+    cursor: pointer;
+}
+
+.modal-backdrop {
+    background-color: rgb(19, 64, 83);
+}
+
+.modal-btn {
+    font-weight: bold;
+}
