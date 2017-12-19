@@ -56,7 +56,22 @@ function submitAppForm() {
     $('#confirmNumber').modal('show');
 }
 
-$('#confirmNumber').click(function(){
-    $(this).modal('hide');
+$('#confirmNumberButton').click(function(){
+    var formValues = getFormData($('#app-form'));
+    
+    $('#confirmNumber').modal('hide');
     $('#congratulations').modal('show');
+
+    axios.post('assets/twilio_verify.json', {
+        api_key: 'XXXXX',
+        phone_number: formValues.phone,
+        country_code: '99',
+        verification_code: 4663
+    })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 });
