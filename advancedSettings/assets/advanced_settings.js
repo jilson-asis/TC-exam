@@ -27,7 +27,6 @@ function uploadImage() {
             previewUpload.removeClass("d-none");
 
             $('#userPhoto').val(result.filesUploaded[0].url);
-            $('#uploadButtonDiv').addClass("d-none");
         }
     });
 }
@@ -229,6 +228,11 @@ function initAutocomplete() {
 // pre-fill form if data is present
 
 $(document).ready(function() {
+    // TEST CODE
+    if (getParameterByName('prefill') !== 'true') {
+        return false;
+    }
+
     $.ajax({
         url: API_GET_ENDPOINT,
         type: 'GET',
@@ -237,7 +241,10 @@ $(document).ready(function() {
                 if (data.hasOwnProperty(key)) {
                     var datum = data[key];
 
-                    if (typeof datum === 'object') {
+                    if (key === 'user_photo') {
+                        $('#previewUpload').attr('src', datum).removeClass("d-none");
+                        $('#userPhoto').val(datum);
+                    } else if (typeof datum === 'object') {
                         for (var i = 0; datum.length > i ; i++) {
                             $('input[name="' + key + '"][value="' + datum[i] + '"]').prop('checked', true);
                         }
@@ -262,3 +269,15 @@ $(document).ready(function() {
         }
     });
 });
+
+// only test codes, not needed on prod
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
