@@ -1,0 +1,146 @@
+
+.container {
+    background: #f1f5f8;
+}
+
+#advanced-form {
+    background: #FFF;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-height: 500px;
+}
+
+#advanced-form .title h3 {
+    font-weight: bold;
+}
+
+#advanced-settings-accordion .item-title {
+    display: block;
+    font-size: 24px;
+    color: #354650;
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 16px;
+    position: relative;
+}
+
+#advanced-settings-accordion .item-number {
+    color: #54cfff;
+}
+
+#advanced-settings-accordion .settings-form-note {
+    color: #354650;
+    background: #e6f8ff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#advanced-settings-accordion .settings-form-content {
+    padding-top: 15px;
+}
+
+#advanced-settings-accordion .bg-app-light-gray {
+    background-color: #F2F6FB;
+}
+
+#advanced-settings-accordion .form-control {
+    line-height: 2.5rem;
+}
+
+#advanced-settings-accordion .check-box-field {
+    background-color: #F2F6FB;
+    border: 1px solid #c6d0d7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid #c7d1d8;
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-input:checked~.custom-control-indicator {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='4' fill='%2354cfff'/%3E%3C/svg%3E");
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-input:checked~.custom-control-indicator {
+    background-color: #FFF;
+}
+
+#advanced-settings-accordion .custom-control-description {
+    font-size: 20px;
+}
+
+#advanced-settings-accordion .check-box-field .custom-control .form-control {
+    background: #FFF;
+}
+
+#advanced-settings-accordion .custom-checkbox .custom-control-input:checked~.custom-control-indicator {
+    background-color: #54cfff;
+}
+
+#advanced-settings-accordion .input-label {
+    font-weight: bold;
+}
+
+#advanced-settings-accordion .custom-checkbox .custom-control-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #FFFFFF;
+    border: 1px solid #c7d1d8;
+}
+
+#initUpload {
+    cursor: pointer;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button {
+    cursor: pointer;
+    border-color: #55d0ff !important;
+    background-color: #55d0ff !important;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button:disabled{
+    border-color: #ecf2f6 !important;
+    background-color: #ecf2f6 !important;
+    color: #96a1a9;
+}
+
+#advanced-settings-accordion .fas {
+    position: absolute;
+    top: 8px;
+    color: #97a1a9;
+    font-size: 18px;
+    right: 0;
+}
+
+#advanced-settings-accordion .fa-chevron-up {
+    display: block;
+}
+
+#advanced-settings-accordion .fa-chevron-down {
+    display: none;
+}
+
+
+#advanced-settings-accordion .collapsed .fa-chevron-down {
+    display: block;
+}
+
+#advanced-settings-accordion .collapsed .fa-chevron-up {
+    display: none;
+}
+
+#advanced-settings-open-button .setting {
+    color: #54cfff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#advanced-settings-open-button {
+    cursor: pointer;
+}
