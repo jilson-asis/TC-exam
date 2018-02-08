@@ -3,7 +3,7 @@
     background: #f1f5f8;
 }
 
-#advanced-form {
+#profile-settings {
     background: #FFF;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -11,7 +11,7 @@
     min-height: 500px;
 }
 
-#advanced-form .title h3 {
+#profile-settings .title h3 {
     font-weight: bold;
 }
 
@@ -41,7 +41,7 @@
     padding-top: 15px;
 }
 
-#advanced-settings-accordion .bg-app-light-gray {
+#advanced-settings-accordion .bg-app-light-gray, #profile-settings-form .bg-app-light-gray {
     background-color: #F2F6FB;
 }
 
@@ -83,7 +83,7 @@
     background-color: #54cfff;
 }
 
-#advanced-settings-accordion .input-label {
+#advanced-settings-accordion .input-label, #profile-settings-form .input-label {
     font-weight: bold;
 }
 
@@ -98,7 +98,7 @@
     cursor: pointer;
 }
 
-#advanced-settings-accordion .advanced-settings-submit-button {
+#advanced-settings-accordion .advanced-settings-submit-button, #profile-settings-form .advanced-settings-submit-button {
     cursor: pointer;
     border-color: #55d0ff !important;
     background-color: #55d0ff !important;
@@ -144,3 +144,62 @@
 #advanced-settings-open-button {
     cursor: pointer;
 }
+
+#profile-settings-form .form-control {
+    font-size: 18px;
+    line-height: 2.5rem;
+}
+
+#profile-settings-form .form-control:read-only {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#profile-settings {
+    padding: 2rem;
+}
+
+#profile-settings hr {
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+
+#profile-settings .form-hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#profile-settings-head h2 {
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+#profile-settings-head {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.rem-4 {
+    line-height: 4.5rem;
+    text-align: left;
+}
+
+@media (min-width: 992px) {
+    .rem-4 {
+        text-align: right;
+    }
+}
+
+#profile-settings-head .stop-receiving-clients {
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: inline-block;
+    color: #ff4764;
+    cursor: pointer;
+}
+
+#profile-settings-head .stop-receiving-clients .fas {
+    margin-right: 0.5rem;
+}
+

@@ -1,7 +1,11 @@
 // settings
 const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
-const API_SUBMIT_ENDPOINT = 'sample/api';
-const API_GET_ENDPOINT = 'assets/sample_data.json';
+const STOP_RECEIVING_CLIENT_SUBMIT_ENDPONT = 'assets/profile_data.json';
+const STOP_RECEIVING_CLIENT_GET_ENDPONT = 'assets/receive_false.json';
+const ADVANCED_SETTINGS_SUBMIT_ENDPOINT = 'assets/profile_data.json';
+const ADVANCED_SETTINGS_GET_ENDPOINT = 'assets/sample_data.json';
+const PROFILE_SUBMIT_ENDPOINT = 'assets/profile_data.json';
+const PROFILE_GET_ENDPOINT = 'assets/profile_data.json';
 
 // open form
 $('#advanced-settings-open-button').click(function() {
@@ -169,11 +173,22 @@ function submitAdvancedSettings() {
     console.log(JSON.stringify(formValues));
 
     $.ajax({
-        url: API_SUBMIT_ENDPOINT,
+        url: ADVANCED_SETTINGS_SUBMIT_ENDPOINT,
         type: "POST",
         data: formValues,
         success: function(response) {
-            $('#successSubmit').removeAttr('d-none');
+            $('#successSubmit')
+                .removeClass('alert-danger')
+                .addClass('alert-success')
+                .html('Thanks for updating the information.')
+                .removeClass('d-none');
+        },
+        error: function(error) {
+            $('#successSubmit')
+                .addClass('alert-danger')
+                .removeClass('alert-success')
+                .html('Failed to save profile, please contact the administrator.')
+                .removeClass('d-none');
         }
     });
 }
@@ -184,6 +199,38 @@ $('#advanced-settings-form').submit(function(e) {
         event.stopPropagation();
     } else {
         submitAdvancedSettings();
+    }
+});
+
+$('#profile-settings-form').submit(function(e) {
+    e.preventDefault();
+    if ($(this)[0].checkValidity() === false) {
+        event.stopPropagation();
+    } else {
+        var formValues = getFormData($(this));
+
+        // PLEASE DELETE THIS CODE AFTER INTEGRATION
+        console.log(formValues);
+        console.log(JSON.stringify(formValues));
+        $.ajax({
+            url: PROFILE_SUBMIT_ENDPOINT,
+            type: "POST",
+            data: formValues,
+            success: function(response) {
+                $('#successSubmitProfile')
+                    .removeClass('alert-danger')
+                    .addClass('alert-success')
+                    .html('Thanks for updating the information.')
+                    .removeClass('d-none');
+            },
+            error: function(error) {
+                $('#successSubmitProfile')
+                    .addClass('alert-danger')
+                    .removeClass('alert-success')
+                    .html('Failed to save profile, please contact the administrator.')
+                    .removeClass('d-none');
+            }
+        });
     }
 });
 
@@ -228,15 +275,48 @@ function initAutocomplete() {
 // pre-fill form if data is present
 
 $(document).ready(function() {
+    // fetch receiving client status
+    $.ajax({
+        url: STOP_RECEIVING_CLIENT_GET_ENDPONT,
+        type: 'GET',
+        success: function(data) {
+            if (data.receive === false) {
+                $('#stop-receiving-clients-button')
+                    .html('<i class="fas fa-play"></i> Start Receiving Clients')
+                    .addClass('green');
+            }
+        }
+    });
+
+    // fetch profile data
+    $.ajax({
+        url: PROFILE_GET_ENDPOINT,
+        type: 'GET',
+        success: function(data) {
+            var form = $('#profile-settings-form');
+
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    var datum = data[key];
+
+                    form.find('input[name=' + key + ']').val(datum);
+                }
+            }
+        }
+    });
+
     // TEST CODE
     if (getParameterByName('prefill') !== 'true') {
         return false;
     }
 
+    // fetch advanced settings data
     $.ajax({
-        url: API_GET_ENDPOINT,
+        url: ADVANCED_SETTINGS_GET_ENDPOINT,
         type: 'GET',
         success: function(data) {
+            var form = $('#advanced-form');
+
             for (var key in data) {
                 if (data.hasOwnProperty(key)) {
                     var datum = data[key];
@@ -246,21 +326,22 @@ $(document).ready(function() {
                         $('#userPhoto').val(datum);
                     } else if (typeof datum === 'object') {
                         for (var i = 0; datum.length > i ; i++) {
-                            $('input[name="' + key + '"][value="' + datum[i] + '"]').prop('checked', true);
+                            // form.find('input[name="' + key + '"][value="' + datum[i] + '"]').prop('checked', true);
+                            form.find('input[name="' + key + '"][value="' + datum[i] + '"]').click();
                         }
                     } else {
-                        var input = $('input[name=' + key + ']');
+                        var input = form.find('input[name=' + key + ']');
 
                         if (input.length === 0) {
                             // then it's textarea
-                            $('textarea[name=' + key + ']').val(datum);
+                            form.find('textarea[name=' + key + ']').val(datum);
                         } else {
                             if (input.attr('type') === 'radio') {
                                 input.click();
                             } else if (input.attr('type') === 'checkbox') {
                                 input.prop('checked', true);
                             } else {
-                                $('input[name=' + key + ']').val(datum);
+                                form.find('input[name=' + key + ']').val(datum);
                             }
                         }
                     }
@@ -281,3 +362,56 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+// source: https://www.truecare24.com/wp-content/themes/jupiter/landing-page/tc24-jobs/dist/scripts-debug.js?v=6412:229
+$("#cellphone").on({
+    contextmenu: false,
+    paste: false,
+    keyup: function () {
+
+
+        var input = $(this).val().replace("+1", "").match(/[0-9]+/g);
+
+        if (input !== null) {
+            var data = input.join("").split("");
+        } else {
+            var data = [];
+        }
+
+        var phone = "";
+
+        for(var i = 0; i < data.length; i++){
+            phone += (!i ? "+1 (" : "") + (i === 3 ? ") " : "") + (i === 6 ? "-" : "") + data[i];
+        }
+
+        $(this).val(phone);
+    }
+});
+
+$('#stop-receiving-clients-button').click(function() {
+    // send stop on API
+
+    $.ajax({
+        url: STOP_RECEIVING_CLIENT_SUBMIT_ENDPONT,
+        type: 'POST',
+        data: {},
+        success: function(response) {
+            var status = response.receive === true ? 'Started' : 'Stopped';
+
+            $('#stopReceiveMessage')
+                .removeClass('alert-danger')
+                .addClass('alert-success')
+                .html(status + ' receiving client.')
+                .removeClass('d-none');
+        },
+        error: function(error) {
+            console.log(error);
+            $('#stopReceiveMessage')
+                .addClass('alert-danger')
+                .removeClass('alert-success')
+                .html('Error has occurred, please contact the administrator.')
+                .removeClass('d-none');
+        }
+    });
+});
+
