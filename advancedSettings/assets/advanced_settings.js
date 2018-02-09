@@ -1,9 +1,5 @@
 // settings
 const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
-const STOP_RECEIVING_CLIENT_SUBMIT_ENDPONT = 'assets/profile_data.json';
-const ADVANCED_SETTINGS_SUBMIT_ENDPOINT = 'assets/profile_data.json';
-const PROFILE_SUBMIT_ENDPOINT = 'assets/profile_data.json';
-
 const GET_API_ENDPOINT = 'assets/get_data_full.json';
 const POST_API_ENDPOINT = 'assets/post_data.json';
 
