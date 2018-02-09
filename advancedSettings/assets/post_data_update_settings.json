@@ -1,4 +1,6 @@
 {
+  "type": "settings", // enum: profile,settings,receive - this will help identify what form I'm updating
+  "id": "knalsfnsald", // if it exists, not required
   "license_number": "1234A", // required
   "working_hours": "other",  // required
   "other_working_hours": "1pm",  // required if working_hours is "other"
@@ -48,14 +50,5 @@
     "Other"
   ],
   "user_photo": "https://cdn.filestackcontent.com/yJR5rUgR5uwCLtWz4Ct7",
-  "give_permission": "on", // required
-
-
-  "agency_name": "Always Best Care Senior Services", // required
-  "zip_code": "90002", // required
-  "email": "info@caringhandscare.com", // required
-  "phone_number": "+1 (511) 227-3669", // required
-
-
-  "receive_clients": true
+  "give_permission": "on" // required
 }

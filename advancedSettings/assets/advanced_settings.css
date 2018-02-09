@@ -61,6 +61,7 @@
     width: 1.75rem;
     height: 1.75rem;
     border: 1px solid #c7d1d8;
+    background-color: #FFF;
 }
 
 #advanced-settings-accordion .custom-radio .custom-control-input:checked~.custom-control-indicator {
@@ -203,3 +204,6 @@
     margin-right: 0.5rem;
 }
 
+#profile-settings-head .stop-receiving-clients.green-receive {
+    color:#2fc344;
+}

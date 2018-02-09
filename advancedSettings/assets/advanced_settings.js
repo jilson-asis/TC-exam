@@ -1,11 +1,11 @@
 // settings
 const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
 const STOP_RECEIVING_CLIENT_SUBMIT_ENDPONT = 'assets/profile_data.json';
-const STOP_RECEIVING_CLIENT_GET_ENDPONT = 'assets/receive_false.json';
 const ADVANCED_SETTINGS_SUBMIT_ENDPOINT = 'assets/profile_data.json';
-const ADVANCED_SETTINGS_GET_ENDPOINT = 'assets/sample_data.json';
 const PROFILE_SUBMIT_ENDPOINT = 'assets/profile_data.json';
-const PROFILE_GET_ENDPOINT = 'assets/profile_data.json';
+
+const GET_API_ENDPOINT = 'assets/get_data_full.json';
+const POST_API_ENDPOINT = 'assets/post_data.json';
 
 // open form
 $('#advanced-settings-open-button').click(function() {
@@ -138,10 +138,10 @@ function validateRequiredCheckboxField(checkbox) {
 
 $('.working-hour-radio').change(function() {
     if ($(this).val() === 'other') {
-        $('#otherWorkingHours').attr('required', 'required').removeAttr('disabled');
+        $('#otherWorkingHours').attr('required', 'required').removeAttr('disabled').parent().removeClass('d-none');
         $('.working-hour-radio').removeAttr('required');
     } else {
-        $('#otherWorkingHours').removeAttr('required').attr('disabled', 'disabled');
+        $('#otherWorkingHours').val('').removeAttr('required').attr('disabled', 'disabled').parent().addClass('d-none');
         $('.working-hour-radio').attr('required', 'required');
     }
 });
@@ -167,13 +167,15 @@ function getFormData($form){
 
 function submitAdvancedSettings() {
     var formValues = getFormData($('#advanced-settings-form'));
+    formValues.type = "settings";
+    formValues.id = $('#agencyId').val();
 
     // PLEASE DELETE THIS CODE AFTER INTEGRATION
     console.log(formValues);
     console.log(JSON.stringify(formValues));
 
     $.ajax({
-        url: ADVANCED_SETTINGS_SUBMIT_ENDPOINT,
+        url: POST_API_ENDPOINT,
         type: "POST",
         data: formValues,
         success: function(response) {
@@ -208,12 +210,14 @@ $('#profile-settings-form').submit(function(e) {
         event.stopPropagation();
     } else {
         var formValues = getFormData($(this));
+        formValues.type = "profile";
+        formValues.id = $('#agencyId').val();
 
         // PLEASE DELETE THIS CODE AFTER INTEGRATION
         console.log(formValues);
         console.log(JSON.stringify(formValues));
         $.ajax({
-            url: PROFILE_SUBMIT_ENDPOINT,
+            url: POST_API_ENDPOINT,
             type: "POST",
             data: formValues,
             success: function(response) {
@@ -275,36 +279,6 @@ function initAutocomplete() {
 // pre-fill form if data is present
 
 $(document).ready(function() {
-    // fetch receiving client status
-    $.ajax({
-        url: STOP_RECEIVING_CLIENT_GET_ENDPONT,
-        type: 'GET',
-        success: function(data) {
-            if (data.receive === false) {
-                $('#stop-receiving-clients-button')
-                    .html('<i class="fas fa-play"></i> Start Receiving Clients')
-                    .addClass('green');
-            }
-        }
-    });
-
-    // fetch profile data
-    $.ajax({
-        url: PROFILE_GET_ENDPOINT,
-        type: 'GET',
-        success: function(data) {
-            var form = $('#profile-settings-form');
-
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    var datum = data[key];
-
-                    form.find('input[name=' + key + ']').val(datum);
-                }
-            }
-        }
-    });
-
     // TEST CODE
     if (getParameterByName('prefill') !== 'true') {
         return false;
@@ -312,7 +286,7 @@ $(document).ready(function() {
 
     // fetch advanced settings data
     $.ajax({
-        url: ADVANCED_SETTINGS_GET_ENDPOINT,
+        url: GET_API_ENDPOINT,
         type: 'GET',
         success: function(data) {
             var form = $('#advanced-form');
@@ -324,24 +298,27 @@ $(document).ready(function() {
                     if (key === 'user_photo') {
                         $('#previewUpload').attr('src', datum).removeClass("d-none");
                         $('#userPhoto').val(datum);
+                    } else if (key === 'receive_clients' && datum === false) {
+                        $('#stop-receiving-clients-button')
+                            .html('<i class="fas fa-play"></i> Start Receiving Clients')
+                            .addClass('green-receive');
                     } else if (typeof datum === 'object') {
                         for (var i = 0; datum.length > i ; i++) {
-                            // form.find('input[name="' + key + '"][value="' + datum[i] + '"]').prop('checked', true);
-                            form.find('input[name="' + key + '"][value="' + datum[i] + '"]').click();
+                            $('input[name="' + key + '"][value="' + datum[i] + '"]').click();
                         }
                     } else {
-                        var input = form.find('input[name=' + key + ']');
+                        var input = $('input[name=' + key + ']');
 
                         if (input.length === 0) {
                             // then it's textarea
-                            form.find('textarea[name=' + key + ']').val(datum);
+                            $('textarea[name=' + key + ']').val(datum);
                         } else {
                             if (input.attr('type') === 'radio') {
                                 input.click();
                             } else if (input.attr('type') === 'checkbox') {
                                 input.prop('checked', true);
                             } else {
-                                form.find('input[name=' + key + ']').val(datum);
+                                $('input[name=' + key + ']').val(datum);
                             }
                         }
                     }
@@ -390,13 +367,30 @@ $("#cellphone").on({
 
 $('#stop-receiving-clients-button').click(function() {
     // send stop on API
+    var formValue = {
+        type: "receive",
+        id: $('#agencyId').val()
+    };
 
     $.ajax({
-        url: STOP_RECEIVING_CLIENT_SUBMIT_ENDPONT,
+        url: POST_API_ENDPOINT,
         type: 'POST',
-        data: {},
+        data: formValue,
         success: function(response) {
-            var status = response.receive === true ? 'Started' : 'Stopped';
+            var status = '';
+            if (response.receive_clients === true) {
+                status = 'Started';
+
+                $('#stop-receiving-clients-button')
+                    .html('<i class="fas fa-square"></i> Stop Receiving Clients')
+                    .removeClass('green-receive');
+            } else {
+                status = 'Stopped';
+
+                $('#stop-receiving-clients-button')
+                    .html('<i class="fas fa-play"></i> Start Receiving Clients')
+                    .addClass('green-receive');
+            }
 
             $('#stopReceiveMessage')
                 .removeClass('alert-danger')
