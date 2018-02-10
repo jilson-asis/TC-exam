@@ -204,6 +204,19 @@
     margin-right: 0.5rem;
 }
 
+#profile-settings-head .stop-receiving-clients:hover {
+    color: #DA1735;
+}
+
 #profile-settings-head .stop-receiving-clients.green-receive {
-    color:#2fc344;
+    color: #2fc344;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button:hover,
+#profile-settings-form .advanced-settings-submit-button:hover {
+    background-color: #00B9FF !important;
+}
+
+#advanced-settings-open-button:hover > p.setting {
+    color: #00B9FF;
 }
