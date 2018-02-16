@@ -223,7 +223,6 @@ section.how-it-works p.description {
 
 section.map {
     background: url('../img/AdobeStock_84442477@1x.png') no-repeat;
-    max-height: 100vh;
     background-size: cover;
     position: relative;
     height: 750px;
@@ -353,6 +352,7 @@ footer .list-title {
     section.banner {
         height: auto;
         padding-bottom: 45px;
+        min-height: 450px;
     }
 }
 
