@@ -105,6 +105,10 @@ header.mobile-open a.nav-link {
     padding: 15px 0 !important;
 }
 
+header.page-header a:hover {
+    color: #54d0ff;
+}
+
 header.mobile-open {
 
 }
@@ -296,7 +300,8 @@ footer {
     background-color: #1B1F26;
     color: #FFFFFF;
     font-size: 14px;
-    padding: 50px 0;
+    padding: 50px 0 10px;
+    position: relative;
 }
 
 footer li, footer a {
@@ -311,6 +316,12 @@ footer li {
 
 footer .list-title {
     line-height: 24px;
+}
+
+footer .disclaimer {
+    color: rgba(255, 255, 255, 0.30);
+    font-size: 14px;
+    padding-top: 50px;
 }
 
 .learn-more {
