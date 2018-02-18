@@ -152,7 +152,6 @@ section.banner p {
 section.banner .round-edge, section.map .round-edge {
     position: absolute;
     bottom: -1px;
-    z-index: 2;
     width: 100%;
 }
 
@@ -329,8 +328,9 @@ footer .disclaimer {
     bottom: 10px;
     z-index: 200;
     color: #FFF;
-    width: 100%;
+    width: 10%;
     font-size: 14px;
+    margin: 0 45%;
 }
 
 .learn-more span.clickable {
@@ -371,4 +371,17 @@ footer .disclaimer {
     header.page-header a.nav-link {
         font-size: 16px;
     }
+}
+
+.zip-code-message {
+    display: none;
+    color: #FFFFFF;
+}
+
+.icon-green {
+    color: #07bf0f;
+}
+
+.icon-red {
+    color: #e00000;
 }

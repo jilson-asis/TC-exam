@@ -8,6 +8,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
@@ -61,8 +62,9 @@
                     <h1>House Call Doctors, 24/7</h1>
                     <p>Search 1,000+ house call doctors and clinicians near you</p>
                     <div class="col-12 col-md-10 offset-md-1">
-                        <input class="btn btn-block input-tc-white" type="text" name="zip_code" placeholder="Enter ZIP Code" />
-                        <button class="btn btn-block btn-tc-blue">Get Started</button>
+                        <input class="btn btn-block input-tc-white zip-code-input" maxlength="5" name="zip_code" placeholder="Enter ZIP Code" />
+                        <span class="zip-code-message"></span>
+                        <button class="btn btn-block btn-tc-blue zip-code-button">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -193,8 +195,9 @@
                     <div class="col-12 col-lg-5">
                         <h2>Our Service Locations</h2>
                         <div class="col-10 offset-1">
-                            <input class="btn btn-block input-tc-white" type="text" name="zip_code" placeholder="Enter ZIP Code" />
-                            <button class="btn btn-block btn-tc-blue">Look Up</button>
+                            <input class="btn btn-block input-tc-white zip-code-input" maxlength="5" name="zip_code" placeholder="Enter ZIP Code" />
+                            <span class="zip-code-message"></span>
+                            <button class="btn btn-block btn-tc-blue zip-code-button">Look Up</button>
                         </div>
                     </div>
                 </div>
@@ -277,8 +280,9 @@
                         <img src="assets/img/TrueCare24_logo.svg" alt="TrueCare24">
                         <h2>The doctor's office that comes to you</h2>
                         <div class="col-8 offset-2 p-0">
-                            <input class="btn btn-block input-tc-white" type="text" name="zip_code" placeholder="Enter ZIP Code" />
-                            <button class="btn btn-block btn-tc-blue">Look Up</button>
+                            <input class="btn btn-block input-tc-white zip-code-input" maxlength="5" name="zip_code" placeholder="Enter ZIP Code" />
+                            <span class="zip-code-message"></span>
+                            <button class="btn btn-block btn-tc-blue zip-code-button">Look Up</button>
                         </div>
                     </div>
                 </div>
@@ -351,5 +355,6 @@
         </footer>
 
         <script src="assets/js/app.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfhlpZx_t7zACXpu_CmF7WMoDgll8Jc48" async="" defer=""></script>
     </body>
 </html>
