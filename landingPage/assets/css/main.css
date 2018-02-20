@@ -10,7 +10,7 @@ header.page-header {
     padding: 0;
     position: absolute;
     width: 100%;
-    z-index: 9999999;
+    z-index: 999;
     top: 0;
     transition: background-color 0.5s ease;
     background-color: transparent;
@@ -170,6 +170,12 @@ input.input-tc-white::placeholder {
     color: #FFFFFF;
     background-color: #54D0FF;
     border-color: #54D0FF;
+}
+
+.btn-tc-light-blue {
+    color: #54D0FF;
+    background-color: #F2FCFF;
+    border: 1px solid #BFEDFF;
 }
 
 section.banner .btn {
@@ -384,4 +390,65 @@ footer .disclaimer {
 
 .icon-red {
     color: #e00000;
+}
+
+.tc-modal .modal-dialog {
+    width: 410px;
+    margin: 6rem auto;
+}
+
+.tc-modal .modal-content {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.tc-modal .modal-header {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.tc-modal .modal-footer {
+    border-top: none;
+    padding: 15px 40px 50px 40px;
+}
+
+.tc-modal .modal-body {
+    padding: 0 50px;
+}
+
+.tc-modal p.modal-text {
+    font-size: 30px;
+    line-height: 36px;
+    color: #354650;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tc-modal .btn {
+    font-size: 18px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.modal-backdrop {
+    background-color: #192E3B;
+    opacity: 0.7;
+}
+
+.tc-blue-text {
+    color: #54D0FF;
+}
+
+.tc-modal i.far {
+    font-size: 70px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 499.98px) {
+    .tc-modal .modal-dialog {
+        width: 98%;
+        margin: 3rem auto;
+    }
 }

@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    const ZIP_REDIRECT_URL = 'google.com';
-    const ZIP_VERIFY_URL = '../index.html';
+    const ZIP_REDIRECT_URL = 'https://www.truecare24.com/get-started/?go=home';
+    const ZIP_VERIFY_URL = 'assets/js/verify_url.json';
+    var zipButtonClicked;
 
     var stickyNavTop = $('.page-header').offset().top;
 
@@ -61,7 +62,7 @@ $(document).ready(function() {
 
     $('.zip-code-input').keyup(function() {
         // force int values only
-        $(this).val(isNaN(parseInt($(this).val())) === true ? '' : parseInt($(this).val()));
+        $(this).val($(this).val().replace(/\D/g, ''));
 
         $(this).closest('.zip-code-button').removeAttr('data-url');
 
@@ -110,7 +111,8 @@ $(document).ready(function() {
                         lng: lng
                     };
 
-                    if (city && state && region && lat && lng) {
+                    // false for testing only
+                    if (city && state && region && lat && lng && false) {
                         // saves data to session
                         $.ajax("/wp-content/themes/jupiter/landing-page/lib/to-session.php", {
                             type: "POST",
@@ -121,29 +123,32 @@ $(document).ready(function() {
                         inputChanged.addClass('mb-1');
                         inputChanged.siblings('button').addClass('mt-1');
 
-                        return false;
+                        // Uncomment after releasing
+                        // return false;
                     }
 
                     // verify on TC API
+                    var url = ZIP_VERIFY_URL.replace('{lat}', lat).replace('{lng}', lng);
+
                     $.ajax({
                         method: 'GET',
-                        url: ZIP_VERIFY_URL,
-                        data: data,
+                        url: url,
                         success: function (response) {
-                            inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
-                                "<i class=\"fas fa-check icon-green\"></i> We service " + city + " " + region
-                            );
+                            if (typeof response.result !== 'undefined' && response.result.length > 0) {
+                                inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                    "<i class=\"fas fa-check icon-green\"></i> We service " + city + " " + region
+                                );
 
-                            inputChanged.siblings('.zip-code-button').attr('data-url', ZIP_REDIRECT_URL);
-                            inputChanged.addClass('mb-1');
-                            inputChanged.siblings('button').addClass('mt-1');
-                        },
-                        error: function (error) {
-                            inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
-                                "<i class=\"fas fa-time icon-red\"></i>Sorry, we don't service " + city + " " + region
-                            );
-                            inputChanged.addClass('mb-1');
-                            inputChanged.siblings('button').addClass('mt-1');
+                                inputChanged.siblings('.zip-code-button').attr('data-url', ZIP_REDIRECT_URL);
+                                inputChanged.addClass('mb-1');
+                                inputChanged.siblings('button').addClass('mt-1');
+                            } else {
+                                inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                    "<i class=\"fas fa-times icon-red\"></i> Sorry, we don't service " + city + " " + region
+                                );
+                                inputChanged.addClass('mb-1');
+                                inputChanged.siblings('button').addClass('mt-1');
+                            }
                         }
                     });
                 } else {
@@ -156,8 +161,30 @@ $(document).ready(function() {
     });
 
     $('.zip-code-button').click(function() {
+        zipButtonClicked = $(this);
+
         if ($(this).attr('data-url') !== '' && $(this).attr('data-url') !== 'undefined' && typeof $(this).attr('data-url') !== 'undefined') {
-            window.location = $(this).attr('data-url');
+            $('#dangerQuestion').modal('show');
+        } else {
+            $(this).siblings('.zip-code-message').css("display", "block").addClass("error").html("Please enter valid 5 digits US ZIP code");
+            $(this).siblings('input').addClass('mb-1');
+            $(this).addClass('mt-1');
+        }
+    });
+
+    $('#dangerButtonYes').click(function() {
+        $('#dangerQuestion').modal('hide');
+        $('#dangerYes').modal('show');
+    });
+
+    $('#dangerButtonNo').click(function() {
+        var zipCodeButton = zipButtonClicked;
+
+        if (zipCodeButton.attr('data-url') !== '' && zipCodeButton.attr('data-url') !== 'undefined' && typeof zipCodeButton.attr('data-url') !== 'undefined') {
+            window.location = zipCodeButton.attr('data-url');
+        } else {
+            $('#dangerQuestion').modal('hide');
+            $('#dangerNoSorry').modal('show');
         }
     });
 });
