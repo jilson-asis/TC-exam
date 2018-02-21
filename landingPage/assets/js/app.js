@@ -122,8 +122,7 @@ $(document).ready(function() {
                         inputChanged.addClass('mb-1');
                         inputChanged.siblings('button').addClass('mt-1');
 
-                        // Uncomment after releasing
-                        // return false;
+                        return false;
                     }
 
                     // verify on TC API
