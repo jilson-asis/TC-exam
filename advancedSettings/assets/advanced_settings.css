@@ -220,3 +220,7 @@
 #advanced-settings-open-button:hover > p.setting {
     color: #00B9FF;
 }
+
+.alert button {
+    cursor: pointer;
+}

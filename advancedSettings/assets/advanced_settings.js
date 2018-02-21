@@ -178,14 +178,18 @@ function submitAdvancedSettings() {
             $('#successSubmit')
                 .removeClass('alert-danger')
                 .addClass('alert-success')
-                .html('Thanks for updating the information.')
+                .html('Thanks for updating the information. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span aria-hidden="true">&times;</span>' +
+                    '</button>')
                 .removeClass('d-none');
         },
         error: function(error) {
             $('#successSubmit')
                 .addClass('alert-danger')
                 .removeClass('alert-success')
-                .html('Failed to save profile, please contact the administrator.')
+                .html('Failed to save profile, please contact the administrator. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span aria-hidden="true">&times;</span>' +
+                    '</button>')
                 .removeClass('d-none');
         }
     });
@@ -221,14 +225,18 @@ $('#profile-settings-form').submit(function(e) {
                 $('#successSubmitProfile')
                     .removeClass('alert-danger')
                     .addClass('alert-success')
-                    .html('Thanks for updating the information.')
+                    .html('Thanks for updating the information. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                        '</button>')
                     .removeClass('d-none');
             },
             error: function(error) {
                 $('#successSubmitProfile')
                     .addClass('alert-danger')
                     .removeClass('alert-success')
-                    .html('Failed to save profile, please contact the administrator.')
+                    .html('Failed to save profile, please contact the administrator. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                        '</button>')
                     .removeClass('d-none');
             }
         });
@@ -392,7 +400,9 @@ $('#stop-receiving-clients-button').click(function() {
             $('#stopReceiveMessage')
                 .removeClass('alert-danger')
                 .addClass('alert-success')
-                .html(status + ' receiving client.')
+                .html(status + ' receiving client. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span aria-hidden="true">&times;</span>' +
+                    '</button>')
                 .removeClass('d-none');
         },
         error: function(error) {
@@ -400,7 +410,9 @@ $('#stop-receiving-clients-button').click(function() {
             $('#stopReceiveMessage')
                 .addClass('alert-danger')
                 .removeClass('alert-success')
-                .html('Error has occurred, please contact the administrator.')
+                .html('Error has occurred, please contact the administrator. <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span aria-hidden="true">&times;</span>' +
+                    '</button>')
                 .removeClass('d-none');
         }
     });
