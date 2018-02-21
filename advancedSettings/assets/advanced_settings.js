@@ -1,7 +1,7 @@
 // settings
 const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
-const GET_API_ENDPOINT = 'assets/get_data_full.json';
-const POST_API_ENDPOINT = 'assets/post_data.json';
+const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
+const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
 
 // open form
 $('#advanced-settings-open-button').click(function() {
@@ -166,9 +166,9 @@ function submitAdvancedSettings() {
     formValues.type = "settings";
     formValues.id = $('#agencyId').val();
 
-    // PLEASE DELETE THIS CODE AFTER INTEGRATION
-    console.log(formValues);
-    console.log(JSON.stringify(formValues));
+    // add provider data
+    formValues.provider_id = $('#providerId').val();
+    formValues.partnership = $('#providerPartnership').val();
 
     $.ajax({
         url: POST_API_ENDPOINT,
@@ -209,9 +209,10 @@ $('#profile-settings-form').submit(function(e) {
         formValues.type = "profile";
         formValues.id = $('#agencyId').val();
 
-        // PLEASE DELETE THIS CODE AFTER INTEGRATION
-        console.log(formValues);
-        console.log(JSON.stringify(formValues));
+        // add provider data
+        formValues.provider_id = $('#providerId').val();
+        formValues.partnership = $('#providerPartnership').val();
+
         $.ajax({
             url: POST_API_ENDPOINT,
             type: "POST",
@@ -275,14 +276,12 @@ function initAutocomplete() {
 // pre-fill form if data is present
 
 $(document).ready(function() {
-    // TEST CODE
-    if (getParameterByName('prefill') !== 'true') {
-        return false;
-    }
+    var provider_id = $('#providerId').val();
+    var partnership = $('#providerPartnership').val();
 
     // fetch advanced settings data
     $.ajax({
-        url: GET_API_ENDPOINT,
+        url: GET_API_ENDPOINT + '/' + provider_id + '/' + partnership,
         type: 'GET',
         success: function(data) {
             var form = $('#advanced-form');
@@ -365,7 +364,9 @@ $('#stop-receiving-clients-button').click(function() {
     // send stop on API
     var formValue = {
         type: "receive",
-        id: $('#agencyId').val()
+        id: $('#agencyId').val(),
+        provider_id: $('#providerId').val(),
+        partnership: $('#providerPartnership').val()
     };
 
     $.ajax({
