@@ -1,6 +1,6 @@
 $(document).ready(function() {
     const ZIP_REDIRECT_URL = 'https://www.truecare24.com/get-started/?go=home';
-    const ZIP_VERIFY_URL = 'assets/js/verify_url.json';
+    const ZIP_VERIFY_URL = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchNearest/{lat}/{lng}/05141/Doctor/VT';
     var zipButtonClicked;
 
     var stickyNavTop = $('.page-header').offset().top;
@@ -111,8 +111,7 @@ $(document).ready(function() {
                         lng: lng
                     };
 
-                    // false for testing only
-                    if (city && state && region && lat && lng && false) {
+                    if (city && state && region && lat && lng) {
                         // saves data to session
                         $.ajax("/wp-content/themes/jupiter/landing-page/lib/to-session.php", {
                             type: "POST",
