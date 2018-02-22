@@ -134,7 +134,7 @@ $(document).ready(function() {
                         success: function (response) {
                             if (typeof response.result !== 'undefined' && response.result.length > 0) {
                                 inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
-                                    "<i class=\"fas fa-check icon-green\"></i> We service " + city + " " + region
+                                    "<i class=\"fas fa-check icon-green\"></i> " + city + " " + region
                                 );
 
                                 inputChanged.siblings('.zip-code-button').attr('data-url', ZIP_REDIRECT_URL);
@@ -142,11 +142,18 @@ $(document).ready(function() {
                                 inputChanged.siblings('button').addClass('mt-1');
                             } else {
                                 inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
-                                    "<i class=\"fas fa-times icon-red\"></i> Sorry, we don't service " + city + " " + region
+                                    "<i class=\"fas fa-times icon-red\"></i> " + city + " " + region
                                 );
                                 inputChanged.addClass('mb-1');
                                 inputChanged.siblings('button').addClass('mt-1');
                             }
+                        },
+                        error: function (error) {
+                            inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                "<i class=\"fas fa-times icon-red\"></i> " + city + " " + region
+                            );
+                            inputChanged.addClass('mb-1');
+                            inputChanged.siblings('button').addClass('mt-1');
                         }
                     });
                 } else {
