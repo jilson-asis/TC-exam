@@ -164,7 +164,23 @@ function getFormData($form){
 function submitAdvancedSettings() {
     var formValues = getFormData($('#advanced-settings-form'));
     formValues.type = "settings";
-    formValues.id = $('#agencyId').val();
+
+    // special case for working hours
+    if (formValues.working_hours === 'other') {
+        formValues.working_hours = $('#otherWorkingHours').val();
+    }
+
+    // flatten array values
+    for (var key in formValues) {
+        if (formValues.hasOwnProperty(key)) {
+            var datum = formValues[key];
+
+            if (typeof datum === 'object') {
+                formValues[key.replace('[]', '')] = datum.join(', ');
+                delete formValues[key];
+            }
+        }
+    }
 
     // add provider data
     formValues.provider_id = $('#providerId').val();
@@ -211,7 +227,6 @@ $('#profile-settings-form').submit(function(e) {
     } else {
         var formValues = getFormData($(this));
         formValues.type = "profile";
-        formValues.id = $('#agencyId').val();
 
         // add provider data
         formValues.provider_id = $('#providerId').val();
@@ -372,7 +387,6 @@ $('#stop-receiving-clients-button').click(function() {
     // send stop on API
     var formValue = {
         type: "receive",
-        id: $('#agencyId').val(),
         provider_id: $('#providerId').val(),
         partnership: $('#providerPartnership').val()
     };
@@ -406,7 +420,6 @@ $('#stop-receiving-clients-button').click(function() {
                 .removeClass('d-none');
         },
         error: function(error) {
-            console.log(error);
             $('#stopReceiveMessage')
                 .addClass('alert-danger')
                 .removeClass('alert-success')

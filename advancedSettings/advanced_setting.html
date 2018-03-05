@@ -17,13 +17,13 @@
     </head>
     <body>
         <!--Provider ID and Partner status-->
-        <input type="hidden" name="provider_id" id="providerId" value="">
-        <input type="hidden" name="partnership" id="providerPartnership" value="">
+        <!-- NOTE: for testing only, uses 1 and false, remove and change dynamically on prod -->
+        <input type="hidden" name="provider_id" id="providerId" value="1">
+        <input type="hidden" name="partnership" id="providerPartnership" value="false">
         <!--Provider ID and Partner status-->
 
         <div class="container">
             <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12 p-0">
-                <input type="hidden" id="agencyId" name="id">
                 <div class="row" id="profile-settings-head">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-0">
                         <h2>Profile Settings</h2>
@@ -161,21 +161,21 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">How many caregivers do you have? *</label>
-                                                        <input type="number" name="caregiver_no" class="form-control bg-app-light-gray" placeholder="Example: 50" required>
-                                                        <div class="invalid-feedback">
-                                                            Number of caregivers is required
-                                                        </div>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">How many caregivers do you have? *</label>-->
+                                                        <!--<input type="number" name="caregiver_no" class="form-control bg-app-light-gray" placeholder="Example: 50" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--Number of caregivers is required-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
 
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Agency website URL *</label>
-                                                        <input type="text" name="agency_website" class="form-control bg-app-light-gray" placeholder="www" required>
-                                                        <div class="invalid-feedback">
-                                                            Website is required.
-                                                        </div>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Agency website URL *</label>-->
+                                                        <!--<input type="text" name="agency_website" class="form-control bg-app-light-gray" placeholder="www" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--Website is required.-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -197,34 +197,34 @@
                                                     We need your address to send you clients that are in your service area
                                                 </div>
                                                 <div class="pt-3 setting-form-inputs">
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Home Care Agency Street *</label>
-                                                        <input type="text" name="agency_street" class="form-control bg-app-light-gray auto-complete route" placeholder="Enter a building number and street name" required>
-                                                        <div class="invalid-feedback">
-                                                            Street is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Home Care Agency City *</label>
-                                                        <input type="text" name="agency_city" class="form-control bg-app-light-gray auto-complete locality" placeholder="Enter City" required>
-                                                        <div class="invalid-feedback">
-                                                            City is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Home Care Agency State *</label>
-                                                        <input type="text" name="agency_state" class="form-control bg-app-light-gray auto-complete administrative_area_level_1" placeholder="Enter State" required>
-                                                        <div class="invalid-feedback">
-                                                            State is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Home Care Agency Zip *</label>
-                                                        <input type="text" name="agency_zip" class="form-control bg-app-light-gray auto-complete postal_code" placeholder="Please enter only 5 digit zip" required>
-                                                        <div class="invalid-feedback">
-                                                            Zip is required.
-                                                        </div>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Home Care Agency Street *</label>-->
+                                                        <!--<input type="text" name="agency_street" class="form-control bg-app-light-gray auto-complete route" placeholder="Enter a building number and street name" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--Street is required.-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Home Care Agency City *</label>-->
+                                                        <!--<input type="text" name="agency_city" class="form-control bg-app-light-gray auto-complete locality" placeholder="Enter City" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--City is required.-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Home Care Agency State *</label>-->
+                                                        <!--<input type="text" name="agency_state" class="form-control bg-app-light-gray auto-complete administrative_area_level_1" placeholder="Enter State" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--State is required.-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Home Care Agency Zip *</label>-->
+                                                        <!--<input type="text" name="agency_zip" class="form-control bg-app-light-gray auto-complete postal_code" placeholder="Please enter only 5 digit zip" required>-->
+                                                        <!--<div class="invalid-feedback">-->
+                                                            <!--Zip is required.-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
                                                     <div class="form-group col-12 p-0 mb-4">
                                                         <label class="input-label">List territories that you service from this office *</label>
                                                         <input type="text" name="territories" class="form-control bg-app-light-gray" placeholder="Example: San Francisco, Palo Alto" required>
@@ -270,7 +270,7 @@
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="accreditation[]" value="Registry. We don't employ caregivers, we facilitate the direct hiring of the caregivers by families." class="custom-control-input">
+                                                                    <input required type="checkbox" name="accreditation[]" value="Registry. We don't employ caregivers%2C we facilitate the direct hiring of the caregivers by families." class="custom-control-input">
                                                                     <span class="custom-control-indicator"></span>
                                                                     <span class="custom-control-description ml-4">Registry. We don't employ caregivers, we facilitate the direct hiring of the caregivers by families.</span>
                                                                 </label>
@@ -284,7 +284,7 @@
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="accreditation[]" value="Accredited By The Joint Commission, Community Health Accreditation Program, Inc., Accreditation Commission for Health Care or Foundation for Hospice & Home Care" class="custom-control-input">
+                                                                    <input required type="checkbox" name="accreditation[]" value="Accredited By The Joint Commission%2C Community Health Accreditation Program%2C Inc.%2C Accreditation Commission for Health Care or Foundation for Hospice & Home Care" class="custom-control-input">
                                                                     <span class="custom-control-indicator"></span>
                                                                     <span class="custom-control-description ml-4">Accredited By The Joint Commission, Community Health Accreditation Program, Inc., Accreditation Commission for Health Care or Foundation for Hospice & Home Care</span>
                                                                 </label>
@@ -330,87 +330,87 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Caregivers screening *</label>
-                                                        <div class="col p-4 check-box-field check-box-field-required">
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="caregiver_screening[]" value="Criminal background check" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Criminal background check</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="caregiver_screening[]" value="National, state, and sex offender" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">National, state, and sex offender</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="caregiver_screening[]" value="DMV records check" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">DMV records check</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="caregiver_screening[]" value="Other" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Other</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Caregivers screening *</label>-->
+                                                        <!--<div class="col p-4 check-box-field check-box-field-required">-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="caregiver_screening[]" value="Criminal background check" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Criminal background check</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="caregiver_screening[]" value="National, state, and sex offender" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">National, state, and sex offender</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="caregiver_screening[]" value="DMV records check" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">DMV records check</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="caregiver_screening[]" value="Other" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Other</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
 
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Basic Activities of daily living (ADLs) *</label>
-                                                        <div class="col p-4 check-box-field check-box-field-required">
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Functional Mobility" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Functional Mobility</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Bathing and showering" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Bathing and showering</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Self-feeding" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Self-feeding</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Personal hygiene and grooming" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Personal hygiene and grooming</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Toilet hygiene" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Toilet hygiene</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="custom-control custom-checkbox">
-                                                                    <input required type="checkbox" name="basic_activities_of_daily[]" value="Other" class="custom-control-input">
-                                                                    <span class="custom-control-indicator"></span>
-                                                                    <span class="custom-control-description ml-4">Other</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Basic Activities of daily living (ADLs) *</label>-->
+                                                        <!--<div class="col p-4 check-box-field check-box-field-required">-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Functional Mobility" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Functional Mobility</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Bathing and showering" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Bathing and showering</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Self-feeding" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Self-feeding</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Personal hygiene and grooming" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Personal hygiene and grooming</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Toilet hygiene" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Toilet hygiene</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                    <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Other" class="custom-control-input">-->
+                                                                    <!--<span class="custom-control-indicator"></span>-->
+                                                                    <!--<span class="custom-control-description ml-4">Other</span>-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
 
                                                     <div class="form-group col-12 p-0 mb-4">
                                                         <label class="input-label">Instrumental Activities of daily living (ADLs) *</label>
@@ -596,10 +596,10 @@
                                                             Rate is required.
                                                         </div>
                                                     </div>
-                                                    <div class="form-group col-12 p-0 mb-4">
-                                                        <label class="input-label">Please Describe (If Payment Plan is offered)</label>
-                                                        <textarea class="form-control bg-app-light-gray" placeholder="Type Here" name="payment_plan"></textarea>
-                                                    </div>
+                                                    <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                        <!--<label class="input-label">Please Describe (If Payment Plan is offered)</label>-->
+                                                        <!--<textarea class="form-control bg-app-light-gray" placeholder="Type Here" name="payment_plan"></textarea>-->
+                                                    <!--</div>-->
                                                 </div>
                                             </div>
                                         </div>
