@@ -302,6 +302,15 @@ $(document).ready(function() {
     var provider_id = $('#providerId').val();
     var partnership = $('#providerPartnership').val();
 
+    const checkboxInputs = {
+        'caregiver_screening': 'caregiver_screening[]',
+        'basic_activities_of_daily': 'basic_activities_of_daily[]',
+        'instrumental_activities_of_daily': 'instrumental_activities_of_daily[]',
+        'patient_payment_options': 'patient_payment_options[]',
+        'languages_spoken': 'languages_spoken[]',
+        'accreditation': 'accreditation[]'
+    };
+
     // fetch advanced settings data
     $.ajax({
         url: GET_API_ENDPOINT + '/' + provider_id + '/' + partnership,
@@ -313,6 +322,10 @@ $(document).ready(function() {
                 if (data.hasOwnProperty(key)) {
                     var datum = data[key];
 
+                    if (datum === null || datum === '') {
+                        continue;
+                    }
+
                     if (key === 'user_photo') {
                         $('#previewUpload').attr('src', datum).removeClass("d-none");
                         $('#userPhoto').val(datum);
@@ -322,6 +335,11 @@ $(document).ready(function() {
                         } else {
                             $('#workingHoursOther').click();
                             $('#otherWorkingHours').val(datum);
+                        }
+                    } else if (typeof checkboxInputs[key] !== 'undefined') {
+                        var checkboxData = datum.split(', ');
+                        for (var a = 0; checkboxData.length > a; a++) {
+                            $('input[name="' + checkboxInputs[key] + '"][value="' + checkboxData[a] + '"]').click();
                         }
                     } else if (key === 'receive_clients' && datum === false) {
                         $('#stop-receiving-clients-button')
