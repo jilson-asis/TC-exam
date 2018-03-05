@@ -316,6 +316,13 @@ $(document).ready(function() {
                     if (key === 'user_photo') {
                         $('#previewUpload').attr('src', datum).removeClass("d-none");
                         $('#userPhoto').val(datum);
+                    } else if (key === 'working_hours') {
+                        if (datum === 'anytime') {
+                            $('#workingHoursAnytime').click();
+                        } else {
+                            $('#workingHoursOther').click();
+                            $('#otherWorkingHours').val(datum);
+                        }
                     } else if (key === 'receive_clients' && datum === false) {
                         $('#stop-receiving-clients-button')
                             .html('<i class="fas fa-play"></i> Start Receiving Clients')
