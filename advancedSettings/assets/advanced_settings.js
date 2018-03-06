@@ -337,10 +337,12 @@ $(document).ready(function() {
                             $('#otherWorkingHours').val(datum);
                         }
                     } else if (typeof checkboxInputs[key] !== 'undefined') {
-                        var checkboxData = datum.split(', ');
-                        for (var a = 0; checkboxData.length > a; a++) {
-                            $('input[name="' + checkboxInputs[key] + '"][value="' + checkboxData[a] + '"]').click();
-                        }
+                        var checkBoxInputs = $('input[name="' + checkboxInputs[key] + '"]');
+                        checkBoxInputs.each(function() {
+                            if (datum.indexOf($(this).val()) !== -1) {
+                                $(this).click();
+                            }
+                        });
                     } else if (key === 'receive_clients' && datum === false) {
                         $('#stop-receiving-clients-button')
                             .html('<i class="fas fa-play"></i> Start Receiving Clients')
