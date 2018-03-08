@@ -224,3 +224,12 @@
 .alert button {
     cursor: pointer;
 }
+
+/*Design conflict fix*/
+i.mark {
+    background: none;
+}
+
+.table {
+    margin-bottom: 0;
+}

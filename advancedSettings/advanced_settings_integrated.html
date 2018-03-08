@@ -1,0 +1,865 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provider Portal</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <link rel="stylesheet" href="assets/advanced_settings.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://vjs.zencdn.net/6.1.0/video-js.css" />
+    <link rel="stylesheet" href="https://www.truecare24.com/tc24-provider-portal/css/default.css?r=4907" />
+    <!--[if lt IE 9]>
+    <script src="https://www.truecare24.com/tc24-provider-portal/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" href="https://www.truecare24.com/tc24-provider-portal/favicon.png" />
+</head>
+<body>
+
+<!--Provider ID and Partner status-->
+<!-- NOTE: for testing only, uses 1 and false, remove and change dynamically on prod -->
+<input type="hidden" name="provider_id" id="providerId" value="1">
+<input type="hidden" name="partnership" id="providerPartnership" value="false">
+<!--Provider ID and Partner status-->
+
+<div id="wrapper">
+    <div id="wrap-left" class="cell">
+        <div id="over-left">
+            <div id="menu">
+                <a id="menu-logo" href="https://www.truecare24.com/"></a>
+                <div id="menu-visitor">Jilson</div>
+                <div id="menu-id">Your ID: 38788</div>
+                <div id="menu-line"></div>
+                <div id="menu-section">
+                    <div class="table">
+                        <div class="cell">
+                            <i class="join"></i>
+                        </div>
+                        <div class="cell middle">
+                            <a href="https://www.truecare24.com/tc24-provider-portal/?page=join">Join the Network</a>
+                        </div>
+                        <div class="cell">
+                            <i class="mark"></i>
+                        </div>
+                    </div>
+                    <div class="table" style="display: none;">
+                        <div class="cell">
+                            <i class="requests"></i>
+                        </div>
+                        <div class="cell middle">
+                            <a href="https://www.truecare24.com/tc24-provider-portal/?page=requests">New Requests</a>
+                        </div>
+                        <div class="cell">
+                            <i class="mark"></i>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="cell">
+                            <i class="home"></i>
+                        </div>
+                        <div class="cell middle">
+                            <a href="https://www.truecare24.com/tc24-provider-portal/">In-progress Clients</a>
+                        </div>
+                        <div class="cell">
+                            <i class="mark"></i>
+                        </div>
+                    </div>
+                    <div class="table active" style="display: none;">
+                        <div class="cell">
+                            <i class="settings"></i>
+                        </div>
+                        <div class="cell middle">
+                            <a href="https://www.truecare24.com/tc24-provider-portal/?page=settings">Profile Settings</a>
+                        </div>
+                        <div class="cell">
+                            <i class="mark"></i>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="cell">
+                            <i class="out"></i>
+                        </div>
+                        <div class="cell middle">
+                            <a href="https://www.truecare24.com/tc24-provider-portal/?page=out">Sign Out</a>
+                        </div>
+                        <div class="cell">
+                            <i class="mark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu-info">Questions?<br/>Call us at: <a href="tel:(628) 333-2005">(628) 333-2005</a></div>
+                <div id="menu-feedback">Website feedback</div>
+                <ul id="menu-links">
+                    <li>
+                        <a href="https://www.truecare24.com/privacy-policy/">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="https://www.truecare24.com/terms-service-truecare24/">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrap-right" class="cell">
+        <div id="over-right">
+            <div id="content">
+                <div id="content-panel">
+                    <div id="content-panel-menu" class="show"></div>
+                    <a id="content-panel-logo" href="https://www.truecare24.com/"></a>
+                    <a id="content-panel-phone" href="tel:(628) 333-2005"></a>
+                </div>
+                <div id="content-form">
+                    <div class="container">
+                        <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-12 col-sm-12 col-12 p-0">
+                            <div class="row" id="profile-settings-head">
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-0">
+                                    <h2>Profile Settings</h2>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-0 rem-4">
+                        <span class="stop-receiving-clients" id="stop-receiving-clients-button">
+                            <i class="fas fa-square"></i> Stop Receiving Clients
+                        </span>
+                                </div>
+                            </div>
+                            <div class="alert alert-success text-center d-none mt-2" role="alert" id="stopReceiveMessage">
+                                Thanks for updating the information
+                            </div>
+                            <div id="profile-settings">
+                                <div class="col p-0">
+                                    <form id="profile-settings-form" action="#">
+                                        <div class="form-group col-12 p-0 mb-4">
+                                            <label class="input-label">Home Care Agency Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder="Home Care Agency Name" readonly>
+                                        </div>
+                                        <div class="form-group col-12 p-0 mb-4">
+                                            <label class="input-label">Zip Code</label>
+                                            <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" readonly>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        <div class="clearfix"></div>
+
+                                        <div class="form-group col-12 p-0 mb-4">
+                                            <label class="input-label">E-mail</label>
+                                            <input type="email" name="email" class="form-control bg-app-light-gray" placeholder="your@email.com" required>
+                                            <div class="invalid-feedback">
+                                                email is required.
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-12 p-0 mb-4">
+                                            <label class="input-label">Phone Number</label>
+                                            <input type="text" name="phone_number" id="cellphone" maxlength="17" class="form-control bg-app-light-gray" placeholder="+1 (___) ___-____" required>
+                                            <div class="invalid-feedback">
+                                                Phone Number is required.
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-success btn-lg btn-block advanced-settings-submit-button" type="submit">UPDATE</button>
+                                        <div class="alert alert-success text-center mt-2 d-none" role="alert" id="successSubmitProfile">
+                                            Thanks for updating the information
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr class="form-hr">
+                                <div class="clearfix"></div>
+
+                                <div id="advanced-settings-open-button">
+                                    <p class="setting text-center">
+                                        <i class="fas fa-cog"></i> ADVANCED SETTINGS
+                                    </p>
+                                    <p class="text-center">(We recommend completing advanced setting so we can match you with right clients)</p>
+                                </div>
+                                <div class="d-none" id="advanced-form">
+                                    <div class="col p-0">
+                                        <div class="title">
+                                            <h3>Advanced Settings</h3>
+                                            <p class="desc">
+                                                To save your time and increase conversion, we're going to ask a few questions about you and
+                                                services you provide. This information will help us to match you with the right clients.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    <div class="clearfix"></div>
+                                    <div class="col p-0">
+                                        <form id="advanced-settings-form" action="#" method="post">
+                                            <div class="form-sections" data-children=".item" id="advanced-settings-accordion">
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="1" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-1" aria-controls="advanced-setting-1">
+                                                        <span class="item-number">1.</span> About Agency
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-1" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="col p-3 settings-form-note">
+                                                                We will use this information in case a client will ask us to provide more
+                                                                details about your agency before we connect them directly to you
+                                                            </div>
+                                                            <div class="pt-3 setting-form-inputs">
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">License number *</label>
+                                                                    <input type="text" name="license_number" class="form-control bg-app-light-gray" placeholder='Type your license number here, or type "Not applicable"' required>
+                                                                    <div class="invalid-feedback">
+                                                                        License number is required.
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Working hours (for accepting leads) *</label>
+                                                                    <div class="col p-4 check-box-field">
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-radio">
+                                                                                <input type="radio" name="working_hours" id="workingHoursAnytime" value="anytime" class="custom-control-input working-hour-radio" required>
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Anytime</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-radio">
+                                                                                <input type="radio" name="working_hours" id="workingHoursOther" value="other" class="custom-control-input working-hour-radio" required>
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Other</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-group p-0 col-12 col-sm-10 offset-sm-1 d-none">
+                                                                            <input type="text" id="otherWorkingHours" name="other_working_hours" class="form-control" disabled placeholder="Type Here">
+                                                                        </div>
+                                                                        <div class="invalid-feedback">
+                                                                            Working hours is required.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Response time to get in touch with the referrals</label>
+                                                                    <input type="text" name="response_time" class="form-control bg-app-light-gray" placeholder="Ex: 15 minutes">
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Short agency description (We might use this description on our mobile app, website, or call center) *</label>
+                                                                    <textarea class="form-control bg-app-light-gray" placeholder="Type Here" required name="agency_description"></textarea>
+                                                                    <div class="invalid-feedback">
+                                                                        Description is required.
+                                                                    </div>
+                                                                </div>
+
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">How many caregivers do you have? *</label>-->
+                                                                <!--<input type="number" name="caregiver_no" class="form-control bg-app-light-gray" placeholder="Example: 50" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--Number of caregivers is required-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Agency website URL *</label>-->
+                                                                <!--<input type="text" name="agency_website" class="form-control bg-app-light-gray" placeholder="www" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--Website is required.-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="2" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-2" aria-controls="advanced-setting-2">
+                                                        <span class="item-number">2.</span> Address
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-2" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="col p-3 settings-form-note">
+                                                                We need your address to send you clients that are in your service area
+                                                            </div>
+                                                            <div class="pt-3 setting-form-inputs">
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Home Care Agency Street *</label>-->
+                                                                <!--<input type="text" name="agency_street" class="form-control bg-app-light-gray auto-complete route" placeholder="Enter a building number and street name" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--Street is required.-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Home Care Agency City *</label>-->
+                                                                <!--<input type="text" name="agency_city" class="form-control bg-app-light-gray auto-complete locality" placeholder="Enter City" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--City is required.-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Home Care Agency State *</label>-->
+                                                                <!--<input type="text" name="agency_state" class="form-control bg-app-light-gray auto-complete administrative_area_level_1" placeholder="Enter State" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--State is required.-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Home Care Agency Zip *</label>-->
+                                                                <!--<input type="text" name="agency_zip" class="form-control bg-app-light-gray auto-complete postal_code" placeholder="Please enter only 5 digit zip" required>-->
+                                                                <!--<div class="invalid-feedback">-->
+                                                                <!--Zip is required.-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">List territories that you service from this office *</label>
+                                                                    <input type="text" name="territories" class="form-control bg-app-light-gray" placeholder="Example: San Francisco, Palo Alto" required>
+                                                                    <div class="invalid-feedback">
+                                                                        List of territories is required.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">If you are a franchisee, enter the list of zip codes you own. <br> Skip if you are not a part of a franchise.</label>
+                                                                    <input type="text" name="agency_franchise" class="form-control bg-app-light-gray" placeholder="Ex:10011, 10012,...">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="3" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-3" aria-controls="advanced-setting-3">
+                                                        <span class="item-number">3.</span> Additional Information
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-3" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="col p-3 settings-form-note">
+                                                                Tell us about services you provide
+                                                            </div>
+                                                            <div class="pt-3 setting-form-inputs">
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Accreditation and Certification *</label>
+                                                                    <div class="col p-4 check-box-field check-box-field-required">
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Medicare Certified" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Medicare Certified</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Registry. We don't employ caregivers, we facilitate the direct hiring of the caregivers by families." class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Registry. We don't employ caregivers, we facilitate the direct hiring of the caregivers by families.</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="State Licensed Agency" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">State Licensed Agency</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Accredited By The Joint Commission, Community Health Accreditation Program, Inc., Accreditation Commission for Health Care or Foundation for Hospice & Home Care" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Accredited By The Joint Commission, Community Health Accreditation Program, Inc., Accreditation Commission for Health Care or Foundation for Hospice & Home Care</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="State Home Care Member-Organization that Represents Hospice and/or Home Care Agencies" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">State Home Care Member-Organization that Represents Hospice and/or Home Care Agencies</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Administrator is a Certified Home Care/Hospice Executive" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Administrator is a Certified Home Care/Hospice Executive</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="National Association for Home Care & Hospice Member" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">National Association for Home Care & Hospice Member</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Private Duty Home Care Association Member" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Private Duty Home Care Association Member</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="accreditation[]" value="Other" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Other</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="invalid-feedback">
+                                                                            Accreditation and Certification is required.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Caregivers screening *</label>-->
+                                                                <!--<div class="col p-4 check-box-field check-box-field-required">-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="caregiver_screening[]" value="Criminal background check" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Criminal background check</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="caregiver_screening[]" value="National, state, and sex offender" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">National, state, and sex offender</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="caregiver_screening[]" value="DMV records check" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">DMV records check</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="caregiver_screening[]" value="Other" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Other</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Basic Activities of daily living (ADLs) *</label>-->
+                                                                <!--<div class="col p-4 check-box-field check-box-field-required">-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Functional Mobility" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Functional Mobility</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Bathing and showering" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Bathing and showering</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Self-feeding" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Self-feeding</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Personal hygiene and grooming" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Personal hygiene and grooming</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Toilet hygiene" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Toilet hygiene</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="form-check">-->
+                                                                <!--<label class="custom-control custom-checkbox">-->
+                                                                <!--<input required type="checkbox" name="basic_activities_of_daily[]" value="Other" class="custom-control-input">-->
+                                                                <!--<span class="custom-control-indicator"></span>-->
+                                                                <!--<span class="custom-control-description ml-4">Other</span>-->
+                                                                <!--</label>-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--</div>-->
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Instrumental Activities of daily living (ADLs) *</label>
+                                                                    <div class="col p-4 check-box-field check-box-field-required">
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Housework" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Housework</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Preparing meals" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Preparing meals</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Taking medications as prescribed" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Taking medications as prescribed</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Managing money" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Managing money</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Shopping for groceries or clothing" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Shopping for groceries or clothing</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Use of telephone or other form of communication" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Use of telephone or other form of communication</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Transportation within the community" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Transportation within the community</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="instrumental_activities_of_daily[]" value="Other" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Other</span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Years of Experience *</label>
+                                                                    <input type="number" name="years_of_experience" class="form-control bg-app-light-gray" placeholder="Ex: 15 years" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Experience is required.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="4" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-4" aria-controls="advanced-setting-4">
+                                                        <span class="item-number">4.</span> Payment & Prices
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-4" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="col p-3 settings-form-note">
+                                                                We will use the price to match you with clients that can afford your prices, but we won't give your prices to clients directly. You can discuss and agree on price with a client directly.
+                                                            </div>
+                                                            <div class="pt-3 setting-form-inputs">
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Patient Payment Options *</label>
+                                                                    <div class="col p-4 check-box-field check-box-field-required">
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Medicaid" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Medicaid</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Medicare" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Medicare</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Patient-pay" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Patient-pay</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Private Health Insurance" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Private Health Insurance</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Long-Term Care Plan" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Long-Term Care Plan</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="VA" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">VA</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Workers Compensation" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Workers Compensation</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Automobile Medical" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Automobile Medical</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="patient_payment_options[]" value="Other" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Other</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="invalid-feedback">
+                                                                            Patient Payment Options is required.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Price rate (4+ hour shift) *</label>
+                                                                    <input type="number" name="price_rate_more_than_4_hours" class="form-control bg-app-light-gray" placeholder="$/hour" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Rate is required.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Price rate (24/7 Live-In) *</label>
+                                                                    <input type="number" name="price_rate_24_7" class="form-control bg-app-light-gray" placeholder="$/Day" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Rate is required.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Price rate (less than 4 hours) *</label>
+                                                                    <input type="number" name="price_rate_less_than_4_hours" class="form-control bg-app-light-gray" placeholder="$/hour" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Rate is required.
+                                                                    </div>
+                                                                </div>
+                                                                <!--<div class="form-group col-12 p-0 mb-4">-->
+                                                                <!--<label class="input-label">Please Describe (If Payment Plan is offered)</label>-->
+                                                                <!--<textarea class="form-control bg-app-light-gray" placeholder="Type Here" name="payment_plan"></textarea>-->
+                                                                <!--</div>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="5" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-5" aria-controls="advanced-setting-5">
+                                                        <span class="item-number">5.</span> Other information
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-5" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="pt-3 setting-form-inputs">
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">What Scheduling Software Do You Use? *</label>
+                                                                    <input type="text" name="scheduling_software" class="form-control bg-app-light-gray" placeholder="Ex: Outlook" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Scheduling Software is required.
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Languages spoken *</label>
+                                                                    <div class="col p-4 check-box-field check-box-field-required">
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="languages_spoken[]" value="English" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">English</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="languages_spoken[]" value="Spanish" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Spanish</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <label class="custom-control custom-checkbox">
+                                                                                <input required type="checkbox" name="languages_spoken[]" value="Other" class="custom-control-input">
+                                                                                <span class="custom-control-indicator"></span>
+                                                                                <span class="custom-control-description ml-4">Other</span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="invalid-feedback">
+                                                                            Language is required.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-12 p-0 mb-4">
+                                                                    <label class="input-label">Upload your logo, photo of your team, or photo of the owner.</label>
+                                                                    <input type="hidden" name="user_photo" id="userPhoto" required>
+                                                                    <div class="col p-4 check-box-field" id="uploadButtonDiv">
+                                                                        <img class="img-fluid d-none" id="previewUpload" alt="uploaded img" />
+                                                                        <div class="col my-5 mx-auto text-center">
+                                                                            <button class="btn" id="initUpload" type="button">Upload photo</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+                                                <div class="item">
+                                                    <a class="item-title form-step collapsed" data-form-step="6" data-toggle="collapse" data-parent="#advanced-settings-accordion" href="#advanced-setting-6" aria-controls="advanced-setting-6">
+                                                        <span class="item-number">6.</span> Personal data usage
+                                                        <i class="fas fa-chevron-down float-right"></i>
+                                                        <i class="fas fa-chevron-up float-right"></i>
+                                                    </a>
+                                                    <div id="advanced-setting-6" class="collapse" role="tabpanel">
+                                                        <div class="settings-form-content">
+                                                            <div class="col p-3">
+                                                                Please give us a permission to use your personal data and publish on the
+                                                                app such items as your photo, name, long and short descriptions,
+                                                                professional titles and specialty.
+                                                            </div>
+                                                            <div class="form-group col-12 p-0 mb-4">
+                                                                <div class="col p-4">
+                                                                    <div class="form-check">
+                                                                        <label class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" id="givePermission" name="give_permission" checked class="custom-control-input" required>
+                                                                            <span class="custom-control-indicator"></span>
+                                                                            <span class="custom-control-description ml-4">I give a permission</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <hr>
+                                                <div class="clearfix"></div>
+
+                                                <button class="btn btn-success btn-lg btn-block advanced-settings-submit-button" disabled type="submit">Submit</button>
+
+                                                <div class="alert alert-success text-center d-none mt-2" role="alert" id="successSubmit">
+                                                    Thanks for updating the information
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="feedback-bg">
+    <div id="feedback-form">
+        <i></i>
+        <span>Feedback form</span>
+        <textarea placeholder="Please provide your feedback"></textarea>
+        <button>Confirm</button>
+    </div>
+</div>
+<div id="comment-bg">
+    <div id="comment-form">
+        <i></i>
+        <span>Comment form</span>
+        <input type="hidden" />
+        <input type="hidden" />
+        <textarea placeholder="Please provide your comment"></textarea>
+        <button>Confirm</button>
+    </div>
+</div>
+<script src="https://www.truecare24.com/tc24-provider-portal/js/jquery.min.js"></script>
+<script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokgOl6OCZyuiVKfqhCabf2f7CJCHUBvs&libraries=places" async defer></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+    var expstripe = {
+        name: "client_com",
+        id: 38788,
+        partner: "false",
+        path: "https://www.truecare24.com/tc24-provider-portal/plugins/",
+        load: false,
+        stop: false
+    };
+</script>
+<script src="https://www.truecare24.com/tc24-provider-portal/plugins/expstripe/js/init.js?r=4907"></script>
+<script src="https://www.truecare24.com/tc24-provider-portal/js/default.js?r=4907"></script>
+<script src="assets/advanced_settings.js"></script>
+</body>
+</html>
