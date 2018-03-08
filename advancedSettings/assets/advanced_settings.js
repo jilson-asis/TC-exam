@@ -2,6 +2,7 @@
 const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
 const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
 const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
+const PHP_ENDPOINT = 'lib/message.php';
 
 // open form
 $('#advanced-settings-open-button').click(function() {
@@ -186,8 +187,10 @@ function submitAdvancedSettings() {
     formValues.provider_id = $('#providerId').val();
     formValues.partnership = $('#providerPartnership').val();
 
+    formValues.api_url = POST_API_ENDPOINT;
+
     $.ajax({
-        url: POST_API_ENDPOINT,
+        url: PHP_ENDPOINT,
         type: "POST",
         data: formValues,
         success: function(response) {
@@ -232,8 +235,10 @@ $('#profile-settings-form').submit(function(e) {
         formValues.provider_id = $('#providerId').val();
         formValues.partnership = $('#providerPartnership').val();
 
+        formValues.api_url = POST_API_ENDPOINT;
+
         $.ajax({
-            url: POST_API_ENDPOINT,
+            url: PHP_ENDPOINT,
             type: "POST",
             data: formValues,
             success: function(response) {
@@ -313,7 +318,7 @@ $(document).ready(function() {
 
     // fetch advanced settings data
     $.ajax({
-        url: GET_API_ENDPOINT + '/' + provider_id + '/' + partnership,
+        url: PHP_ENDPOINT + '?api_url=' + GET_API_ENDPOINT + '/' + provider_id + '/' + partnership,
         type: 'GET',
         success: function(data) {
             var form = $('#advanced-form');
@@ -412,14 +417,21 @@ $("#cellphone").on({
 
 $('#stop-receiving-clients-button').click(function() {
     // send stop on API
+    var value = "false";
+    if ($(this).hasClass('green-receive')) {
+        value = "true";
+    }
     var formValue = {
         type: "receive",
         provider_id: $('#providerId').val(),
-        partnership: $('#providerPartnership').val()
+        partnership: $('#providerPartnership').val(),
+        activation: value
     };
 
+    formValue.api_url = POST_API_ENDPOINT;
+
     $.ajax({
-        url: POST_API_ENDPOINT,
+        url: PHP_ENDPOINT,
         type: 'POST',
         data: formValue,
         success: function(response) {
