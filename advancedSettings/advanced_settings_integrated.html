@@ -11,6 +11,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
+    <!-- Integration - Load dependency CSS and JS first start -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -18,6 +19,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="https://static.filestackapi.com/v3/filestack.js"></script>
     <link rel="stylesheet" href="assets/advanced_settings.css">
+    <!-- Integration - Load dependency CSS and JS first end -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="stylesheet" href="https://vjs.zencdn.net/6.1.0/video-js.css" />
@@ -28,13 +30,6 @@
     <link rel="icon" href="https://www.truecare24.com/tc24-provider-portal/favicon.png" />
 </head>
 <body>
-
-<!--Provider ID and Partner status-->
-<!-- NOTE: for testing only, uses 1 and false, remove and change dynamically on prod -->
-<input type="hidden" name="provider_id" id="providerId" value="1">
-<input type="hidden" name="partnership" id="providerPartnership" value="false">
-<!--Provider ID and Partner status-->
-
 <div id="wrapper">
     <div id="wrap-left" class="cell">
         <div id="over-left">
@@ -122,7 +117,15 @@
                     <a id="content-panel-phone" href="tel:(628) 333-2005"></a>
                 </div>
                 <div id="content-form">
+                    <!-- Integration - Advanced Settings Started -->
                     <div class="container">
+
+                        <!-- Integration - Provider ID and Partner status-->
+                        <!-- NOTE: for testing only, uses 1 and false, remove and change dynamically on prod -->
+                        <input type="hidden" name="provider_id" id="providerId" value="1">
+                        <input type="hidden" name="partnership" id="providerPartnership" value="false">
+                        <!-- Integration - Provider ID and Partner status-->
+
                         <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-12 col-sm-12 col-12 p-0">
                             <div class="row" id="profile-settings-head">
                                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-0">
@@ -821,6 +824,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Integration - Advanced Settings Ended -->
                 </div>
             </div>
         </div>
@@ -860,6 +864,7 @@
 </script>
 <script src="https://www.truecare24.com/tc24-provider-portal/plugins/expstripe/js/init.js?r=4907"></script>
 <script src="https://www.truecare24.com/tc24-provider-portal/js/default.js?r=4907"></script>
+<!-- Integration - call custom js -->
 <script src="assets/advanced_settings.js"></script>
 </body>
 </html>
