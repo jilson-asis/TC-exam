@@ -165,7 +165,7 @@
 
                                         <div class="form-group col-12 p-0 mb-4">
                                             <label class="input-label">Phone Number</label>
-                                            <input type="text" name="phone_number" id="cellphone" maxlength="17" class="form-control bg-app-light-gray" placeholder="+1 (___) ___-____" required>
+                                            <input type="text" name="phone_number" maxlength="17" class="form-control bg-app-light-gray cell-phone-number" placeholder="+1 (___) ___-____" required>
                                             <div class="invalid-feedback">
                                                 Phone Number is required.
                                             </div>
@@ -865,6 +865,14 @@
 <script src="https://www.truecare24.com/tc24-provider-portal/plugins/expstripe/js/init.js?r=4907"></script>
 <script src="https://www.truecare24.com/tc24-provider-portal/js/default.js?r=4907"></script>
 <!-- Integration - call custom js -->
+<script>
+    // advanced settings config
+    const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
+    const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
+    const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
+    const PHP_ENDPOINT = 'lib/message.php';
+    // advanced settings config
+</script>
 <script src="assets/advanced_settings.js"></script>
 </body>
 </html>

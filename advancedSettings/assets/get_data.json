@@ -1,9 +1,0 @@
-{
-  "id": "asdjkj231kjnaksudh12ljn3i1udni2", // if it exists, I will add this data on every request
-  "agency_name": "Always Best Care Senior Services", // required, but can be empty
-  "zip_code": "90002", // required, but can be empty
-  "email": "info@caringhandscare.com", // required, but can be empty
-  "phone_number": "+1 (511) 227-3669", // required, but can be empty
-  "receive_clients": true // required, boolean
-  // all other things are optional
-}

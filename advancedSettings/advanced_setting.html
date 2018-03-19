@@ -62,7 +62,7 @@
 
                             <div class="form-group col-12 p-0 mb-4">
                                 <label class="input-label">Phone Number</label>
-                                <input type="text" name="phone_number" id="cellphone" maxlength="17" class="form-control bg-app-light-gray" placeholder="+1 (___) ___-____" required>
+                                <input type="text" name="phone_number" maxlength="17" class="form-control bg-app-light-gray cell-phone-number" placeholder="+1 (___) ___-____" required>
                                 <div class="invalid-feedback">
                                     Phone Number is required.
                                 </div>
@@ -127,20 +127,20 @@
                                                         <div class="col p-4 check-box-field">
                                                             <div class="form-check">
                                                                 <label class="custom-control custom-radio">
-                                                                    <input type="radio" name="working_hours" id="workingHoursAnytime" value="anytime" class="custom-control-input working-hour-radio" required>
+                                                                    <input type="radio" name="working_hours" id="workingHoursAnytime" value="anytime" class="custom-control-input" required>
                                                                     <span class="custom-control-indicator"></span>
                                                                     <span class="custom-control-description ml-4">Anytime</span>
                                                                 </label>
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="custom-control custom-radio">
-                                                                    <input type="radio" name="working_hours" id="workingHoursOther" value="other" class="custom-control-input working-hour-radio" required>
+                                                                    <input type="radio" name="working_hours" value="other" class="custom-control-input" required>
                                                                     <span class="custom-control-indicator"></span>
                                                                     <span class="custom-control-description ml-4">Other</span>
                                                                 </label>
                                                             </div>
                                                             <div class="form-group p-0 col-12 col-sm-10 offset-sm-1 d-none">
-                                                                <input type="text" id="otherWorkingHours" name="other_working_hours" class="form-control" disabled placeholder="Type Here">
+                                                                <input type="text" name="working_hours_other" class="form-control" disabled placeholder="Type Here">
                                                             </div>
                                                             <div class="invalid-feedback">
                                                                 Working hours is required.
@@ -721,6 +721,14 @@
                 </div>
             </div>
         </div>
+        <script>
+            // advanced settings config
+            const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
+            const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
+            const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
+            const PHP_ENDPOINT = 'lib/message.php';
+            // advanced settings config
+        </script>
         <script src="assets/advanced_settings.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhcQ1ozKIEvQZU3fklB64vfSOJI1Vdke4&libraries=places&callback=initAutocomplete&language=en-US" async defer></script>
 

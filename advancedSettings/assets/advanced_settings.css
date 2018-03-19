@@ -99,6 +99,12 @@
     cursor: pointer;
 }
 
+#advanced-settings-accordion .form-group p.input-text-note {
+    font-size: 14px;
+    color: #6E7B83;
+    margin-bottom: 8px;
+}
+
 #advanced-settings-accordion .advanced-settings-submit-button, #profile-settings-form .advanced-settings-submit-button {
     cursor: pointer;
     border-color: #55d0ff !important;

@@ -1,8 +1,16 @@
-// settings
-const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
-const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
-const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
-const PHP_ENDPOINT = 'lib/message.php';
+// default settings
+if (typeof client === 'undefined') {
+    const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
+}
+if (typeof GET_API_ENDPOINT === 'undefined') {
+    const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
+}
+if (typeof POST_API_ENDPOINT === 'undefined') {
+    const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
+}
+if (typeof PHP_ENDPOINT === 'undefined') {
+    const PHP_ENDPOINT = 'lib/message.php';
+}
 
 // open form
 $('#advanced-settings-open-button').click(function() {
@@ -133,13 +141,14 @@ function validateRequiredCheckboxField(checkbox) {
 
 // validation --end
 
-$('.working-hour-radio').change(function() {
-    if ($(this).val() === 'other') {
-        $('#otherWorkingHours').attr('required', 'required').removeAttr('disabled').parent().removeClass('d-none');
-        $('.working-hour-radio').removeAttr('required');
-    } else {
-        $('#otherWorkingHours').val('').removeAttr('required').attr('disabled', 'disabled').parent().addClass('d-none');
-        $('.working-hour-radio').attr('required', 'required');
+// trigger other text field if value is "other"
+$('input[type=radio]').change(function() {
+    var otherInput = $('input[name=' + $(this).attr('name') + '_other]');
+
+    if (otherInput.length > 0 && $(this).val().toLowerCase() === 'other') {
+        otherInput.attr('required', 'required').removeAttr('disabled').parent().removeClass('d-none');
+    } else if (otherInput.length > 0 && $(this).val().toLowerCase() !== 'other') {
+        otherInput.val('').removeAttr('required').attr('disabled', 'disabled').parent().addClass('d-none');
     }
 });
 
@@ -166,9 +175,15 @@ function submitAdvancedSettings() {
     var formValues = getFormData($('#advanced-settings-form'));
     formValues.type = "settings";
 
-    // special case for working hours
-    if (formValues.working_hours === 'other') {
-        formValues.working_hours = $('#otherWorkingHours').val();
+    // special case for radio with 'other' values
+    for (var k in formValues) {
+        if (formValues.hasOwnProperty(k)) {
+            var d = formValues[k];
+
+            if (k.indexOf('_other') !== -1 && formValues[k.replace('_other', '')].toLowerCase() === 'other') {
+                formValues[k.replace('_other', '')] = d;
+            }
+        }
     }
 
     // flatten array values
@@ -188,6 +203,20 @@ function submitAdvancedSettings() {
     formValues.partnership = $('#providerPartnership').val();
 
     formValues.api_url = POST_API_ENDPOINT;
+
+
+    // test codes
+    console.log(
+        formValues
+    );
+
+    console.log(
+        JSON.stringify(formValues)
+    );
+
+    return;
+
+    // test codes
 
     $.ajax({
         url: PHP_ENDPOINT,
@@ -368,7 +397,12 @@ $(document).ready(function() {
                             } else if (input.attr('type') === 'checkbox') {
                                 input.prop('checked', true);
                             } else {
-                                $('input[name=' + key + ']').val(datum);
+                                var inputSelected = $('input[name=' + key + ']');
+                                inputSelected.val(datum);
+
+                                if (inputSelected.hasClass('cell-phone-number')) {
+                                    formatPhone(inputSelected);
+                                }
                             }
                         }
                     }
@@ -391,29 +425,31 @@ function getParameterByName(name, url) {
 }
 
 // source: https://www.truecare24.com/wp-content/themes/jupiter/landing-page/tc24-jobs/dist/scripts-debug.js?v=6412:229
-$("#cellphone").on({
+$(".cell-phone-number").on({
     contextmenu: false,
     paste: false,
     keyup: function () {
-
-
-        var input = $(this).val().replace("+1", "").match(/[0-9]+/g);
-
-        if (input !== null) {
-            var data = input.join("").split("");
-        } else {
-            var data = [];
-        }
-
-        var phone = "";
-
-        for(var i = 0; i < data.length; i++){
-            phone += (!i ? "+1 (" : "") + (i === 3 ? ") " : "") + (i === 6 ? "-" : "") + data[i];
-        }
-
-        $(this).val(phone);
+        formatPhone($(this));
     }
 });
+
+function formatPhone(object) {
+    var input = object.val().replace("+1", "").match(/[0-9]+/g);
+
+    if (input !== null) {
+        var data = input.join("").split("");
+    } else {
+        var data = [];
+    }
+
+    var phone = "";
+
+    for(var i = 0; i < data.length; i++){
+        phone += (!i ? "+1 (" : "") + (i === 3 ? ") " : "") + (i === 6 ? "-" : "") + data[i];
+    }
+
+    object.val(phone);
+}
 
 $('#stop-receiving-clients-button').click(function() {
     // send stop on API
@@ -470,3 +506,5 @@ $('#stop-receiving-clients-button').click(function() {
     });
 });
 
+// timepicker
+$('#wow').timepicker();

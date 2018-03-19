@@ -1,4 +1,0 @@
-{
-  "type": "receive", // enum: profile,settings,receive - this will help identify what form I'm updating
-  "receive_clients": false
-}

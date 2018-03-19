@@ -1,8 +1,0 @@
-{
-  "type": "profile", // enum: profile,settings,receive - this will help identify what form I'm updating
-  "id": "knalsfnsald", // if it exists, not required
-  "agency_name": "Always Best Care Senior Services", // required
-  "zip_code": "90002", // required
-  "email": "info@caringhandscare.com", // required
-  "phone_number": "+1 (511) 227-3669", // required
-}
