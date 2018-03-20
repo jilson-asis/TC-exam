@@ -175,17 +175,6 @@ function submitAdvancedSettings() {
     var formValues = getFormData($('#advanced-settings-form'));
     formValues.type = "settings";
 
-    // special case for radio with 'other' values
-    for (var k in formValues) {
-        if (formValues.hasOwnProperty(k)) {
-            var d = formValues[k];
-
-            if (k.indexOf('_other') !== -1 && formValues[k.replace('_other', '')].toLowerCase() === 'other') {
-                formValues[k.replace('_other', '')] = d;
-            }
-        }
-    }
-
     // flatten array values
     for (var key in formValues) {
         if (formValues.hasOwnProperty(key)) {
@@ -198,25 +187,31 @@ function submitAdvancedSettings() {
         }
     }
 
+    // special cases
+    for (var k in formValues) {
+        if (formValues.hasOwnProperty(k)) {
+            var d = formValues[k];
+
+            // special case for radio with 'other' values
+            if (k.indexOf('_other') !== -1 && formValues[k.replace('_other', '')].toLowerCase() === 'other') {
+                formValues[k.replace('_other', '')] = d;
+                continue;
+            }
+
+            // special case for input-time, appends AM or PM, defaults to AM (fallback only)
+            var domInput = $('input[name=' + k + ']');
+            if (domInput.length > 0 && domInput.hasClass('input-time') === true) {
+                var domInputSibling = domInput.siblings('.selected');
+                formValues[k] = d + (domInputSibling.length > 0 ? domInputSibling.attr('data-value') : 'AM');
+            }
+        }
+    }
+
     // add provider data
     formValues.provider_id = $('#providerId').val();
     formValues.partnership = $('#providerPartnership').val();
 
     formValues.api_url = POST_API_ENDPOINT;
-
-
-    // test codes
-    console.log(
-        formValues
-    );
-
-    console.log(
-        JSON.stringify(formValues)
-    );
-
-    return;
-
-    // test codes
 
     $.ajax({
         url: PHP_ENDPOINT,
@@ -336,14 +331,36 @@ $(document).ready(function() {
     var provider_id = $('#providerId').val();
     var partnership = $('#providerPartnership').val();
 
-    const checkboxInputs = {
-        'caregiver_screening': 'caregiver_screening[]',
-        'basic_activities_of_daily': 'basic_activities_of_daily[]',
-        'instrumental_activities_of_daily': 'instrumental_activities_of_daily[]',
-        'patient_payment_options': 'patient_payment_options[]',
-        'languages_spoken': 'languages_spoken[]',
-        'accreditation': 'accreditation[]'
-    };
+    var checkboxInputs = {};
+
+    $('input[type=checkbox]').each(function() {
+        var checkBoxName = $(this).attr('name');
+
+        if (typeof checkboxInputs[checkBoxName] === 'undefined' && checkBoxName.indexOf('[]') !== -1) {
+            checkboxInputs[checkBoxName.replace('[]', '')] = checkBoxName;
+        }
+    });
+
+    var radioWithOtherInputs = {};
+
+    $('input[type=radio]').each(function() {
+        var radioName = $(this).attr('name');
+        var radioValue = $(this).val();
+
+        if ($('input[name=' + radioName + '_other]').length > 0) {
+            if (typeof radioWithOtherInputs[radioName] === 'undefined') {
+                radioWithOtherInputs[radioName] = {};
+            }
+
+            radioWithOtherInputs[radioName][radioValue] = true;
+        }
+    });
+
+    var timeInputs = {};
+
+    $('input.input-time').each(function() {
+        timeInputs[$(this).attr('name')] = true;
+    });
 
     // fetch advanced settings data
     $.ajax({
@@ -361,31 +378,50 @@ $(document).ready(function() {
                     }
 
                     if (key === 'user_photo') {
+
                         $('#previewUpload').attr('src', datum).removeClass("d-none");
                         $('#userPhoto').val(datum);
-                    } else if (key === 'working_hours') {
-                        if (datum === 'anytime') {
-                            $('#workingHoursAnytime').click();
+
+                    } else if (typeof radioWithOtherInputs[key] !== 'undefined') {
+
+                        if (typeof radioWithOtherInputs[key][datum] !== 'undefined') {
+                            $('input[type=radio][value="' + datum + '"]').click();
                         } else {
-                            $('#workingHoursOther').click();
-                            $('#otherWorkingHours').val(datum);
+                            $('input[name=' + key + '][value=other]').click();
+                            $('input[name=' + key + '_other]').val(datum);
                         }
+
                     } else if (typeof checkboxInputs[key] !== 'undefined') {
+
                         var checkBoxInputs = $('input[name="' + checkboxInputs[key] + '"]');
+
                         checkBoxInputs.each(function() {
                             if (datum.indexOf($(this).val()) !== -1) {
                                 $(this).click();
                             }
                         });
+
+                    } else if (typeof timeInputs[key] !== 'undefined') {
+
+                        var timeInputMeridiem = datum.indexOf('AM') !== -1 ? 'AM' : 'PM';
+                        var timeInputDom = $('input[name=' + key + ']');
+                        timeInputDom.val(datum.replace(/(AM|PM)/, ''));
+                        timeInputDom.siblings('.input-time-' + timeInputMeridiem.toLowerCase()).addClass('selected');
+
                     } else if (key === 'receive_clients' && datum === false) {
+
                         $('#stop-receiving-clients-button')
                             .html('<i class="fas fa-play"></i> Start Receiving Clients')
                             .addClass('green-receive');
+
                     } else if (typeof datum === 'object') {
+
                         for (var i = 0; datum.length > i ; i++) {
                             $('input[name="' + key + '"][value="' + datum[i] + '"]').click();
                         }
+
                     } else {
+
                         var input = $('input[name=' + key + ']');
 
                         if (input.length === 0) {
@@ -405,6 +441,7 @@ $(document).ready(function() {
                                 }
                             }
                         }
+
                     }
                 }
             }
@@ -507,4 +544,23 @@ $('#stop-receiving-clients-button').click(function() {
 });
 
 // timepicker
-$('#wow').timepicker();
+if (typeof $.timepicker !== 'undefined') {
+    $('.input-time').timepicker({
+        hours: {
+            starts: 0,
+            ends: 12
+        },
+        showPeriodLabels: false
+    });
+}
+
+$('.am-pm').click(function() {
+    if ($(this).hasClass('selected') === true) {
+        return;
+    }
+    $(this).addClass('selected');
+
+    var siblingClass = ($(this).hasClass('input-time-am') === true ? 'input-time-pm' : 'input-time-am');
+
+    $(this).siblings('.' + siblingClass).removeClass('selected');
+});

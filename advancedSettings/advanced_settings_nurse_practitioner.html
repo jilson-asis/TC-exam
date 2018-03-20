@@ -2,7 +2,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
+    <link rel="stylesheet" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/css/jquery.ui.min.css?c=5401">
+    <link rel="stylesheet" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/css/jquery.ui.timepicker.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -112,7 +114,7 @@
                                         <div class="pt-3 setting-form-inputs">
                                             <div class="form-group col-12 p-0 mb-4">
                                                 <label class="input-label">First name *</label>
-                                                <input type="text" name="first_name" id="wow" class="form-control bg-app-light-gray hasTimepicker" placeholder='Type here your first name' required>
+                                                <input type="text" name="first_name" class="form-control bg-app-light-gray" placeholder='Type here your first name' required>
                                                 <div class="invalid-feedback">
                                                     First name is required.
                                                 </div>
@@ -381,7 +383,7 @@
                                                     </div>
                                                     <div class="form-check">
                                                         <label class="custom-control custom-checkbox">
-                                                            <input required type="checkbox" name="nurse_specialty[]" value="Other" class="custom-control-input">
+                                                            <input required type="checkbox" name="nurse_specialty[]" value="other" class="custom-control-input">
                                                             <span class="custom-control-indicator"></span>
                                                             <span class="custom-control-description ml-4">Other</span>
                                                         </label>
@@ -667,7 +669,7 @@
                                                     </div>
                                                     <div class="form-check">
                                                         <label class="custom-control custom-checkbox">
-                                                            <input required type="checkbox" name="payment_types[]" value="Other" class="custom-control-input">
+                                                            <input required type="checkbox" name="payment_types[]" value="other" class="custom-control-input">
                                                             <span class="custom-control-indicator"></span>
                                                             <span class="custom-control-description ml-4">Other</span>
                                                         </label>
@@ -804,14 +806,22 @@
 
                                             <div class="form-group col-12 p-0 mb-4">
                                                 <label class="input-label">When do you start accepting request? (e.g 8:00 am) *</label>
-                                                <input type="text" name="accepting_request_start_time" class="form-control bg-app-light-gray hasTimepicker" placeholder="00:00" required>
+                                                <div class="m-0 input-time-box">
+                                                    <input type="text" name="accepting_request_start_time" class="form-control bg-app-light-gray input-time" placeholder="00:00" required>
+                                                    <span class="input-time-am am-pm" data-value="AM">AM</span>
+                                                    <span class="input-time-pm am-pm" data-value="PM">PM</span>
+                                                </div>
                                                 <div class="invalid-feedback">
                                                     Accepting request start time is required.
                                                 </div>
                                             </div>
                                             <div class="form-group col-12 p-0 mb-4">
                                                 <label class="input-label">When do you stop accepting request? (e.g 11:59 pm) *</label>
-                                                <input type="text" name="accepting_request_stop_time" class="form-control bg-app-light-gray" placeholder="00:00" required>
+                                                <div class="m-0 input-time-box">
+                                                    <input type="text" name="accepting_request_stop_time" class="form-control bg-app-light-gray input-time" placeholder="00:00" required>
+                                                    <span class="input-time-am am-pm" data-value="AM">AM</span>
+                                                    <span class="input-time-pm am-pm" data-value="PM">PM</span>
+                                                </div>
                                                 <div class="invalid-feedback">
                                                     Accepting request stop time is required.
                                                 </div>
@@ -848,7 +858,7 @@
                                                     </div>
                                                     <div class="form-check">
                                                         <label class="custom-control custom-radio">
-                                                            <input type="radio" name="phone_type" value="Other" class="custom-control-input" required>
+                                                            <input type="radio" name="phone_type" value="other" class="custom-control-input" required>
                                                             <span class="custom-control-indicator"></span>
                                                             <span class="custom-control-description ml-4">Other</span>
                                                         </label>
@@ -918,14 +928,14 @@
 </div>
 <script>
     // advanced settings config
-    // dev: AYlo7RPvORMC4LIrENlktz
-    // prod: ACURxPQQTwCwLZKevYKOWz
     const client = filestack.init("ACURxPQQTwCwLZKevYKOWz");
     const GET_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchSpecificProviderInformation';
     const POST_API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchUpdateProviderProfile';
     const PHP_ENDPOINT = 'lib/message.php';
     // advanced settings config
 </script>
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.ui.min.js"></script>
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.ui.timepicker.js"></script>
 <script src="assets/advanced_settings.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhcQ1ozKIEvQZU3fklB64vfSOJI1Vdke4&libraries=places&callback=initAutocomplete&language=en-US" async defer></script>
 

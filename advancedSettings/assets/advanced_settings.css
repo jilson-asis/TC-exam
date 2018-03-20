@@ -231,6 +231,31 @@
     cursor: pointer;
 }
 
+#profile-settings .input-time-box {
+    position: relative;
+}
+
+#profile-settings .input-time-box span.am-pm{
+    position: absolute;
+    top: 12px;
+    right: 55px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#profile-settings .input-time-box span.input-time-am {
+    right: 55px;
+}
+
+#profile-settings .input-time-box span.input-time-pm {
+    right: 15px;
+}
+
+#profile-settings .input-time-box span.selected {
+    color: #54D0FF;
+}
+
+
 /*Design conflict fix*/
 i.mark {
     background: none;
@@ -238,4 +263,13 @@ i.mark {
 
 .table {
     margin-bottom: 0;
+}
+
+/* Timepicker design conflict with bootstrap fix */
+.ui-timepicker-table td a {
+    box-sizing: unset;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled {
+    width: 100%;
 }
