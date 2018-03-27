@@ -305,10 +305,6 @@ section.services .rounded-border img {
     height: initial;
 }
 
-section.how-it-works img {
-    height: 310px;
-}
-
 section.how-it-works .step-row {
     text-align: center;
     margin: 50px 0;
