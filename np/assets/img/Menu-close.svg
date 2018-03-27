@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="23px" viewBox="0 0 22 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="HCD27_mobile-menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-16.000000, -19.000000)">
+        <g id="Menu" transform="translate(27.500000, 30.500000) rotate(-315.000000) translate(-27.500000, -30.500000) translate(13.000000, 16.000000)" fill="#728B9B">
+            <g id="Group" transform="translate(0.000000, -0.000000)">
+                <rect id="Rectangle-2" x="0" y="14" width="29" height="3" rx="1.5"></rect>
+                <g id="Menu" transform="translate(14.000000, 14.500000) rotate(-270.000000) translate(-14.000000, -14.500000) translate(-0.500000, 13.000000)">
+                    <rect id="Rectangle-2" x="0" y="0" width="29" height="3" rx="1.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
