@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>House Call Doctors and Home Health Services with TrueCare24</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="assets/css/peformance.css">-->
+    <style>
+        #performanceModal {
+            color: #354650;
+            font-family: 'Lato', sans-serif;
+        }
+
+        #performanceModal .modal-header {
+            position: relative;
+            border: none;
+            padding: 2rem 2rem 0;
+        }
+
+        #performanceModal button.close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        #performanceModal h5.modal-title {
+            width: 100%;
+            font-size: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bold;
+            display: block;
+        }
+
+        #performanceModal .modal-sub-title {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: normal;
+            display: block;
+        }
+
+        #performanceModal .modal-dialog {
+            max-width: 650px;
+        }
+
+        #performanceModal .performance-graphs {
+            border: 1px solid #D2DCE4;
+            border-radius: 15px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        #performanceModal .performance-tips {
+            border-radius: 6px;
+            padding: 20px;
+            position: relative;
+            background-color: #E6F8FF;
+            margin-top: 50px;
+        }
+
+        #performanceModal .performance-tips .tips-entry {
+            position: relative;
+        }
+
+        #performanceModal .performance-tips .tips-desc {
+            padding-left: 25px;
+        }
+
+        #performanceModal .performance-tips .tips-num {
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #54D0FF;
+            line-height: 18px;
+            top: 3px;
+        }
+
+        #performanceModal .performance-tips .tips-title {
+            font-size: 18px;
+            line-height: 23px;
+            font-weight: bold;
+        }
+
+        #performanceModal .graph-border {
+            position: relative;
+            text-align: center;
+            width: 85px;
+            height: 85px;
+            border-radius: 100%;
+            margin: auto;
+        }
+
+        #performanceModal .circle-graph {
+            position: relative;
+            top: 4px;
+            left: 4px;
+            text-align: center;
+            width: 77px;
+            height: 77px;
+            border-radius: 100%;
+            background-color: #FFFFFF;
+        }
+
+        #performanceModal .circle-graph .percent {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+
+        #performanceModal div.col-md-5er {
+            width: 20%;
+            text-align: center;
+            padding: 0 5px;
+        }
+
+        #performanceModal div.row-5er-4 {
+            width: 80%;
+            margin: auto;
+        }
+
+        #performanceModal div.row-5er-4 .col-md-5er {
+            width: 25%;
+        }
+
+        #performanceModal div.col-md-5er .description {
+            font-size: 14px;
+        }
+
+        #performanceModal .red-bullet {
+            color: #FF2F4F;
+            padding: 0 5px;
+        }
+
+        #performanceModal .yellow-bullet {
+            color: #F5BD23;
+            padding: 0 5px;
+        }
+
+        #performanceModal .green-bullet {
+            color: #1DD384;
+            padding: 0 5px;
+        }
+
+        #performanceModal .legend-entry {
+            padding: 0 5px;
+        }
+
+        #performanceModal .color-legend {
+            position: absolute;
+            background: #FFFFFF;
+            bottom: -10px;
+            left: 15%;
+            width: 70%;
+            text-align: center;
+        }
+
+        #performanceModal .ask {
+            color: #54D0FF;
+            font-size: 18px;
+            line-height: 14px;
+            font-weight: bold;
+            padding-top: 30px;
+        }
+
+        #performanceModal .modal-footer {
+            border: none;
+            padding: 0 2rem 1rem;
+        }
+
+        #performanceModal .modal-body {
+            padding: 2rem;
+        }
+
+        #performanceModal .btn-got-it {
+            background-color: #54D0FF;
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 33px;
+            padding: 15px;
+            text-transform: uppercase;
+        }
+
+        #performanceModal .cursor-pointer {
+            cursor: pointer;
+        }
+
+        #feedback {
+            height: 150px;
+            width: 100%;
+            border: 1.5px solid #C6D0D8;
+            resize: none;
+            border-radius: 6px;
+            background-color: #F2F6FB;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="modal fade tc-modal" id="performanceModal" tabindex="-1" role="dialog" aria-labelledby="dangerQuestion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Your performance
+                    <img src="assets/img/Above%20average@2x.svg" alt="Rating">
+                    <br>
+                    <span class="modal-sub-title">
+                        vs. other providers in the network
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="performance-graphs">
+                    <div class="row m-4">
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="30">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Received
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="45">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Accepted
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="10">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Talked
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="60">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Initial assessment
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="100">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Contract signed
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-5er-4 mt-4">
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="100">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Cancelled
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="100">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Legitimate
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="100">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Hours
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border" data-percent="1    height: 150px;
+    width: 100%;
+    border: 1.5px solid #C6D0D8;
+    resize: none;
+    border-radius: 6px;
+    background-color: #F2F6FB;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);00">
+                                <div class="circle-graph">
+                                    <div class="percent">30%</div>
+                                    <div class="count">120</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Responsive clients
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-legend">
+                        <span class="legend-entry">
+                            <span class="red-bullet">&bull;</span> Below Average
+                        </span>
+                            <span class="legend-entry">
+                            <span class="yellow-bullet">&bull;</span> Average
+                        </span>
+                            <span class="legend-entry">
+                            <span class="green-bullet">&bull;</span> Above Average
+                        </span>
+                    </div>
+                </div>
+                <div class="performance-tips">
+                    <h5 class="tips-title">Tips how to improve performance:</h5>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            1.
+                        </span>
+                        <p class="tips-desc">
+                            Most of the requests are time sensitive. Hence, response asap. The best time for the first
+                            try is 30 minutes after the contact received, Try 2 is mid-day (lunch time) and last Try 3
+                            is after office hours or weekend.
+                        </p>
+                    </div>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            2.
+                        </span>
+                        <p class="tips-desc">
+                            Please keep the dashboard updated even if it implies passing the client
+                            or marking them unresponsive.
+                        </p>
+                    </div>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            3.
+                        </span>
+                        <p class="tips-desc">
+                            The emphasis should be on meeting face to face in initial assessment. We schedule the
+                            initial assessment. After covering basic questions e.g. pricing, answer all the other
+                            questions in initial assessment.
+                        </p>
+                    </div>
+                </div>
+                <div class="ask text-center">
+                    <div id="askQuestion" class="cursor-pointer">
+                        <img src="assets/img/Feedback@2x.svg" alt="Ask"> Ask a question
+                    </div>
+                    <div id="feedbackDiv" class="d-none">
+                        <textarea name="feedback" id="feedback" placeholder="Type feedback here"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-0">
+                            <button type="button" class="btn btn-block btn-got-it" data-dismiss="modal">GOT IT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#performanceModal').modal('show');
+
+    $('.graph-border').each(function(event) {
+        calculateGraphBorder($(this));
+    });
+
+    function calculateGraphBorder(obj) {
+        var percent = parseInt(obj.attr('data-percent'));
+        var degrees = 360 * (percent / 100);
+
+        var colors = {
+            'below_average' : {
+                'solid': '#FF2F4F',
+                'faded': '#ffc0cb'
+            },
+            'average' : {
+                'solid': '#F5BD23',
+                'faded': '#fcebbd'
+            },
+            'above_average' : {
+                'solid': '#1DD384',
+                'faded': '#bcf1da'
+            }
+        };
+
+        var colorsSelected = percent > 50 ? colors['above_average'] : (percent > 25 ? colors['average'] : colors['below_average']);
+        obj.css('background', colorsSelected['solid']);
+        obj.find('.percent').html(percent + '%');
+
+        if (degrees <= 180){
+            obj.css(
+                'background-image',
+                'linear-gradient(' + (90 + degrees) + 'deg, transparent 50%, ' + colorsSelected['faded'] + ' 50%),linear-gradient(90deg, ' + colorsSelected['faded'] + ' 50%, transparent 50%)'
+            );
+        } else if (degrees < 360) {
+            obj.css(
+                'background-image',
+                'linear-gradient(' + (degrees - 90) + 'deg, transparent 50%, ' + colorsSelected['solid'] + ' 50%),linear-gradient(90deg, ' + colorsSelected['faded'] + ' 50%, transparent 50%)'
+            );
+        } else {
+            obj.css('background-image', 'none');
+        }
+    }
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    $('#askQuestion').click(function() {
+        $(this).addClass('d-none');
+        $('#feedbackDiv').removeClass('d-none');
+
+        var btn = $('#performanceModal .btn-got-it');
+        btn.html('Send feedback');
+        btn.removeAttr('data-dismiss');
+        btn.click(function(event) {
+            event.preventDefault();
+
+            // do something
+
+            $('#performanceModal').modal('hide');
+        });
+    });
+</script>
+
+<!--<script src="assets/js/peformance.js"></script>-->
+</body>
+</html>
