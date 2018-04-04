@@ -207,6 +207,20 @@
             padding: 15px;
         }
 
+        #performanceModal .show-sm-custom {
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            #performanceModal .hide-sm-custom {
+                display: none;
+            }
+
+            #performanceModal .show-sm-custom {
+                display: block;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -229,7 +243,7 @@
             </div>
             <div class="modal-body">
                 <div class="performance-graphs">
-                    <div class="row m-4">
+                    <div class="row m-4 hide-sm-custom">
                         <div class="col col-md-5er">
                             <div class="graph-border" data-percent="30">
                                 <div class="circle-graph">
@@ -301,7 +315,7 @@ received from customers">
                             </div>
                         </div>
                     </div>
-                    <div class="row row-5er-4 mt-4">
+                    <div class="row row-5er-4 mt-4 hide-sm-custom">
                         <div class="col col-md-5er">
                             <div class="graph-border" data-percent="100">
                                 <div class="circle-graph">
@@ -345,13 +359,7 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="1    height: 150px;
-    width: 100%;
-    border: 1.5px solid #C6D0D8;
-    resize: none;
-    border-radius: 6px;
-    background-color: #F2F6FB;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);00">
+                            <div class="graph-border" data-percent="100">
                                 <div class="circle-graph">
                                     <div class="percent">30%</div>
                                     <div class="count">120</div>
@@ -365,7 +373,137 @@ received from customers">
                             </div>
                         </div>
                     </div>
-                    <div class="color-legend">
+                    <div class="show-sm-custom">
+                        <div class="row text-center">
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="30">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Received
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="45">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Accepted
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="10">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Talked
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="60">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Initial assessment
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="100">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Contract signed
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="100">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Cancelled
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="100">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Legitimate
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="100">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Hours
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average 
+value of your estimates 
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4">
+                                <div class="graph-border" data-percent="2">
+                                    <div class="circle-graph">
+                                        <div class="percent">30%</div>
+                                        <div class="count">120</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Responsive clients
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-legend hide-sm-custom">
                         <span class="legend-entry">
                             <span class="red-bullet">&bull;</span> Below Average
                         </span>
@@ -375,6 +513,20 @@ received from customers">
                             <span class="legend-entry">
                             <span class="green-bullet">&bull;</span> Above Average
                         </span>
+                    </div>
+
+                    <div class="show-sm-custom">
+                    <span class="legend-entry">
+                        <span class="red-bullet">&bull;</span> Below Average
+                    </span>
+                        <br>
+                        <span class="legend-entry">
+                        <span class="yellow-bullet">&bull;</span> Average
+                    </span>
+                        <br>
+                        <span class="legend-entry">
+                        <span class="green-bullet">&bull;</span> Above Average
+                    </span>
                     </div>
                 </div>
                 <div class="performance-tips">
