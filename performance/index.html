@@ -807,6 +807,11 @@ received from customers">
         });
     });
 
+    // call calculate border so it's not empty
+    $('.graph-border').each(function(event) {
+        calculateGraphBorder($(this));
+    });
+
     // rounding function recommended by Mozilla.org
     function round(number, precision) {
         var shift = function (number, precision, reverseShift) {
