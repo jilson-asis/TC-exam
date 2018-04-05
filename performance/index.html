@@ -56,7 +56,7 @@
         #performanceModal .performance-graphs {
             border: 1px solid #D2DCE4;
             border-radius: 15px;
-            padding: 10px 0;
+            padding: 10px 0 20px;
             position: relative;
         }
 
@@ -117,6 +117,10 @@
             padding-top: 10px;
         }
 
+        #performanceModal .circle-graph .count {
+            color: #728B9B;
+        }
+
         #performanceModal div.col-md-5er {
             width: 20%;
             text-align: center;
@@ -153,6 +157,7 @@
 
         #performanceModal .legend-entry {
             padding: 0 5px;
+            color: #728B9B;
         }
 
         #performanceModal .color-legend {
@@ -219,11 +224,64 @@
             #performanceModal .show-sm-custom {
                 display: block;
             }
+
+            #performanceModal .performance-graphs {
+                border: none;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #performanceModal .performance-graphs .graph-border {
+                width: 65px;
+                height: 65px;
+            }
+
+            #performanceModal .performance-graphs .description {
+                font-size: 14px;
+            }
+
+            #performanceModal .performance-graphs .circle-graph {
+                top: 3px;
+                left: 3px;
+                width: 59px;
+                height: 59px;
+            }
+
+            #performanceModal .circle-graph .percent {
+                font-size: 16px;
+                padding-top: 5px;
+            }
+
+            #performanceModal .circle-graph .count {
+                font-size: 14px;
+            }
+
+            #performanceModal .modal-header {
+                padding: 1rem 1rem 0;
+            }
+
+            #performanceModal .modal-body {
+                padding: 1rem;
+            }
+
+            #performanceModal .modal-footer {
+                padding: 0 1rem 1rem;
+            }
+
+            #performanceModal .performance-tips {
+                font-size: 14px;
+            }
+
+            #performanceModal .legend-entry {
+                font-size: 14px;
+            }
         }
 
     </style>
 </head>
 <body>
+<input type="hidden" name="provider_id" id="providerId" value="3">
+<input type="hidden" name="partnership" id="providerPartnership" value="false">
 
 <div class="modal fade tc-modal" id="performanceModal" tabindex="-1" role="dialog" aria-labelledby="dangerQuestion" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -231,7 +289,7 @@
             <div class="modal-header">
                 <h5 class="modal-title">
                     Your performance
-                    <img src="assets/img/Above%20average@2x.svg" alt="Rating">
+                    <img id="performanceRating" src="assets/img/Below%20average@2x.svg" alt="Rating">
                     <br>
                     <span class="modal-sub-title">
                         vs. other providers in the network
@@ -245,10 +303,10 @@
                 <div class="performance-graphs">
                     <div class="row m-4 hide-sm-custom">
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="30">
+                            <div class="graph-border performance-received" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -259,10 +317,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="45">
+                            <div class="graph-border performance-accepted" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -273,10 +331,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="10">
+                            <div class="graph-border performance-talked" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -287,10 +345,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="60">
+                            <div class="graph-border performance-initial-assessment" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -301,10 +359,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="100">
+                            <div class="graph-border performance-contract-signed" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -317,10 +375,10 @@ received from customers">
                     </div>
                     <div class="row row-5er-4 mt-4 hide-sm-custom">
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="100">
+                            <div class="graph-border performance-cancelled" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -331,10 +389,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="100">
+                            <div class="graph-border performance-legitimate" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -345,10 +403,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="100">
+                            <div class="graph-border performance-hours" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -359,10 +417,10 @@ received from customers">
                             </div>
                         </div>
                         <div class="col col-md-5er">
-                            <div class="graph-border" data-percent="100">
+                            <div class="graph-border performance-responsive-clients" data-percent="0">
                                 <div class="circle-graph">
-                                    <div class="percent">30%</div>
-                                    <div class="count">120</div>
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
                                 </div>
                             </div>
                             <div class="description">
@@ -375,11 +433,11 @@ received from customers">
                     </div>
                     <div class="show-sm-custom">
                         <div class="row text-center">
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="30">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-received" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -389,11 +447,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="45">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-accepted" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -403,11 +461,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="10">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-talked" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -417,11 +475,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="60">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-initial-assessment" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -431,11 +489,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="100">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-contract-signed" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -445,11 +503,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="100">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-cancelled" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -459,11 +517,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="100">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-legitimate" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -473,11 +531,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="100">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-hours" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -487,11 +545,11 @@ value of your estimates
 received from customers">
                                 </div>
                             </div>
-                            <div class="col col-4">
-                                <div class="graph-border" data-percent="2">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-responsive-clients" data-percent="0">
                                     <div class="circle-graph">
-                                        <div class="percent">30%</div>
-                                        <div class="count">120</div>
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
                                     </div>
                                 </div>
                                 <div class="description">
@@ -515,18 +573,18 @@ received from customers">
                         </span>
                     </div>
 
-                    <div class="show-sm-custom">
-                    <span class="legend-entry">
-                        <span class="red-bullet">&bull;</span> Below Average
-                    </span>
+                    <div class="show-sm-custom mt-3">
+                        <span class="legend-entry">
+                            <span class="red-bullet">&bull;</span> Below Average
+                        </span>
                         <br>
                         <span class="legend-entry">
-                        <span class="yellow-bullet">&bull;</span> Average
-                    </span>
+                            <span class="yellow-bullet">&bull;</span> Average
+                        </span>
                         <br>
                         <span class="legend-entry">
-                        <span class="green-bullet">&bull;</span> Above Average
-                    </span>
+                            <span class="green-bullet">&bull;</span> Above Average
+                        </span>
                     </div>
                 </div>
                 <div class="performance-tips">
@@ -584,14 +642,19 @@ received from customers">
 </div>
 
 <script>
+
+    const API_ENDPOINT = 'https://www.truecare24.com/webapi/v1/account/zeroTouchProviderMetrics';
+    const PHP_ENDPOINT = 'lib/message.php';
+
     $('#performanceModal').modal('show');
 
-    $('.graph-border').each(function(event) {
-        calculateGraphBorder($(this));
-    });
+    var graphAnimate = {};
+    function calculateGraphBorder(obj, animateTime, animateSpeed) {
+        animateTime = animateTime || 5; // ms
+        animateSpeed = animateSpeed || 250; // ms
+        var animate = animateTime !== animateSpeed;
 
-    function calculateGraphBorder(obj) {
-        var percent = parseInt(obj.attr('data-percent'));
+        var percent = parseFloat(round(obj.attr('data-percent') * (animateTime / animateSpeed), 2));
         var degrees = 360 * (percent / 100);
 
         var colors = {
@@ -613,6 +676,14 @@ received from customers">
         obj.css('background', colorsSelected['solid']);
         obj.find('.percent').html(percent + '%');
 
+        applyGraphPercent(obj, degrees, colorsSelected);
+
+        if (animate === true) {
+            setTimeout(function() {calculateGraphBorder(obj, animateTime + 5, animateSpeed)}, 5);
+        }
+    }
+
+    function applyGraphPercent(obj, degrees, colorsSelected) {
         if (degrees <= 180){
             obj.css(
                 'background-image',
@@ -647,6 +718,106 @@ received from customers">
             $('#performanceModal').modal('hide');
         });
     });
+
+    $(document).ready(function() {
+        var provider_id = $('#providerId').val();
+        var partnership = $('#providerPartnership').val();
+
+        $.ajax({
+            url: PHP_ENDPOINT + '?api_url=' + API_ENDPOINT + '/' + provider_id + '/' + partnership,
+            method: 'GET',
+            success: function(data) {
+                var performance = {
+                    '.performance-received': {
+                        'data': data.numberOfContacted,
+                        'percent': 0
+                    },
+                    '.performance-accepted': {
+                        'data': data.numberOfConfirmed,
+                        'percent': 0
+                    },
+                    '.performance-talked': {
+                        'data': data.numberOfTalkedProviderReported + data.numberOfTalked,
+                        'percent': 0
+                    },
+                    '.performance-initial-assessment': {
+                        'data': data.numberOfIa,
+                        'percent': 0
+                    },
+                    '.performance-contract-signed': {
+                        'data': data.numberOfCs,
+                        'percent': 0
+                    },
+                    '.performance-cancelled': {
+                        'data': data.numberOfCancel,
+                        'percent': 0
+                    },
+                    '.performance-legitimate': {
+                        'data': data.numberOfConfirmed,
+                        'percent': 0
+                    },
+                    '.performance-hours': {
+                        'data': data.hours,
+                        'percent': 100
+                    },
+                    '.performance-responsive-clients': {
+                        'data': data.numberOfResponsiveCase,
+                        'percent': 0
+                    },
+                    'average_total': data.averagePercentage
+                };
+
+                var imgRatings = {
+                    'above_average': 'assets/img/Above%20average@2x.svg',
+                    'average': 'assets/img/Average@2x.svg',
+                    'below_average': 'assets/img/Below%20average@2x.svg'
+                };
+                var imgRating = performance['average_total'] > 50 ? imgRatings['above_average'] : (performance['average_total'] > 25 ? imgRatings['average'] : imgRatings['below_average']);
+                $('#performanceRating').attr('src', imgRating);
+
+                // avoid division by zero
+                if (data.numberOfAvailable > 0) {
+                    performance['.performance-received']['percent'] = round(performance['.performance-received']['data'] / data.numberOfAvailable, 2) * 100;
+                }
+
+                if (data.numberOfContacted > 0) {
+                    performance['.performance-accepted']['percent'] = round(performance['.performance-accepted']['data'] / data.numberOfContacted, 2) * 100;
+                    performance['.performance-accepted']['percent'] = round(performance['.performance-accepted']['data'] / data.numberOfContacted, 2) * 100;
+                }
+
+                if (data.numberOfConfirmed > 0) {
+                    performance['.performance-initial-assessment']['percent'] = round(performance['.performance-initial-assessment']['data'] / data.numberOfConfirmed, 2) * 100;
+                    performance['.performance-contract-signed']['percent'] = round(performance['.performance-contract-signed']['data'] / data.numberOfConfirmed, 2) * 100;
+                    performance['.performance-cancelled']['percent'] = round(performance['.performance-cancelled']['data'] / data.numberOfConfirmed, 2) * 100;
+                    performance['.performance-legitimate']['percent'] = round(performance['.performance-legitimate']['data'] / data.numberOfConfirmed, 2) * 100;
+                    performance['.performance-responsive-clients']['percent'] = round(performance['.performance-responsive-clients']['data'] / data.numberOfConfirmed, 2) * 100;
+                }
+
+                for (var className in performance) {
+                    if (performance.hasOwnProperty(className)) {
+                        $(className).attr('data-percent', parseFloat(performance[className]['percent']));
+                        $(className).find('.count').html(performance[className]['data']);
+                    }
+                }
+
+                $('.graph-border').each(function(event) {
+                    calculateGraphBorder($(this));
+                });
+            }
+        });
+    });
+
+    // rounding function recommended by Mozilla.org
+    function round(number, precision) {
+        var shift = function (number, precision, reverseShift) {
+            if (reverseShift) {
+                precision = -precision;
+            }
+            numArray = ("" + number).split("e");
+            return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
+        };
+        return shift(Math.round(shift(number, precision, false)), precision, true);
+    }
 </script>
 
 <!--<script src="assets/js/peformance.js"></script>-->
