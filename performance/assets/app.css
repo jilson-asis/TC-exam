@@ -1,0 +1,2509 @@
+/***
+   Default style
+***/
+@-webkit-viewport {
+    width: device-width;
+}
+@-moz-viewport {
+    width: device-width;
+}
+@-ms-viewport {
+    width: device-width;
+}
+@-o-viewport {
+    width: device-width;
+}
+@viewport {
+    width: device-width;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+body,
+input,
+button,
+textarea {
+    color: #354650;
+    font-family: Lato, sans-serif;
+}
+textarea {
+    resize: none;
+}
+input:focus,
+textarea:focus {
+    outline: none;
+}
+input:invalid {
+    box-shadow: none;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+::-webkit-input-placeholder {
+    color: #c0c6ce;
+}
+:-moz-placeholder {
+    color: #c0c6ce;
+    opacity: 1;
+}
+::-moz-placeholder {
+    color: #c0c6ce;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: #c0c6ce;
+}
+body.pattern {
+    background: #00aff1 url(https://www.truecare24.com/tc24-provider-portal/img/pattern.png) repeat;
+    display: table;
+    width: 100%;
+}
+#logo {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/logo.svg) no-repeat;
+    width: 55px;
+    height: 45px;
+    margin: 51px auto 0;
+    display: block;
+}
+/***
+   Login style
+***/
+#login {
+    margin: 26px 0 15px;
+}
+#login-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+}
+#login input.input {
+    width: 280px;
+    height: 60px;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+}
+#login-email {
+    margin: 26px auto 0;
+}
+#login-password {
+    margin: 15px auto 0;
+}
+#login-forgot {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    display: table;
+    margin: 11px auto 0;
+}
+#login button {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px auto 0;
+    display: block;
+}
+#login button:hover {
+    background: #1bc1ff;
+}
+#login button.disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+#login-create {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    display: table;
+    margin: 11px auto 16px;
+    text-decoration: none;
+}
+#login-message {
+    display: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #ff2f4f;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 240px;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+}
+#login-information {
+    width: 280px;
+    margin: 15px auto 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #d2f3ff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#login-information span {
+    font-size: 18px;
+    font-weight: bold;
+}
+#login-information div.table {
+    display: table;
+    width: 100%;
+    margin-top: 10px;
+}
+#login-information div.row {
+    display: table-row;
+}
+#login-information div.table div.cell {
+    font-size: 14px;
+    display: table-cell;
+    padding: 5px 0;
+    line-height: 1.29;
+}
+#login-information div.table div.cell:first-child {
+    color: #54d0ff;
+    font-weight: bold;
+    padding-right: 15px;
+}
+#login-information div.table div.cell:last-child {
+    width: 100%;
+}
+/***
+   Forgot style
+***/
+#forgot {
+    margin: 26px 0 29px;
+}
+#forgot-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+}
+#forgot-text1 {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 280px;
+    margin: 26px auto 0;
+}
+#forgot-text2 {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 280px;
+    margin: 29px auto 0;
+}
+#forgot-text2 a {
+    color: #fff;
+}
+#forgot-email {
+    margin: 30px auto 0;
+    width: 280px;
+    height: 60px;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+}
+#forgot button {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 15px auto 0;
+    display: block;
+}
+#forgot button:hover {
+    background: #1bc1ff;
+}
+#forgot button.disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+#forgot-message {
+    display: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 240px;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+}
+#forgot-message.error {
+    background: #ff2f4f;
+}
+#forgot-message.success {
+    background: #1dd384;
+}
+#forgot-return {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    display: table;
+    margin: 18px auto 0;
+    text-decoration: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/return.svg) no-repeat left center;
+    padding-left: 30px;
+}
+/***
+   Create style
+***/
+#create {
+    margin: 26px 0 29px;
+}
+#create-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+}
+#create-description {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    max-width: 400px;
+    margin: 15px auto 0;
+}
+#create-description a {
+    color: #fff;
+}
+#create input.input {
+    width: 280px;
+    height: 60px;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+}
+#create input.input.top1 {
+    margin: 26px auto 0;
+}
+#create input.input.top2 {
+    margin: 15px auto 0;
+}
+#create div.select {
+    width: 280px;
+    height: 60px;
+    margin: 15px auto 0;
+    position: relative;
+}
+#create div.select input {
+    width: inherit;
+    height: inherit;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+    cursor: pointer;
+}
+#create div.select i {
+    position: absolute;
+    top: 26px;
+    right: 15px;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/dropdown.svg) no-repeat;
+    width: 12px;
+    height: 7px;
+    cursor: pointer;
+}
+#create div.select ul {
+    display: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    list-style: none;
+}
+#create div.select ul li {
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+#create div.select ul li:first-child {
+    border-top-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    color: #92abb6;
+}
+#create div.select ul li:last-child {
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+}
+#create div.select ul li:hover,
+#create div.select ul li.active {
+    background: #f2f6fb;
+}
+#create-confirm {
+    display: table;
+    width: 280px;
+    margin: 11px auto 0;
+}
+#create-confirm div.block {
+    display: table-cell;
+    font-size: 14px;
+    color: #fff;
+    vertical-align: middle;
+}
+#create-confirm div.block i {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-off.svg) no-repeat;
+    width: 28px;
+    height: 28px;
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#create-confirm div.block i.active {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-on.svg) no-repeat;
+}
+#create button {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 15px auto 0;
+    display: block;
+}
+#create button:hover {
+    background: #1bc1ff;
+}
+#create button.disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+#create-message {
+    display: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 240px;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background: #ff2f4f;
+}
+#create-return {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    display: table;
+    margin: 18px auto 0;
+    text-decoration: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/return.svg) no-repeat left center;
+    padding-left: 30px;
+}
+#create-text {
+    font-size: 12px;
+    line-height: 1.33;
+    text-align: center;
+    color: #fff;
+    margin-top: 18px;
+}
+#create-text a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/***
+   Change style
+***/
+#change {
+    margin: 26px 0 15px;
+}
+#change-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+}
+#change-text {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    margin-top: 22px;
+}
+#change input.input {
+    width: 280px;
+    height: 60px;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+}
+#change-password-new {
+    margin: 37px auto 0;
+}
+#change-password-confirm {
+    margin: 15px auto 0;
+}
+#change-forgot {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    display: table;
+    margin: 11px auto 0;
+}
+#change button {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 15px auto 0;
+    display: block;
+}
+#change button:hover {
+    background: #1bc1ff;
+}
+#change button.disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+#change-message {
+    display: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #ff2f4f;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    width: 240px;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+}
+/***
+   Wrapper style
+***/
+#wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+#wrapper div.cell {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+}
+#wrap-left {
+    background: #00aff1;
+    -webkit-box-shadow: 7px 0 12px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 7px 0 12px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+#over-left {
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+#menu {
+    width: 260px;
+    height: 100%;
+    overflow: hidden;
+}
+#menu-logo {
+    width: 200px;
+    height: 44px;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/logo-big.svg) no-repeat;
+    display: block;
+    margin: 30px 30px 0;
+}
+#menu-visitor {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    margin: 31px 30px 0 30px;
+    overflow: hidden;
+    height: 27px;
+}
+#menu-id {
+    font-size: 14px;
+    color: #fff;
+    margin: 5px 30px 0 30px;
+}
+#menu-line {
+    width: 20px;
+    height: 1px;
+    opacity: 0.37;
+    background: #fff;
+    margin: 29px 0 0 30px;
+}
+#menu-section {
+    margin: 19px 0 0 28px;
+}
+#menu-section div.table {
+    display: table;
+    width: 100%;
+    opacity: 0.5;
+    padding: 18px 0;
+}
+#menu-section div.table div.cell {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+#menu-section div.table div.cell.middle {
+    width: 100%;
+    padding: 0 20px;
+}
+#menu-section div.table div.cell i {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+#menu-section div.table div.cell i.icon1 {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/join.svg) no-repeat center;
+}
+#menu-section div.table div.cell i.icon2 {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/new.svg) no-repeat center;
+}
+#menu-section div.table div.cell i.icon3 {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/settings.svg) no-repeat center;
+}
+#menu-section div.table div.cell i.icon4 {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/signed.svg) no-repeat center;
+}
+#menu-section div.table div.cell i.icon5 {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/sign-out.svg) no-repeat center;
+}
+#menu-section div.table div.cell a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+#menu-section div.table.active {
+    opacity: 1;
+}
+#menu-section div.table.active div.cell i.mark {
+    display: none;
+    width: 16px;
+    height: 16px;
+    background: #f1f4f7;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    margin-top: -8px;
+}
+#menu-info {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 170px 0 0 30px;
+}
+#menu-info a {
+    color: #fff;
+    text-decoration: none;
+}
+#menu-feedback {
+    width: 200px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d1ff;
+    margin: 13px 30px 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+#menu-feedback:hover {
+    background: #1bc1ff;
+}
+#menu-links {
+    margin: 21px 0 26px 30px;
+    list-style: none;
+}
+#menu-links li {
+    line-height: 16px;
+}
+#menu-links li a {
+    opacity: 0.5;
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+#menu-links li a:hover {
+    opacity: 1;
+}
+#wrap-right {
+    width: 100%;
+    background: #f1f4f7;
+}
+#over-right {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#content-panel {
+    height: 61px;
+    background: #00aff1;
+    position: relative;
+}
+#content-panel-menu {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+}
+#content-panel-menu.show {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/menu-show.svg) no-repeat;
+    width: 29px;
+    height: 21px;
+    top: 20px;
+}
+#content-panel-menu.hide {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/menu-hide.svg) no-repeat;
+    width: 23px;
+    height: 23px;
+    top: 19px;
+}
+#content-panel-logo {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/logo-small.svg) no-repeat;
+    width: 40px;
+    height: 33px;
+    margin-left: -20px;
+}
+#content-panel-phone {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone.svg) no-repeat;
+    width: 20px;
+    height: 27px;
+}
+#content-form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 22px 20px;
+    padding-top: 17px;
+}
+#content-form-back {
+    margin: 20px 0 20px 20px;
+}
+#content-form-back a {
+    font-size: 18px;
+    display: table;
+    text-decoration: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/back.svg) no-repeat left center;
+    padding-left: 30px;
+    color: #354650;
+}
+#content-form-bg {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 28px;
+    position: relative;
+    box-sizing: border-box;
+}
+#content-form-bg i.dh {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/dont-have.svg) no-repeat;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -30px;
+}
+#content-form-bg span.dh {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    padding: 183px 0 96px;
+}
+#content-form-bg.contact {
+    padding: 50px 20px;
+}
+#content-form-bg.join {
+    padding: 30px 20px 70px;
+}
+#content-form-bg.join-done {
+    margin-top: 20px;
+    padding: 30px 20px;
+}
+#content-form-bg.join-connect {
+    padding: 20px 20px 30px;
+}
+#join-different-title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 27px;
+    text-align: center;
+}
+#join-different-compare {
+    display: table;
+    width: 100%;
+    margin-top: 15px;
+}
+#join-different-compare div.line {
+    display: table-row;
+    height: 60px;
+}
+#join-different-compare div.line:first-child {
+    height: 40px;
+}
+#join-different-compare div.line.round1 div.block.b1 {
+    border-top-left-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+}
+#join-different-compare div.line.round1 div.block.b3 {
+    border-top-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+}
+#join-different-compare div.line.round2 div.block.b1 {
+    border-bottom-left-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+}
+#join-different-compare div.line.round2 div.block.b3 {
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+}
+#join-different-compare div.line div.block {
+    display: table-cell;
+    font-size: 16px;
+    vertical-align: middle;
+}
+#join-different-compare div.line div.block.b1 {
+    width: 45%;
+    padding-left: 15px;
+}
+#join-different-compare div.line div.block.b2 {
+    width: 35%;
+}
+#join-different-compare div.line div.block.b3 {
+    width: 20%;
+    padding-right: 15px;
+}
+#join-different-compare div.line div.block.background {
+    background: #f0f7f9;
+}
+#join-different-compare div.line div.block span {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+#join-different-compare div.line div.block i.yes {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/yes.svg) no-repeat;
+    width: 19px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}
+#join-different-compare div.line div.block i.no {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/no.svg) no-repeat;
+    width: 19px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+}
+#join-different-step {
+    border: 1px solid #d9e2ea;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    position: relative;
+    margin-top: 40px;
+    padding: 50px 20px;
+}
+#step-title {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 220px;
+    margin-left: -110px;
+    background: #fff;
+}
+#step-variant {
+    display: table;
+    width: 100%;
+}
+#step-variant div.line {
+    display: table-row;
+}
+#step-variant div.line div.block {
+    display: table-cell;
+    font-size: 24px;
+    line-height: 28px;
+    vertical-align: top;
+    position: relative;
+}
+#step-variant div.line div.block span {
+    display: block;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #54d0ff;
+    border-radius: 40px;
+    text-align: center;
+    color: #54d0ff;
+    line-height: 36px;
+    box-sizing: border-box;
+    cursor: default;
+    font-size: 20px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+#step-variant div.line div.block span.active {
+    background: #54d0ff;
+    color: #fff;
+}
+#step-variant div.line div.block i {
+    position: absolute;
+    top: 0;
+    left: 19px;
+    background: #d9e2ea;
+    width: 2px;
+    bottom: 0;
+    z-index: 1;
+}
+#step-variant div.line div.block a {
+    display: block;
+    line-height: 38px;
+    width: 120px;
+    border: 1px solid #54d0ff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    height: 40px;
+    margin: 15px 0 20px;
+    cursor: pointer;
+}
+#step-variant div.line div.block a:hover {
+    border: 1px solid #43b9e5;
+    background: #43b9e5;
+}
+#step-variant div.line div.block a.disabled {
+    background: #bdc9d0;
+    border: 1px solid #bdc9d0;
+    cursor: default;
+}
+#step-button {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 260px;
+    height: 60px;
+    margin-left: -130px;
+    background: #fff;
+}
+#step-button a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    width: 240px;
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+    line-height: 21px;
+    background: #1dd384;
+    height: 60px;
+    text-align: center;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    padding: 9px 30px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#step-button a:hover {
+    background: #15c075;
+}
+#step-button a.disabled {
+    background: #bdc9d0;
+    cursor: default;
+}
+#join-done-img {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/done.svg) no-repeat;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+#join-done-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+#join-done-text {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 30px;
+}
+#join-done-tutorial {
+    margin-top: 40px;
+}
+#join-done-tutorial .video-js {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#join-done-tutorial .video-js .vjs-tech,
+#join-done-tutorial .video-js .vjs-poster {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#join-done-tutorial .video-js .vjs-big-play-button {
+    margin: -22px 0 0 -45px;
+    top: 50%;
+    left: 50%;
+    border: unset;
+}
+#join-connect-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+#join-connect-card {
+    line-height: 58px;
+    border: 1px solid #4bc1ed;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#join-connect-card span {
+    font-weight: bold;
+    color: #54d0ff;
+}
+#join-connect-card.active span {
+    font-weight: unset;
+    color: unset;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-list.svg) no-repeat left center;
+    padding-left: 30px;
+}
+#join-connect-card-text {
+    color: #8fa7b2;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+#join-connect-bank {
+    line-height: 58px;
+    border: 1px solid #4bc1ed;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#join-connect-bank span {
+    font-weight: bold;
+    color: #54d0ff;
+}
+#join-connect-bank.active span {
+    font-weight: unset;
+    color: unset;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-list.svg) no-repeat left center;
+    padding-left: 30px;
+}
+#join-connect-bank-text {
+    color: #8fa7b2;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+#join-connect-line {
+    height: 2px;
+    background: #e0e5f1;
+    margin-top: 30px;
+}
+#join-connect-billing {
+    margin-top: 25px;
+}
+#join-connect-billing div.title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#join-connect-billing div.table {
+    display: table;
+    width: 100%;
+}
+#join-connect-billing div.table div.line {
+    display: table-row;
+}
+#join-connect-billing div.table div.line div.block {
+    display: table-cell;
+}
+#join-connect-billing div.table div.line div.block input.input {
+    height: 60px;
+    border: 1px solid #e0e5f1;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #f6f9fb;
+    font-size: 18px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+#join-connect-confirm {
+    display: table;
+}
+#join-connect-confirm div.line {
+    display: table-row;
+}
+#join-connect-confirm div.line div.block {
+    display: table-cell;
+    font-size: 20px;
+    vertical-align: top;
+}
+#join-connect-confirm div.line div.block i {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-off.svg) no-repeat;
+    width: 28px;
+    height: 28px;
+    display: block;
+    margin-right: 15px;
+    cursor: pointer;
+}
+#join-connect-confirm div.line div.block i.active {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-on.svg) no-repeat;
+}
+#join-connect-confirm div.line div.block p {
+    display: inline;
+    cursor: pointer;
+}
+#join-connect-confirm div.line div.block span {
+    color: #96a2a9;
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+    line-height: 23px;
+}
+#join-connect-button {
+    height: 60px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: #54d0ff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    line-height: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#join-connect-button:hover {
+    background: #43b9e5;
+}
+#join-connect-button.disabled {
+    background: #bdc9d0;
+    cursor: default;
+}
+#join-connect-message {
+    display: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background: #ff2f4f;
+}
+#case-number {
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    width: 150px;
+    height: 35px;
+    padding: 0 10px;
+    background: #fff;
+    margin-left: -75px;
+}
+#case-number span {
+    font-size: 18px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    background: #edfaff;
+    width: 150px;
+    display: block;
+    text-align: center;
+    line-height: 35px;
+}
+#case-line {
+    height: 2px;
+    background: #dbe5eb;
+    margin-bottom: 25px;
+}
+#case-limit {
+    font-size: 16px;
+}
+#case-message {
+    background: #f5f7f9;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 2px solid #dbe5eb;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+}
+#case-button {
+    background: #54d0ff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    line-height: 60px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#case-button:hover {
+    background: #30c3fa;
+}
+#case-button.disabled {
+    background: #bdc9d0;
+    cursor: default;
+}
+#short-information {
+    position: relative;
+    border: 1px solid #dbe5eb;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    padding: 40px 20px 30px;
+}
+#short-information div.case-title {
+    color: #96a2a9;
+    font-size: 16px;
+    text-align: center;
+}
+#short-information div.case-description {
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0 25px;
+}
+#short-information div.case-description a {
+    text-decoration: none;
+    color: #354650;
+}
+#case-update {
+    margin-top: 38px;
+}
+#case-update div.status-title {
+    font-size: 20px;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+}
+#case-update div.status-title span {
+    display: block;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #96a2a9;
+}
+#case-update div.status-value {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #fcfdfd;
+    border: solid 1px #c6d0d8;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    line-height: 58px;
+    margin: 23px auto 0;
+    box-sizing: border-box;
+}
+#case-update div.status-value i.icon {
+    display: block;
+    float: left;
+}
+#case-update div.status-value.receive i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#case-update div.status-value.phone i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#case-update div.status-value.assessment i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#case-update div.status-value.contract i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#case-update div.status-value.cancel i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#case-update div.status-value.cancel {
+    color: #ff2f4f;
+}
+#case-update div.status-value i.arrow {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/arrow.svg) no-repeat;
+    width: 10px;
+    height: 7px;
+    float: right;
+    margin: 26px 20px 0 0;
+}
+#case-update div.status-value ul {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 290px;
+    margin: -145px 0 0 -120px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    list-style: none;
+    cursor: default;
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+#case-update div.status-value ul li:hover {
+    background: #f7f9fa;
+}
+#case-update div.status-value ul li:hover:first-child {
+    border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+#case-update div.status-value ul li:hover:last-child {
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+#case-update div.status-value ul li i.pick {
+    display: block;
+    float: left;
+}
+#case-update div.status-value ul li.off i.pick,
+#case-update div.status-value ul li.off span {
+    opacity: 0.3;
+}
+#case-update div.status-value ul li.receive i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#case-update div.status-value ul li.phone i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#case-update div.status-value ul li.assessment i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#case-update div.status-value ul li.contract i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#case-update div.status-value ul li.cancel i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#case-update div.status-value ul li span {
+    cursor: pointer;
+    color: #354650;
+}
+#case-update div.status-value ul li.cancel span {
+    color: #ff2f4f;
+}
+#case-update div.status-value ul li i.check {
+    display: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check.svg) no-repeat;
+    width: 20px;
+    height: 15px;
+    float: right;
+    margin: 21px 19px 0 0;
+}
+#case-update div.status-value ul li.off i.check {
+    display: block;
+}
+#full-information {
+    margin-top: 38px;
+}
+#full-information i {
+    font-style: normal;
+    border-bottom: 2px solid #dbe5eb;
+    font-size: 20px;
+    display: block;
+    padding-bottom: 20px;
+}
+#case-more {
+    display: table;
+    width: 100%;
+}
+#case-more div.line {
+    display: table-row;
+}
+#case-more div.line div.block {
+    display: table-cell;
+    font-size: 18px;
+    border-bottom: 2px solid #dbe5eb;
+    padding: 20px 0;
+    vertical-align: middle;
+}
+#case-more div.line div.block:first-child {
+    color: #96a2a9;
+    padding-right: 5px;
+    width: 35%;
+}
+#case-more div.line div.block:last-child {
+    padding-left: 5px;
+    width: 65%;
+}
+#case-more div.line div.block span {
+    white-space: nowrap;
+}
+#case-more div.line div.block p {
+    margin-bottom: 10px;
+}
+#case-more div.line div.block ul.services {
+    list-style: none;
+}
+#case-more div.line div.block ul.services li {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check-list.svg) no-repeat left 10px;
+    padding: 5px 0 5px 30px;
+}
+#case-more div.line div.block ul.days {
+    list-style: none;
+}
+#case-more div.line div.block ul.days li {
+    line-height: 40px;
+    width: 40px;
+    border: 1px solid #c6d0d8;
+    background: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    color: #92abb6;
+    text-align: center;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    float: left;
+    margin: 5px;
+}
+#case-more div.line div.block ul.days li.active {
+    background: #54d0ff;
+    color: #fff;
+}
+#content-form-video {
+    margin-bottom: 28px;
+}
+#content-form-video .video-js {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#content-form-video .video-js .vjs-tech,
+#content-form-video .video-js .vjs-poster {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#content-form-video .video-js .vjs-big-play-button {
+    margin: -22px 0 0 -45px;
+    top: 50%;
+    left: 50%;
+    border: unset;
+}
+#form-mobile div.block {
+    padding: 15px 20px 20px;
+}
+#form-mobile div.block.border {
+    border-bottom: solid 1px #e9f1f5;
+}
+#form-mobile div.block div.id-line {
+    font-size: 16px;
+    color: #96a2a9;
+}
+#form-mobile div.block div.id-value {
+    font-size: 18px;
+    margin-top: 5px;
+}
+#form-mobile div.block div.name-line {
+    font-size: 16px;
+    color: #96a2a9;
+    margin-top: 27px;
+}
+#form-mobile div.block div.name-value {
+    font-size: 18px;
+    margin-top: 4px;
+}
+#form-mobile div.block div.date-line {
+    font-size: 16px;
+    color: #96a2a9;
+    margin-top: 30px;
+}
+#form-mobile div.block div.date-value {
+    font-size: 18px;
+    margin-top: 4px;
+}
+#form-mobile div.block div.status-line {
+    font-size: 16px;
+    color: #96a2a9;
+    display: table;
+    margin-top: 32px;
+    position: relative;
+}
+#form-mobile div.block div.status-line i.info {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/info.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 2px 0 0 10px;
+    cursor: pointer;
+}
+#form-mobile div.block div.status-line span {
+    display: none;
+    position: absolute;
+    width: 200px;
+    bottom: 30px;
+    text-align: center;
+    background: #354650;
+    left: 50%;
+    margin-left: -58px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 15px 12px;
+    border-radius: 6px;
+}
+#form-mobile div.block div.status-line span i {
+    width: 16px;
+    height: 16px;
+    background: #354650;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -8px;
+}
+#form-mobile div.block div.status-value {
+    max-width: 360px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #fcfdfd;
+    border: solid 1px #c6d0d8;
+    cursor: pointer;
+    margin-top: 12px;
+    position: relative;
+    font-size: 18px;
+    line-height: 58px;
+    box-sizing: border-box;
+}
+#form-mobile div.block div.status-value:hover {
+    background: #edf9ff;
+}
+#form-mobile div.block div.status-value i.icon {
+    display: block;
+    float: left;
+}
+#form-mobile div.block div.status-value.receive i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#form-mobile div.block div.status-value.phone i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-mobile div.block div.status-value.assessment i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-mobile div.block div.status-value.contract i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-mobile div.block div.status-value.cancel i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-mobile div.block div.status-value.cancel {
+    color: #ff2f4f;
+}
+#form-mobile div.block div.status-value i.arrow {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/arrow.svg) no-repeat;
+    width: 10px;
+    height: 7px;
+    float: right;
+    margin: 26px 20px 0 0;
+}
+#form-mobile div.block div.status-value ul {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 290px;
+    margin-left: -145px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    list-style: none;
+    cursor: default;
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+}
+#form-mobile div.block div.status-value ul li:hover {
+    background: #f7f9fa;
+}
+#form-mobile div.block div.status-value ul li:hover:first-child {
+    border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+#form-mobile div.block div.status-value ul li:hover:last-child {
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+#form-mobile div.block div.status-value ul li i.pick {
+    display: block;
+    float: left;
+}
+#form-mobile div.block div.status-value ul li.off i.pick,
+#form-mobile div.block div.status-value ul li.off span {
+    opacity: 0.3;
+}
+#form-mobile div.block div.status-value ul li.phone i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-mobile div.block div.status-value ul li.assessment i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-mobile div.block div.status-value ul li.contract i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-mobile div.block div.status-value ul li.cancel i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-mobile div.block div.status-value ul li span {
+    cursor: pointer;
+    color: #354650;
+}
+#form-mobile div.block div.status-value ul li.cancel span {
+    color: #ff2f4f;
+}
+#form-mobile div.block div.status-value ul li i.check {
+    display: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check.svg) no-repeat;
+    width: 20px;
+    height: 15px;
+    float: right;
+    margin: 21px 19px 0 0;
+}
+#form-mobile div.block div.status-value ul li.off i.check {
+    display: block;
+}
+#form-mobile div.block a.contact {
+    display: block;
+    color: #54d0ff;
+    height: 60px;
+    max-width: 360px;
+    border: 1px solid #b4eaff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #f7fdff;
+    cursor: pointer;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+#form-mobile div.block a.contact:hover {
+    color: #fff;
+    background: #1bc1ff;
+}
+#form-tablet {
+    display: none;
+}
+#form-tablet div.table {
+    display: table;
+    padding: 35px 40px 36px;
+}
+#form-tablet div.table.border {
+    border-bottom: solid 1px #e9f1f5;
+}
+#form-tablet div.table div.left {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+}
+#form-tablet div.table div.left div.id-line {
+    font-size: 16px;
+    color: #96a2a9;
+}
+#form-tablet div.table div.left div.id-value {
+    font-size: 18px;
+    margin-top: 5px;
+}
+#form-tablet div.table div.left div.name-line {
+    font-size: 16px;
+    color: #96a2a9;
+    margin-top: 27px;
+}
+#form-tablet div.table div.left div.name-value {
+    font-size: 18px;
+    margin-top: 4px;
+}
+#form-tablet div.table div.left div.date-line {
+    font-size: 16px;
+    color: #96a2a9;
+    margin-top: 30px;
+}
+#form-tablet div.table div.left div.date-value {
+    font-size: 18px;
+    margin-top: 4px;
+}
+#form-tablet div.table div.right {
+    display: table-cell;
+    vertical-align: top;
+}
+#form-tablet div.table div.right div.status-line {
+    font-size: 16px;
+    color: #96a2a9;
+    display: table;
+    position: relative;
+}
+#form-tablet div.table div.right div.status-line i.info {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/info.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 2px 0 0 10px;
+    cursor: pointer;
+}
+#form-tablet div.table div.right div.status-line span {
+    display: none;
+    position: absolute;
+    width: 200px;
+    bottom: 30px;
+    text-align: center;
+    background: #354650;
+    left: 50%;
+    margin-left: -58px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 15px 12px;
+    border-radius: 6px;
+}
+#form-tablet div.table div.right div.status-line span i {
+    width: 16px;
+    height: 16px;
+    background: #354650;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -8px;
+}
+#form-tablet div.table div.right div.status-value {
+    width: 280px;
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #fcfdfd;
+    border: solid 1px #c6d0d8;
+    cursor: pointer;
+    margin-top: 12px;
+    position: relative;
+    font-size: 18px;
+    line-height: 58px;
+    box-sizing: border-box;
+}
+#form-tablet div.table div.right div.status-value:hover {
+    background: #edf9ff;
+}
+#form-tablet div.table div.right div.status-value i.icon {
+    display: block;
+    float: left;
+}
+#form-tablet div.table div.right div.status-value.receive i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#form-tablet div.table div.right div.status-value.phone i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-tablet div.table div.right div.status-value.assessment i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-tablet div.table div.right div.status-value.contract i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-tablet div.table div.right div.status-value.cancel i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-tablet div.table div.right div.status-value.cancel {
+    color: #ff2f4f;
+}
+#form-tablet div.table div.right div.status-value i.arrow {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/arrow.svg) no-repeat;
+    width: 10px;
+    height: 7px;
+    float: right;
+    margin: 26px 20px 0 0;
+}
+#form-tablet div.table div.right div.status-value ul {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 290px;
+    margin: -116px 0 0 -120px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    list-style: none;
+    cursor: default;
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+}
+#form-tablet div.table div.right div.status-value ul li:hover {
+    background: #f7f9fa;
+}
+#form-tablet div.table div.right div.status-value ul li:hover:first-child {
+    border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+#form-tablet div.table div.right div.status-value ul li:hover:last-child {
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+#form-tablet div.table div.right div.status-value ul li i.pick {
+    display: block;
+    float: left;
+}
+#form-tablet div.table div.right div.status-value ul li.off i.pick,
+#form-tablet div.table div.right div.status-value ul li.off span {
+    opacity: 0.3;
+}
+#form-tablet div.table div.right div.status-value ul li.phone i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-tablet div.table div.right div.status-value ul li.assessment i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-tablet div.table div.right div.status-value ul li.contract i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-tablet div.table div.right div.status-value ul li.cancel i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-tablet div.table div.right div.status-value ul li span {
+    cursor: pointer;
+    color: #354650;
+}
+#form-tablet div.table div.right div.status-value ul li.cancel span {
+    color: #ff2f4f;
+}
+#form-tablet div.table div.right div.status-value ul li i.check {
+    display: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check.svg) no-repeat;
+    width: 20px;
+    height: 15px;
+    float: right;
+    margin: 21px 19px 0 0;
+}
+#form-tablet div.table div.right div.status-value ul li.off i.check {
+    display: block;
+}
+#form-tablet div.table div.right a.contact {
+    display: block;
+    color: #54d0ff;
+    height: 60px;
+    width: 280px;
+    border: 1px solid #b4eaff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #f7fdff;
+    cursor: pointer;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+#form-tablet div.table div.right a.contact:hover {
+    color: #fff;
+    background: #1bc1ff;
+}
+#form-desktop {
+    display: none;
+}
+#form-desktop table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#form-desktop table tr.head {
+    height: 50px;
+    font-size: 16px;
+    color: #96a2a9;
+}
+#form-desktop table tr.body {
+    height: 91px;
+    font-size: 18px;
+}
+#form-desktop table tr.body td {
+    border-top: solid 1px #e9f1f5;
+}
+#form-desktop table tr td.start {
+    padding-left: 40px;
+}
+#form-desktop table tr td.end {
+    padding-right: 40px;
+}
+#status-line {
+    display: table;
+    position: relative;
+}
+#status-line i.info {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/info.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 2px 0 0 10px;
+    cursor: pointer;
+}
+#status-line span {
+    display: none;
+    position: absolute;
+    width: 200px;
+    bottom: 30px;
+    text-align: center;
+    background: #354650;
+    left: 50%;
+    margin-left: -58px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 15px 12px;
+    border-radius: 6px;
+}
+#status-line span i {
+    width: 16px;
+    height: 16px;
+    background: #354650;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -8px;
+}
+#form-desktop table tr td div.status-value {
+    width: 280px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #fcfdfd;
+    border: solid 1px #c6d0d8;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    line-height: 58px;
+    box-sizing: border-box;
+    height: 60px;
+}
+#form-desktop table tr td div.status-value:hover {
+    background: #edf9ff;
+}
+#form-desktop table tr td div.status-value i.icon {
+    display: block;
+    float: left;
+}
+#form-desktop table tr td div.status-value.receive i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#form-desktop table tr td div.status-value.phone i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-desktop table tr td div.status-value.assessment i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-desktop table tr td div.status-value.contract i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-desktop table tr td div.status-value.cancel i.icon {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-desktop table tr td div.status-value.cancel {
+    color: #ff2f4f;
+}
+#form-desktop table tr td div.status-value i.arrow {
+    display: block;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/arrow.svg) no-repeat;
+    width: 10px;
+    height: 7px;
+    float: right;
+    margin: 26px 20px 0 0;
+}
+#form-desktop table tr td div.status-value ul {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 290px;
+    margin: -145px 0 0 -120px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    list-style: none;
+    cursor: default;
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.08), 0 -1px 10px 0 rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+#form-desktop table tr td div.status-value ul li:hover {
+    background: #f7f9fa;
+}
+#form-desktop table tr td div.status-value ul li:hover:first-child {
+    border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+#form-desktop table tr td div.status-value ul li:hover:last-child {
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+#form-desktop table tr td div.status-value ul li i.pick {
+    display: block;
+    float: left;
+}
+#form-desktop table tr td div.status-value ul li.off i.pick,
+#form-desktop table tr td div.status-value ul li.off span {
+    opacity: 0.3;
+}
+#form-desktop table tr td div.status-value ul li.receive i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/receive.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    margin: 23px 19px 0 20px;
+}
+#form-desktop table tr td div.status-value ul li.phone i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/phone-triage.svg) no-repeat;
+    width: 19px;
+    height: 24px;
+    margin: 17px 19px 0 20px;
+}
+#form-desktop table tr td div.status-value ul li.assessment i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/assessment.svg) no-repeat;
+    width: 27px;
+    height: 17px;
+    margin: 20px 15px 0 16px;
+}
+#form-desktop table tr td div.status-value ul li.contract i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/contract.svg) no-repeat;
+    width: 23px;
+    height: 22px;
+    margin: 18px 18px 0 18px;
+}
+#form-desktop table tr td div.status-value ul li.cancel i.pick {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/cancel.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    margin: 20px 21px 0 21px;
+}
+#form-desktop table tr td div.status-value ul li span {
+    cursor: pointer;
+    color: #354650;
+}
+#form-desktop table tr td div.status-value ul li.cancel span {
+    color: #ff2f4f;
+}
+#form-desktop table tr td div.status-value ul li i.check {
+    display: none;
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/check.svg) no-repeat;
+    width: 20px;
+    height: 15px;
+    float: right;
+    margin: 21px 19px 0 0;
+}
+#form-desktop table tr td div.status-value ul li.off i.check {
+    display: block;
+}
+#form-desktop table tr td a.contact {
+    display: block;
+    color: #54d0ff;
+    height: 58px;
+    width: 158px;
+    border: 1px solid #b4eaff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #f7fdff;
+    cursor: pointer;
+    line-height: 58px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+#form-desktop table tr td a.contact:hover {
+    color: #fff;
+    background: #1bc1ff;
+}
+#feedback-bg,
+#comment-bg {
+    background: rgba(0, 21, 29, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 1;
+}
+#feedback-form,
+#comment-form {
+    background: #fff;
+    position: absolute;
+    max-width: 400px;
+    height: 442px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    top: 50%;
+    left: 0;
+    margin: -221px auto 0;
+    padding: 0 20px;
+    right: 0;
+}
+#feedback-form i,
+#comment-form i {
+    background: url(https://www.truecare24.com/tc24-provider-portal/img/close.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+#feedback-form span,
+#comment-form span {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 18px;
+    display: block;
+}
+#feedback-form textarea,
+#comment-form textarea {
+    height: 260px;
+    width: 100%;
+    border: solid 1px #edeff4;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    margin-top: 24px;
+}
+#feedback-form textarea.attention,
+#comment-form textarea.attention {
+    border: solid 1px #ff2e42;
+}
+#feedback-form button,
+#comment-form button {
+    height: 60px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #54d0ff;
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#feedback-form button:hover,
+#comment-form button:hover {
+    background: #1bc1ff;
+}
+#feedback-form button.disabled,
+#comment-form button.disabled {
+    background: #bdc9d0;
+    cursor: default;
+}
+@media (min-width: 768px){
+    #content-form-title {
+        font-size: 36px;
+        margin: 0 0 20px 30px;
+        padding-top: 26px;
+    }
+    #content-form-back {
+        margin: 20px 0 20px 30px;
+    }
+    #content-form-bg {
+        margin: 0 30px 28px;
+    }
+    #content-form-bg span.dh {
+        font-size: 24px;
+        padding: 180px 0 94px;
+        opacity: 0.3;
+    }
+    #content-form-bg.join {
+        padding: 30px 40px 70px;
+    }
+    #content-form-bg.join-done {
+        padding: 50px 40px;
+    }
+    #content-form-bg.join-connect {
+        padding: 40px 40px 50px;
+    }
+    #join-different-title {
+        font-size: 30px;
+        line-height: unset;
+    }
+    #join-different-compare div.line div.block span {
+        font-size: 18px;
+    }
+    #join-different-compare div.line div.block {
+        font-size: 18px;
+    }
+    #step-title {
+        font-size: 30px;
+        width: 300px;
+        top: -20px;
+        margin-left: -150px;
+    }
+    #step-button {
+        width: 400px;
+        margin-left: -200px;
+    }
+    #step-button a {
+        width: 380px;
+        line-height: 60px;
+        padding: unset;
+    }
+    #join-done-title {
+        font-size: 36px;
+    }
+    #join-done-text {
+        width: 520px;
+        margin: 30px auto 0;
+    }
+    #join-connect-title {
+        font-size: 36px;
+    }
+    #join-connect-card {
+        margin-top: 35px;
+    }
+    #join-connect-bank {
+        margin-top: 30px;
+    }
+    #join-connect-confirm {
+        margin-top: 10px;
+    }
+    #join-connect-button {
+        margin-top: 30px;
+    }
+    #short-information div.case-title {
+        font-size: 18px;
+    }
+    #short-information div.case-description {
+        font-size: 24px;
+    }
+    #case-update {
+        background: #edfaff;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        padding: 21px 0 32px;
+    }
+    #case-update div.status-title {
+        font-size: 24px;
+        max-width: 480px;
+    }
+    #case-update div.status-value {
+        margin: 22px auto 0;
+    }
+    #case-limit {
+        font-size: 18px;
+    }
+    #case-message {
+        font-size: 18px;
+        padding: 15px;
+        height: 160px;
+    }
+    #full-information {
+        margin-top: 27px;
+    }
+    #full-information i {
+        font-size: 24px;
+    }
+    #content-form-video {
+        margin: 0 30px 28px;
+    }
+    #form-mobile {
+        display: none;
+    }
+    #form-tablet {
+        display: block;
+    }
+    #login input.input,
+    #login button,
+    #login-information,
+    #forgot-text1,
+    #forgot-text2,
+    #forgot-email,
+    #forgot button,
+    #create input.input,
+    #create div.select,
+    #create-confirm,
+    #create button,
+    #change input.input,
+    #change button {
+        width: 400px;
+    }
+}
+@media (min-width: 1028px){
+    #wrap-left {
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
+        position: unset;
+        z-index: unset;
+    }
+    #over-left {
+        width: 260px;
+    }
+    #menu-section div.table.active div.cell i.mark {
+        display: unset;
+    }
+    #content-panel {
+        display: none;
+    }
+}
+@media (min-width: 1280px){
+    #content-form-title {
+        margin: 0 auto 20px;
+        width: 900px;
+    }
+    #content-form-back {
+        margin: 20px auto;
+        width: 900px;
+    }
+    #content-form-bg {
+        margin: 0 auto 28px;
+        width: 900px;
+    }
+    #join-done-tutorial {
+        width: 820px;
+        height: 428px !important;
+    }
+    #content-form-video {
+        width: 900px;
+        height: 470px !important;
+        margin: 0 auto 28px;
+    }
+    #form-tablet {
+        display: none;
+    }
+    #form-desktop {
+        display: block;
+    }
+    #city {
+        float: left;
+        width: 530px !important;
+        margin-right: 20px;
+    }
+    #state {
+        float: left;
+        width: 150px !important;
+        margin-right: 20px;
+    }
+    #zip {
+        float: left;
+        width: 100px !important;
+    }
+}

@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/css/jquery.ui.min.css?c=5401">
     <link rel="stylesheet" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/css/jquery.ui.timepicker.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="https://static.filestackapi.com/v3/filestack.js"></script>
     <link rel="stylesheet" href="assets/advanced_settings.css">
+    <link rel="stylesheet" href="assets/css/performance.css">
     <!-- Integration - Load dependency CSS and JS first end -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
@@ -1053,6 +1054,368 @@
         <button>Confirm</button>
     </div>
 </div>
+
+
+<div class="modal fade tc-modal" id="performanceModal" tabindex="-1" role="dialog" aria-labelledby="performanceModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Your performance
+                    <img id="performanceRating" src="assets/img/Below%20average@2x.svg" alt="Rating">
+                    <br>
+                    <span class="modal-sub-title">
+                        vs. other providers in the network
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="performance-graphs">
+                    <div class="row m-4 hide-sm-custom">
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-received" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Received
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-accepted" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Accepted
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-talked" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Talked
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-initial-assessment" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Initial assessment
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-contract-signed" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Contract signed
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-5er-4 mt-4 hide-sm-custom">
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-cancelled" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Cancelled
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-legitimate" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Legitimate
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-hours" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Hours
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                        <div class="col col-md-5er">
+                            <div class="graph-border performance-responsive-clients" data-percent="0">
+                                <div class="circle-graph">
+                                    <div class="percent">0%</div>
+                                    <div class="count">0</div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                Responsive clients
+                                <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="show-sm-custom">
+                        <div class="row text-center">
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-received" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Received
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-accepted" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Accepted
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-talked" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Talked
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-initial-assessment" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Initial assessment
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-contract-signed" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Contract signed
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-cancelled" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Cancelled
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-legitimate" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Legitimate
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-hours" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Hours
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                            <div class="col col-4 p-1">
+                                <div class="graph-border performance-responsive-clients" data-percent="0">
+                                    <div class="circle-graph">
+                                        <div class="percent">0%</div>
+                                        <div class="count">0</div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Responsive clients
+                                    <img src="assets/img/Page%201@2x.svg" alt="tooltip" class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="Your rating is the average
+value of your estimates
+received from customers">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-legend hide-sm-custom">
+                        <span class="legend-entry">
+                            <span class="red-bullet">&bull;</span> Below Average
+                        </span>
+                        <span class="legend-entry">
+                            <span class="yellow-bullet">&bull;</span> Average
+                        </span>
+                        <span class="legend-entry">
+                            <span class="green-bullet">&bull;</span> Above Average
+                        </span>
+                    </div>
+
+                    <div class="show-sm-custom mt-3">
+                        <span class="legend-entry">
+                            <span class="red-bullet">&bull;</span> Below Average
+                        </span>
+                        <br>
+                        <span class="legend-entry">
+                            <span class="yellow-bullet">&bull;</span> Average
+                        </span>
+                        <br>
+                        <span class="legend-entry">
+                            <span class="green-bullet">&bull;</span> Above Average
+                        </span>
+                    </div>
+                </div>
+                <div class="performance-tips">
+                    <h5 class="tips-title">Tips how to improve performance:</h5>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            1.
+                        </span>
+                        <p class="tips-desc">
+                            Most of the requests are time sensitive. Hence, response asap. The best time for the first
+                            try is 30 minutes after the contact received, Try 2 is mid-day (lunch time) and last Try 3
+                            is after office hours or weekend.
+                        </p>
+                    </div>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            2.
+                        </span>
+                        <p class="tips-desc">
+                            Please keep the dashboard updated even if it implies passing the client
+                            or marking them unresponsive.
+                        </p>
+                    </div>
+                    <div class="tips-entry">
+                        <span class="tips-num">
+                            3.
+                        </span>
+                        <p class="tips-desc">
+                            The emphasis should be on meeting face to face in initial assessment. We schedule the
+                            initial assessment. After covering basic questions e.g. pricing, answer all the other
+                            questions in initial assessment.
+                        </p>
+                    </div>
+                </div>
+                <div class="ask text-center">
+                    <div id="askQuestion" class="cursor-pointer">
+                        <img src="assets/img/Feedback@2x.svg" alt="Ask"> Ask a question
+                    </div>
+                    <div id="feedbackDiv" class="d-none">
+                        <textarea name="feedback" id="feedback" placeholder="Type feedback here"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-0">
+                            <button type="button" class="btn btn-block btn-got-it" data-dismiss="modal">GOT IT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var jQuery_latest = $.noConflict(true);
+</script>
 <script src="https://www.truecare24.com/tc24-provider-portal/js/jquery.min.js"></script>
 <script src="https://vjs.zencdn.net/6.1.0/video.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokgOl6OCZyuiVKfqhCabf2f7CJCHUBvs&libraries=places" async defer></script>
@@ -1081,5 +1444,6 @@
 <script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.ui.min.js"></script>
 <script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.ui.timepicker.js"></script>
 <script src="assets/advanced_settings.js"></script>
+<script src="assets/js/performance.js"></script>
 </body>
 </html>

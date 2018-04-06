@@ -1,0 +1,275 @@
+
+.container {
+    background: #f1f5f8;
+}
+
+#profile-settings {
+    background: #FFF;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-height: 500px;
+}
+
+#profile-settings .title h3 {
+    font-weight: bold;
+}
+
+#advanced-settings-accordion .item-title {
+    display: block;
+    font-size: 24px;
+    color: #354650;
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 16px;
+    position: relative;
+}
+
+#advanced-settings-accordion .item-number {
+    color: #54cfff;
+}
+
+#advanced-settings-accordion .settings-form-note {
+    color: #354650;
+    background: #e6f8ff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#advanced-settings-accordion .settings-form-content {
+    padding-top: 15px;
+}
+
+#advanced-settings-accordion .bg-app-light-gray, #profile-settings-form .bg-app-light-gray {
+    background-color: #F2F6FB;
+}
+
+#advanced-settings-accordion .form-control {
+    line-height: 2.5rem;
+}
+
+#advanced-settings-accordion .check-box-field {
+    background-color: #F2F6FB;
+    border: 1px solid #c6d0d7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid #c7d1d8;
+    background-color: #FFF;
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-input:checked~.custom-control-indicator {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='4' fill='%2354cfff'/%3E%3C/svg%3E");
+}
+
+#advanced-settings-accordion .custom-radio .custom-control-input:checked~.custom-control-indicator {
+    background-color: #FFF;
+}
+
+#advanced-settings-accordion .custom-control-description {
+    font-size: 20px;
+}
+
+#advanced-settings-accordion .check-box-field .custom-control .form-control {
+    background: #FFF;
+}
+
+#advanced-settings-accordion .custom-checkbox .custom-control-input:checked~.custom-control-indicator {
+    background-color: #54cfff;
+}
+
+#advanced-settings-accordion .input-label, #profile-settings-form .input-label {
+    font-weight: bold;
+}
+
+#advanced-settings-accordion .custom-checkbox .custom-control-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #FFFFFF;
+    border: 1px solid #c7d1d8;
+}
+
+#initUpload {
+    cursor: pointer;
+}
+
+#advanced-settings-accordion .form-group p.input-text-note {
+    font-size: 14px;
+    color: #6E7B83;
+    margin-bottom: 8px;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button, #profile-settings-form .advanced-settings-submit-button {
+    cursor: pointer;
+    border-color: #55d0ff !important;
+    background-color: #55d0ff !important;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button:disabled{
+    border-color: #ecf2f6 !important;
+    background-color: #ecf2f6 !important;
+    color: #96a1a9;
+}
+
+#advanced-settings-accordion .fas {
+    position: absolute;
+    top: 8px;
+    color: #97a1a9;
+    font-size: 18px;
+    right: 0;
+}
+
+#advanced-settings-accordion .fa-chevron-up {
+    display: block;
+}
+
+#advanced-settings-accordion .fa-chevron-down {
+    display: none;
+}
+
+
+#advanced-settings-accordion .collapsed .fa-chevron-down {
+    display: block;
+}
+
+#advanced-settings-accordion .collapsed .fa-chevron-up {
+    display: none;
+}
+
+#advanced-settings-open-button .setting {
+    color: #54cfff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#advanced-settings-open-button {
+    cursor: pointer;
+}
+
+#profile-settings-form .form-control {
+    font-size: 18px;
+    line-height: 2.5rem;
+}
+
+#profile-settings-form .form-control:read-only {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#profile-settings {
+    padding: 2rem;
+}
+
+#profile-settings hr {
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+
+#profile-settings .form-hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#profile-settings-head h2 {
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+#profile-settings-head {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.rem-4 {
+    line-height: 4.5rem;
+    text-align: left;
+}
+
+@media (min-width: 992px) {
+    .rem-4 {
+        text-align: right;
+    }
+}
+
+#profile-settings-head .stop-receiving-clients {
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: inline-block;
+    color: #ff4764;
+    cursor: pointer;
+}
+
+#profile-settings-head .stop-receiving-clients .fas {
+    margin-right: 0.5rem;
+}
+
+#profile-settings-head .stop-receiving-clients:hover {
+    color: #DA1735;
+}
+
+#profile-settings-head .stop-receiving-clients.green-receive {
+    color: #2fc344;
+}
+
+#advanced-settings-accordion .advanced-settings-submit-button:hover,
+#profile-settings-form .advanced-settings-submit-button:hover {
+    background-color: #00B9FF !important;
+}
+
+#advanced-settings-open-button:hover > p.setting {
+    color: #00B9FF;
+}
+
+.alert button {
+    cursor: pointer;
+}
+
+#profile-settings .input-time-box {
+    position: relative;
+}
+
+#profile-settings .input-time-box span.am-pm{
+    position: absolute;
+    top: 12px;
+    right: 55px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#profile-settings .input-time-box span.input-time-am {
+    right: 55px;
+}
+
+#profile-settings .input-time-box span.input-time-pm {
+    right: 15px;
+}
+
+#profile-settings .input-time-box span.selected {
+    color: #54D0FF;
+}
+
+
+/*Design conflict fix*/
+i.mark {
+    background: none;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+/* Timepicker design conflict with bootstrap fix */
+.ui-timepicker-table td a {
+    box-sizing: unset;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled {
+    width: 100%;
+}

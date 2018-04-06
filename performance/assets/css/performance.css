@@ -1,0 +1,274 @@
+#performanceModal {
+    color: #354650;
+    font-family: 'Lato', sans-serif;
+}
+
+#performanceModal .modal-header {
+    position: relative;
+    border: none;
+    padding: 30px 30px 0;
+}
+
+#performanceModal button.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+#performanceModal h5.modal-title {
+    width: 100%;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+}
+
+#performanceModal h5.modal-title img {
+    vertical-align: bottom;
+}
+
+#performanceModal .modal-sub-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: normal;
+    display: block;
+}
+
+#performanceModal .modal-dialog {
+    max-width: 650px;
+}
+
+#performanceModal .performance-graphs {
+    border: 1px solid #D2DCE4;
+    border-radius: 15px;
+    padding: 10px 0 20px;
+    position: relative;
+}
+
+#performanceModal .performance-tips {
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+    background-color: #E6F8FF;
+    margin-top: 50px;
+}
+
+#performanceModal .performance-tips .tips-entry {
+    position: relative;
+}
+
+#performanceModal .performance-tips .tips-desc {
+    padding-left: 25px;
+}
+
+#performanceModal .performance-tips .tips-num {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #54D0FF;
+    line-height: 18px;
+    top: 3px;
+}
+
+#performanceModal .performance-tips .tips-title {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: bold;
+}
+
+#performanceModal .graph-border {
+    position: relative;
+    text-align: center;
+    width: 85px;
+    height: 85px;
+    border-radius: 100%;
+    margin: auto;
+}
+
+#performanceModal .circle-graph {
+    position: relative;
+    top: 4px;
+    left: 4px;
+    text-align: center;
+    width: 77px;
+    height: 77px;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+}
+
+#performanceModal .circle-graph .percent {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+#performanceModal .circle-graph .count {
+    color: #728B9B;
+}
+
+#performanceModal div.col-md-5er {
+    width: 20%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+#performanceModal div.row-5er-4 {
+    width: 80%;
+    margin: auto;
+}
+
+#performanceModal div.row-5er-4 .col-md-5er {
+    width: 25%;
+}
+
+#performanceModal div.col-md-5er .description {
+    font-size: 14px;
+}
+
+#performanceModal .red-bullet {
+    color: #FF2F4F;
+    padding: 0 5px;
+}
+
+#performanceModal .yellow-bullet {
+    color: #F5BD23;
+    padding: 0 5px;
+}
+
+#performanceModal .green-bullet {
+    color: #1DD384;
+    padding: 0 5px;
+}
+
+#performanceModal .legend-entry {
+    padding: 0 5px;
+    color: #728B9B;
+}
+
+#performanceModal .color-legend {
+    position: absolute;
+    background: #FFFFFF;
+    bottom: -10px;
+    left: 15%;
+    width: 70%;
+    text-align: center;
+}
+
+#performanceModal .ask {
+    color: #54D0FF;
+    font-size: 18px;
+    line-height: 14px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+#performanceModal .ask:hover {
+    color: #00B9FF;
+}
+
+#performanceModal .modal-footer {
+    border: none;
+    padding: 0 30px 30px;
+}
+
+#performanceModal .modal-body {
+    padding: 19px 30px 30px;
+}
+
+#performanceModal .btn-got-it {
+    background-color: #54D0FF;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 33px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+#performanceModal .btn-got-it:hover {
+    background-color: #00B9FF;
+}
+
+#performanceModal .cursor-pointer {
+    cursor: pointer;
+}
+
+#feedback {
+    height: 150px;
+    width: 100%;
+    border: 1.5px solid #C6D0D8;
+    resize: none;
+    border-radius: 6px;
+    background-color: #F2F6FB;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+    padding: 15px;
+}
+
+#performanceModal .show-sm-custom {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    #performanceModal .hide-sm-custom {
+        display: none;
+    }
+
+    #performanceModal .show-sm-custom {
+        display: block;
+    }
+
+    #performanceModal .performance-graphs {
+        border: none;
+    }
+}
+
+@media (max-width: 400px) {
+    #performanceModal .performance-graphs .graph-border {
+        width: 65px;
+        height: 65px;
+    }
+
+    #performanceModal .performance-graphs .description {
+        font-size: 14px;
+    }
+
+    #performanceModal .performance-graphs .circle-graph {
+        top: 3px;
+        left: 3px;
+        width: 59px;
+        height: 59px;
+    }
+
+    #performanceModal .circle-graph .percent {
+        font-size: 16px;
+        padding-top: 5px;
+    }
+
+    #performanceModal .circle-graph .count {
+        font-size: 14px;
+    }
+
+    #performanceModal .modal-header {
+        padding: 1rem 1rem 0;
+    }
+
+    #performanceModal .modal-body {
+        padding: 1rem;
+    }
+
+    #performanceModal .modal-footer {
+        padding: 0 1rem 1rem;
+    }
+
+    #performanceModal .performance-tips {
+        font-size: 14px;
+    }
+
+    #performanceModal .legend-entry {
+        font-size: 14px;
+    }
+}
