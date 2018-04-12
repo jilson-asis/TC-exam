@@ -83,11 +83,6 @@
             font-size: 14px;
         }
 
-        #servicesModal .modal-dialog {
-            max-width: 750px;
-            width: 750px !important;
-        }
-
         #servicesModal .modal-content {
             border-radius: 10px;
             border: none;
@@ -107,6 +102,78 @@
         #servicesModal .modal-footer button:hover, #servicesModal .modal-footer a:hover {
             text-decoration: none;
             color: #00B9FF;
+        }
+
+        #servicesModal .modal-dialog {
+            max-width: 750px;
+            width: 750px;
+        }
+
+        #servicesModal .modal-dialog .services-desktop {
+            display: block;
+        }
+
+        #servicesModal .modal-dialog .services-mobile {
+            display: none;
+        }
+
+        #servicesModal .services-mobile .service-item {
+            padding: 15px 20px;
+        }
+
+        #servicesModal .services-mobile .service-item p {
+            margin: 0;
+            display: inline-block;
+            height: initial;
+            vertical-align: middle;
+        }
+
+        #servicesModal .services-mobile .service-item img {
+            margin-right: 10px;
+        }
+
+        #tcServices .services-mobile .service-item {
+            min-height: unset;
+            padding: 15px 20px;
+            cursor: pointer;
+        }
+
+        #tcServices .services-mobile .service-item:hover {
+            background-color: #F6FCFF;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+            border: 1px solid #54D0FF;
+        }
+
+        #tcServices .services-mobile .service-item img {
+            margin-right: 15px;
+        }
+
+        #tcServices .services-mobile .service-item p {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            #servicesModal .modal-dialog {
+                max-width: 600px;
+                width: 600px;
+            }
+        }
+
+        @media (max-width: 612.98px) {
+            #servicesModal .modal-dialog {
+                max-width: 98%;
+                margin: 0 1%;
+            }
+
+            #servicesModal .modal-dialog .services-desktop {
+                display: none;
+            }
+
+            #servicesModal .modal-dialog .services-mobile {
+                display: block;
+            }
         }
 
         /*
@@ -244,6 +311,11 @@
         input.input-tc-white::placeholder {
             color: #96A2A9;
         }
+
+        .vertical-middle {
+            display: flex;
+            align-items: center;
+        }
     </style>
     <!-- Integration - Load dependency CSS and JS first end -->
 
@@ -313,77 +385,119 @@
 <div id="content">
     <div id="content-about-us">What is TrueCare<span>24</span></div>
     <div class="container" id="tcServices">
-        <div class="row">
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        House Call Doctor
-                    </p>
-                    <p class="subtext">
-                        Get treatment in the comfort of your home
-                    </p>
-                    <a href="#" class="btn btn-tc-light-blue house-call-doctor-learn-more">Learn more</a>
+        <div class="d-none d-sm-block">
+            <div class="row services-desktop-page">
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/House-Call-Doctor.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            House Call Doctor
+                        </p>
+                        <p class="subtext">
+                            Get treatment in the comfort of your home
+                        </p>
+                        <a href="#" class="btn btn-tc-light-blue house-call-doctor-learn-more">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/Caregiver.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            Caregivers
+                        </p>
+                        <p class="subtext">
+                            Get help with activities of daily living like bathing, getting dressed, meal preparation, and more.
+                        </p>
+                        <a href="https://www.truecare24.com/get-started/" class="btn btn-tc-light-blue">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/Nurses.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            Nurses
+                        </p>
+                        <p class="subtext">
+                            Prevention and management of illness, care for chronic conditions, and evaluation of care needs
+                        </p>
+                        <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/Therapy.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            Therapy
+                        </p>
+                        <p class="subtext">
+                            Treatment of injuries, range of motion, daily exercises, and home safety.
+                        </p>
+                        <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/Lab-Tests.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            Lab Tests
+                        </p>
+                        <p class="subtext">
+                            Labs at home
+                        </p>
+                        <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 text-center p-0">
+                    <div class="service-item">
+                        <img src="img/Imaging.png" alt="" class="img-fluid">
+                        <p class="maintext">
+                            Imaging
+                        </p>
+                        <p class="subtext">
+                            Imaging at home
+                        </p>
+                        <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        Caregivers
-                    </p>
-                    <p class="subtext">
-                        Get help with activities of daily living like bathing, getting dressed, meal preparation, and more.
-                    </p>
-                    <a href="https://www.truecare24.com/get-started/" class="btn btn-tc-light-blue">Learn more</a>
+        </div>
+        <div class="d-sm-none">
+            <div class="container services-mobile">
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="house-call-doctor">
+                        <img src="img/House-Call-Doctor.png" alt="" class="img-fluid">
+                        <p> House Call Doctor</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        Nurses
-                    </p>
-                    <p class="subtext">
-                        Prevention and management of illness, care for chronic conditions, and evaluation of care needs
-                    </p>
-                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="caregiver">
+                        <img src="img/Caregiver.png" alt="" class="img-fluid">
+                        <p>Caregivers</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        Therapy
-                    </p>
-                    <p class="subtext">
-                        Treatment of injuries, range of motion, daily exercises, and home safety.
-                    </p>
-                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="default">
+                        <img src="img/Nurses.png" alt="" class="img-fluid">
+                        <p>Nurses</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        Lab Tests
-                    </p>
-                    <p class="subtext">
-                        Labs at home
-                    </p>
-                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="default">
+                        <img src="img/Therapy.png" alt="" class="img-fluid">
+                        <p>Therapy</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4 text-center p-0">
-                <div class="service-item">
-                    <img src="img/Caregiver.png" alt="" class="img-fluid">
-                    <p class="maintext">
-                        Imaging
-                    </p>
-                    <p class="subtext">
-                        Imaging at home
-                    </p>
-                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="default">
+                        <img src="img/Lab-Tests.png" alt="" class="img-fluid">
+                        <p>Lab Tests</p>
+                    </div>
+                </div>
+                <div class="col-12 p-0">
+                    <div class="service-item" data-link-type="default">
+                        <img src="img/Imaging.png" alt="" class="img-fluid">
+                        <p>Imaging</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -845,11 +959,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <div class="container services-desktop">
                     <div class="row">
                         <div class="col-4 text-center p-0">
                             <div class="service-item" data-link-type="house-call-doctor">
-                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <img src="img/House-Call-Doctor.png" alt="" class="img-fluid">
                                 <p>House Call Doctor</p>
                             </div>
                         </div>
@@ -864,27 +978,65 @@
                         </div>
                         <div class="col-4 text-center p-0">
                             <div class="service-item" data-link-type="default">
-                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <img src="img/Nurses.png" alt="" class="img-fluid">
                                 <p>Nurses</p>
                             </div>
                         </div>
                         <div class="col-4 text-center p-0">
                             <div class="service-item" data-link-type="default">
-                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <img src="img/Therapy.png" alt="" class="img-fluid">
                                 <p>Therapy</p>
                             </div>
                         </div>
                         <div class="col-4 text-center p-0">
                             <div class="service-item" data-link-type="default">
-                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <img src="img/Lab-Tests.png" alt="" class="img-fluid">
                                 <p>Lab Tests</p>
                             </div>
                         </div>
                         <div class="col-4 text-center p-0">
                             <div class="service-item" data-link-type="default">
-                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <img src="img/Imaging.png" alt="" class="img-fluid">
                                 <p>Imaging</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container services-mobile">
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="house-call-doctor">
+                            <img src="img/House-Call-Doctor.png" alt="" class="img-fluid">
+                            <p> House Call Doctor</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="caregiver">
+                            <img src="img/Caregiver.png" alt="" class="img-fluid">
+                            <p>Caregivers</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="default">
+                            <img src="img/Nurses.png" alt="" class="img-fluid">
+                            <p>Nurses</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="default">
+                            <img src="img/Therapy.png" alt="" class="img-fluid">
+                            <p>Therapy</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="default">
+                            <img src="img/Lab-Tests.png" alt="" class="img-fluid">
+                            <p>Lab Tests</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="service-item" data-link-type="default">
+                            <img src="img/Imaging.png" alt="" class="img-fluid">
+                            <p>Imaging</p>
                         </div>
                     </div>
                 </div>
@@ -1016,6 +1168,20 @@
 //        jQuery_latest('#houseCallDoctorZipModal').modal('show');
 
         jQuery_latest('#servicesModal .service-item').click(function () {
+            var link_type = jQuery_latest(this).attr('data-link-type');
+
+            if (link_type === 'house-call-doctor') {
+                // show zip code search modal
+                jQuery_latest('#servicesModal').modal('hide');
+                jQuery_latest('#houseCallDoctorZipModal').modal('show');
+            } else if (link_type === 'caregiver') {
+                window.location = 'https://www.truecare24.com/get-started/';
+            } else {
+                window.location = 'https://www.truecare24.com/get-started/?go=home';
+            }
+        });
+
+        jQuery_latest('#tcServices .services-mobile .service-item').click(function () {
             var link_type = jQuery_latest(this).attr('data-link-type');
 
             if (link_type === 'house-call-doctor') {
