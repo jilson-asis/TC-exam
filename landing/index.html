@@ -85,6 +85,7 @@
 
         #servicesModal .modal-dialog {
             max-width: 750px;
+            width: 750px !important;
         }
 
         #servicesModal .modal-content {
@@ -280,11 +281,11 @@
             <div id="header-desktop-line2"></div>
             <a id="header-desktop-sign-in" href="https://www.truecare24.com/account/login">Sign In</a>
             <!-- <a id="header-desktop-get-started" href="https://www.truecare24.com/account/signUp">Sign Up</a> -->
-            <a id="header-desktop-get-started" href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            <a id="header-desktop-get-started" class="open-service-modal" href="#">Get Started</a>
         </div>
         <div id="header-text">Find in-home health care<br/>service that you love</div>
         <div id="header-action">
-            <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            <a href="#" class="open-service-modal">Get Started</a>
         </div>
         <div id="header-link">
             <a href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
@@ -300,7 +301,7 @@
             <div id="header-touch-menu-exit"></div>
             <div id="header-touch-menu-logo"></div>
             <div id="header-touch-menu-gets">
-                <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+                <a href="#" class="open-service-modal">Get Started</a>
             </div>
             <div id="header-touch-menu-jobs">
                 <a href="https://www.truecare24.com/jobs/">Jobs</a>
@@ -413,7 +414,7 @@
             <span>To Care For Those Who Once Cared For Us Is One Of The Highest Honors</span>
         </div>
         <div id="content-fixed-action">
-            <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            <a href="#" class="open-service-modal">Get Started</a>
         </div>
         <div id="content-fixed-link">
             <a href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
@@ -665,7 +666,7 @@
         <div id="content-fixed2-indent">
             <div id="content-fixed2-title">Take The First Step, Talk With An Expert</div>
             <div id="content-fixed2-text">Solve common medical needs at home with a single call.</div>
-            <a id="content-fixed2-gst" href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            <a id="content-fixed2-gst" href="#" class="open-service-modal">Get Started</a>
             <a id="content-fixed2-link" href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
         </div>
     </div>
@@ -1028,7 +1029,13 @@
             }
         });
 
+        // bind trigger of modal
+        jQuery_latest('.open-service-modal').click(function(event) {
+            event.preventDefault();
+            jQuery_latest('#servicesModal').modal('show');
+        });
 
+        // custom trigger for house call doctor
         jQuery_latest('.house-call-doctor-learn-more').click(function(event) {
             event.preventDefault();
             jQuery_latest('#houseCallDoctorZipModal').modal('show');
