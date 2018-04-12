@@ -1,0 +1,1183 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Complete Home Care Solution (Doctors, Nurses, Therapists, Caregivers, Lab Test &amp; X-Rays)</title>
+    <meta name="description" content="Complete home care, from house call doctors, skilled nursing and caregivers."/>
+    <meta name="keywords" content=""/>
+    <meta name="apple-mobile-web-app-title" content="TrueCare24"/>
+    <meta name="application-name" content="TrueCare24"/>
+    <meta name="msapplication-config" content="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/browserconfig.xml"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <!-- Integration - Load dependency CSS and JS first start -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        // no conflict
+        var jQuery_latest = $.noConflict(true);
+    </script>
+    <style>
+        /*
+        * TC services modal styles
+        */
+        #servicesModal .modal-header {
+            border: none;
+            text-align: center;
+            padding: 40px 0 0;
+            position: relative;
+        }
+
+        #servicesModal .modal-header button.close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        #servicesModal .modal-header .modal-title {
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 34px;
+            width: 100%;
+        }
+
+        #servicesModal .modal-body {
+            padding: 15px 40px;
+        }
+
+        #servicesModal .service-item {
+            margin: 10px;
+            border: 1px solid #CCDCE2;
+            border-radius: 10px;
+            padding: 40px 10px;
+            cursor: pointer;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 1px 0 rgba(53,70,80,0.1);
+        }
+
+        #servicesModal .service-item:hover {
+            background-color: #F6FCFF;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+            border: 1px solid #54D0FF;
+        }
+
+        #servicesModal .service-item p {
+            height: 42px;
+            font-size: 18px;
+            color: #354650;
+            font-family: 'Lato', sans-serif;
+            line-height: 21px;
+            margin-top: 35px;
+            margin-bottom: 0;
+        }
+
+        #servicesModal .service-item p span {
+            font-size: 14px;
+        }
+
+        #servicesModal .modal-dialog {
+            max-width: 750px;
+        }
+
+        #servicesModal .modal-content {
+            border-radius: 10px;
+            border: none;
+        }
+
+        #servicesModal .modal-footer {
+            padding: 0 40px 46px;
+            border: none;
+        }
+
+        #servicesModal .modal-footer button {
+            color: #54D0FF;
+            font-size: 18px;
+            line-height: 18px;
+        }
+
+        #servicesModal .modal-footer button:hover, #servicesModal .modal-footer a:hover {
+            text-decoration: none;
+            color: #00B9FF;
+        }
+
+        /*
+        * TC services on landing page styles
+        */
+
+        #tcServices {
+            max-width: 900px;
+        }
+
+        #tcServices .service-item {
+            border: 1px solid #54D0FF;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px 0 rgba(53,70,80,0.1);
+            margin: 15px;
+            padding: 30px 15px;
+            min-height: 300px;
+        }
+
+        #tcServices .service-item p.maintext {
+            color: #354650;
+            font-size: 20px;
+            line-height: 24px;
+            margin-top: 30px;
+        }
+
+        #tcServices .service-item p.subtext {
+            color: #354650;
+            font-size: 14px;
+            line-height: 19px;
+            margin-top: 8px;
+            height: 65px;
+        }
+
+        #tcServices .service-item a.btn-tc-light-blue {
+            font-weight: bold;
+            padding: 8px 20px;
+        }
+
+        #tcServices .service-item a.btn-tc-light-blue:hover {
+            background-color: #54D0FF;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,0.03);
+            color: #FFFFFF;
+        }
+
+        /*
+        * House Call Doctors modal styles
+        */
+
+        .btn-tc-blue {
+            color: #FFFFFF;
+            background-color: #54D0FF;
+            border-color: #54D0FF;
+        }
+
+        .btn-tc-blue:hover {
+            background-color: #00aff1;
+            border-color: #00aff1;
+        }
+
+        .btn-tc-light-blue {
+            color: #54D0FF;
+            background-color: #F2FCFF;
+            border: 1px solid #BFEDFF;
+        }
+
+        .tc-modal .modal-dialog {
+            width: 410px;
+            margin: 6rem auto;
+        }
+
+        .tc-modal .modal-content {
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .tc-modal .modal-header {
+            border-bottom: none;
+            padding-bottom: 10px;
+        }
+
+        .tc-modal .modal-footer {
+            border-top: none;
+            padding: 15px 40px 50px 40px;
+        }
+
+        .tc-modal .modal-body {
+            padding: 0 50px;
+        }
+
+        .tc-modal p.modal-text {
+            font-size: 30px;
+            line-height: 36px;
+            color: #354650;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tc-modal .btn {
+            font-size: 18px;
+            padding: 15px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .modal-backdrop {
+            background-color: #192E3B;
+            opacity: 0.7;
+        }
+
+        .tc-blue-text {
+            color: #54D0FF;
+        }
+
+        .tc-modal i.far {
+            font-size: 70px;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 499.98px) {
+            .tc-modal .modal-dialog {
+                width: 98%;
+                margin: 3rem auto;
+            }
+        }
+
+        input.input-tc-white {
+            color: #354650;
+            background-color: #FFFFFF;
+            border-color: #AAA;
+            cursor: text !important;
+        }
+
+        input.input-tc-white::placeholder {
+            color: #96A2A9;
+        }
+    </style>
+    <!-- Integration - Load dependency CSS and JS first end -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
+    <link rel="stylesheet" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/css/index.css?c=8206"/>
+    <!--[if lt IE 9]>
+    <script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.optimizely.com/js/2824000060.js"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MN6Q9R');</script>
+    <script>(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);mixpanel.init("0136f4a7280a73bc45951793e2614c90");</script>		<script>var page_id=1;</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/favicon-16x16.png" sizes="16x16"/>
+    <link rel="manifest" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/manifest.json"/>
+    <link rel="mask-icon" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/safari-pinned-tab.svg" color="#00b1f1"/>
+    <link rel="shortcut icon" href="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/favicon.ico"/>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN6Q9R" height="0" width="0" style="display:none;visibility:hidden;"></iframe></noscript>		<div id="header">
+    <div id="header-rounding">
+        <div id="header-mobile">
+            <div id="header-mobile-background"></div>
+            <div id="header-mobile-menu"></div>
+            <a id="header-mobile-logo" href="https://www.truecare24.com/"></a>
+            <a id="header-mobile-phone" href="tel:(551) 227-3669"></a>
+        </div>
+        <div id="header-desktop">
+            <div id="header-desktop-background"></div>
+            <a id="header-desktop-logo" href="https://www.truecare24.com/"></a>
+            <a id="header-desktop-phone-icon" href="tel:(551) 227-3669"></a>
+            <a id="header-desktop-phone-number" href="tel:(551) 227-3669">(551) 227-3669</a>
+            <div id="header-desktop-line1"></div>
+            <a id="header-desktop-link" href="https://www.truecare24.com/jobs/">Jobs</a>
+            <div id="header-desktop-line2"></div>
+            <a id="header-desktop-sign-in" href="https://www.truecare24.com/account/login">Sign In</a>
+            <!-- <a id="header-desktop-get-started" href="https://www.truecare24.com/account/signUp">Sign Up</a> -->
+            <a id="header-desktop-get-started" href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+        </div>
+        <div id="header-text">Find in-home health care<br/>service that you love</div>
+        <div id="header-action">
+            <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+        </div>
+        <div id="header-link">
+            <a href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
+        </div>
+        <div id="header-scroll">
+            <span>Learn more</span>
+            <i></i>
+        </div>
+    </div>
+    <div id="header-blackout"></div>
+    <div id="header-touch-menu">
+        <div id="header-touch-menu-scroll">
+            <div id="header-touch-menu-exit"></div>
+            <div id="header-touch-menu-logo"></div>
+            <div id="header-touch-menu-gets">
+                <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            </div>
+            <div id="header-touch-menu-jobs">
+                <a href="https://www.truecare24.com/jobs/">Jobs</a>
+            </div>
+            <div id="header-touch-menu-copy">&copy; TrueCare24.com</div>
+        </div>
+    </div>
+</div>
+<div id="content">
+    <div id="content-about-us">What is TrueCare<span>24</span></div>
+    <div class="container" id="tcServices">
+        <div class="row">
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        House Call Doctor
+                    </p>
+                    <p class="subtext">
+                        Get treatment in the comfort of your home
+                    </p>
+                    <a href="#" class="btn btn-tc-light-blue house-call-doctor-learn-more">Learn more</a>
+                </div>
+            </div>
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        Caregivers
+                    </p>
+                    <p class="subtext">
+                        Get help with activities of daily living like bathing, getting dressed, meal preparation, and more.
+                    </p>
+                    <a href="https://www.truecare24.com/get-started/" class="btn btn-tc-light-blue">Learn more</a>
+                </div>
+            </div>
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        Nurses
+                    </p>
+                    <p class="subtext">
+                        Prevention and management of illness, care for chronic conditions, and evaluation of care needs
+                    </p>
+                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                </div>
+            </div>
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        Therapy
+                    </p>
+                    <p class="subtext">
+                        Treatment of injuries, range of motion, daily exercises, and home safety.
+                    </p>
+                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                </div>
+            </div>
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        Lab Tests
+                    </p>
+                    <p class="subtext">
+                        Labs at home
+                    </p>
+                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                </div>
+            </div>
+            <div class="col-4 text-center p-0">
+                <div class="service-item">
+                    <img src="img/Caregiver.png" alt="" class="img-fluid">
+                    <p class="maintext">
+                        Imaging
+                    </p>
+                    <p class="subtext">
+                        Imaging at home
+                    </p>
+                    <a href="https://www.truecare24.com/get-started/?go=home" class="btn btn-tc-light-blue">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content-howto">
+        <div id="content-howto-header">Service You Can Trust</div>
+        <div id="content-howto-element">
+            <div class="cell">
+                <div class="icon complete-care"></div>
+                <div class="name">Complete Care</div>
+                <div class="text">Comprehensive care and clinical services for yourself or your family all in one place.</div>
+            </div>
+            <div class="cell">
+                <div class="icon insurance-accepted"></div>
+                <div class="name">Insurance Accepted</div>
+                <div class="text">Pay with your insurance or out of pocket. Call us to check whether your insurance is accepted.</div>
+            </div>
+            <div class="cell">
+                <div class="icon transparent"></div>
+                <div class="name">Transparent</div>
+                <div class="text">We provide price transparency and will help you find the best rate in your area.</div>
+            </div>
+        </div>
+    </div>
+    <div id="content-fixed">
+        <div id="content-fixed-blackout"></div>
+        <div id="content-fixed-text">
+            <span>To Care For Those Who Once Cared For Us Is One Of The Highest Honors</span>
+        </div>
+        <div id="content-fixed-action">
+            <a href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+        </div>
+        <div id="content-fixed-link">
+            <a href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
+        </div>
+    </div>
+    <div id="content-infoblock">
+        <div class="table">
+            <div class="cell">
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span>Serving 3,500+ Cities</span>
+                        <p>We maintain a national network of house call doctors, caregivers, and home health providers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span>Available anytime</span>
+                        <p>Our live representatives will help you arrange medical care services at any time of the day including weekends and nights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <div class="cell">
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span>Trusted providers</span>
+                        <p>We collect feedback from each client and clinician to make sure that you are getting top quality service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span>Peace of Mind</span>
+                        <p>We provide peace of mind for home care patients and their families.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content-review">
+        <div id="content-review-over">
+            <div class="review">
+                <div class="left">
+                    <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/review1.png" alt=""/>
+                </div>
+                <div class="right">
+                    <span class="dotdot">My mother suffers from severe dementia, and she realized she had run out of medicine. Unable to drive to the clinic herself and wait through the long lines to receive her prescriptions, she called TrueCare24. The nurse practitioner arrived in a timely manner with the needed prescriptions. Very fast, quality service!</span>
+                    <p>J.A. Anaheim, CA</p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="left">
+                    <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/review2.png" alt=""/>
+                </div>
+                <div class="right">
+                    <span class="dotdot">I had a great experience with Truecare 24 and their app. Easy to use, fast service, and caring service. I highly recommend them to my friends.</span>
+                    <p>B.T. Newark, NJ</p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="left">
+                    <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/review3.png" alt=""/>
+                </div>
+                <div class="right">
+                    <span class="dotdot">My mother suffered from a double ear infection and was unable to drive to the hospital because she’s immobile. After contacting TrueCare24, a doctor came within three hours and treated her with antibiotics. Furthermore, medicare covered all the costs of the doctor’s visit! We love the services TrueCare24 provides.</span>
+                    <p>R.P. Lomita, CA</p>
+                </div>
+            </div>
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content-solution">
+        <div id="content-solution-header">All-in-one solution</div>
+        <div id="content-solution-line">
+            <div class="cell">
+                <div class="tb">
+                    <div class="cl w32">&nbsp;</div>
+                    <div class="cl w68">
+                        <div class="left">
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="center">
+                    <i></i>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="tb">
+                    <div class="cl w41">
+                        <div class="right">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="cl w59">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div id="content-solution-table">
+            <div class="cell">
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/house-call-doctor.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>House call clinicians</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/tele-medical.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Telemedicine</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/prescription.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Prescriptions</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/advice.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Advice</span>
+                    </div>
+                </div>
+                <div class="ln"></div>
+            </div>
+            <div class="cell">
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/caregiver.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Caregivers</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/house-cleaning.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>House Cleaning</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/transportation.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Transportation</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/supplies.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Food Preparation</span>
+                    </div>
+                </div>
+                <div class="ln"></div>
+            </div>
+            <div class="cell">
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/skilled-nurse.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Skilled Nursing</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/therapist.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Therapy</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/x-ray.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Imaging</span>
+                    </div>
+                </div>
+                <div class="tb">
+                    <div class="cl">
+                        <div class="image">
+                            <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/lab-tests.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <span>Lab Tests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content-computer">
+        <img src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/img/computer.jpg" alt=""/>
+    </div>
+    <div id="content-fixed2">
+        <div id="content-fixed2-blackout"></div>
+        <div id="content-fixed2-indent">
+            <div id="content-fixed2-title">Take The First Step, Talk With An Expert</div>
+            <div id="content-fixed2-text">Solve common medical needs at home with a single call.</div>
+            <a id="content-fixed2-gst" href="https://www.truecare24.com/get-started/?go=home">Get Started</a>
+            <a id="content-fixed2-link" href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
+        </div>
+    </div>
+</div>
+<div id="footer-background">
+    <div id="footer-links">
+        <div class="dinamic-cell">
+            <div class="table">
+                <div class="static-cell">
+                    <ul class="col1">
+                        <li>Search by city:</li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">Miami</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">Washington DC</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">Los Angeles</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">San Francisco</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">New York</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/service-area/">All Locations</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="static-cell">
+                    <ul class="col2">
+                        <li>Search by speciality:</li>
+                        <li>
+                            <a href="https://www.truecare24.com/visiting-nurse/">Visiting Nurses</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/house-call-doctor/">House Call Doctors</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/caregivers/">Caregivers</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/visiting-nurse/">Home Health Services</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dinamic-cell">
+            <div class="table">
+                <div class="static-cell">
+                    <ul class="col3">
+                        <li>About us:</li>
+                        <li>
+                            <a href="https://www.truecare24.com/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/press/">Press</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/career/">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/privacy-policy/">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.truecare24.com/terms-service-truecare24/">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="static-cell">
+                    <div class="col4">
+                        <ul>
+                            <li>Get in touch</li>
+                            <li>
+                                <a href="tel:+1(628) 333-2005">+1(628) 333-2005</a>
+                            </li>
+                            <li>
+                                <a href="https://www.truecare24.com/contact-us/">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="https://appsto.re/us/LRJS8.i">Download TrueCare24 App</a>
+                            </li>
+                        </ul>
+                        <div class="social">
+                            <a class="yelp" href="https://www.yelp.com/biz/truecare24-berkeley-3" target="_blank"></a>
+                            <a class="twitter" href="https://twitter.com/truecare24" target="_blank"></a>
+                            <a class="facebook" href="https://www.facebook.com/TrueCare24" target="_blank"></a>
+                        </div>
+                        <a class="accredited" href="https://www.bbb.org/greater-san-francisco/business-reviews/mobile-apps/truecare24-com-in-sunnyvale-ca-548848#bbbonlineclick" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-text">TrueCare24 provides a technology platform that enables users to connect easily with top rated third-party health care medical service providers. All medical services are provided by licensed independent health care practitioners. TrueCare24, Inc.<br/>All Rights Reserved &copy; 2017</div>
+</div>
+<div id="popup-learn-more">
+    <div id="popup-learn-more-close"></div>
+    <div id="popup-learn-more-contact">
+        <div class="cell left">
+            <div class="featured">
+                <div class="title">Featured in</div>
+                <div class="tc"></div>
+                <div class="bb"></div>
+                <div class="cnbc"></div>
+                <div class="tbj"></div>
+                <a class="bbb" href="https://www.bbb.org/greater-san-francisco/business-reviews/mobile-apps/truecare24-com-in-sunnyvale-ca-548848#bbbonlineclick" target="_blank"></a>
+                <div class="copy">&copy; TrueCare24.com</div>
+            </div>
+        </div>
+        <div class="cell right">
+            <div class="form">
+                <div class="send">
+                    <div class="name">Complete the form<br/>and TrueCare<span>24</span> will<br/>contact you</div>
+                    <div class="input input-name">
+                        <input type="text" name="learn-more-name" maxlength="20" placeholder="Your Name" autocomplete="off"/>
+                        <i></i>
+                    </div>
+                    <div class="input input-phone">
+                        <input type="tel" name="learn-more-phone" maxlength="14" placeholder="Your Phone" autocomplete="off"/>
+                        <i></i>
+                    </div>
+                    <div class="input input-email">
+                        <input type="email" name="learn-more-email" maxlength="50" placeholder="Your Email" autocomplete="off"/>
+                        <i></i>
+                    </div>
+                    <div class="textarea textarea-comments">
+                        <textarea name="learn-more-comments" placeholder="Comments"></textarea>
+                    </div>
+                    <button>
+                        <span>Contact me</span>
+                        <i></i>
+                    </button>
+                    <div class="link">
+                        <a href="https://www.truecare24.com/jobs/">Jobs seekers go to -> Jobs</a>
+                    </div>
+                </div>
+                <div class="close">
+                    <div class="icon"></div>
+                    <div class="name">Thank you for<br/>contacting us</div>
+                    <div class="info">We will get back to you soon!</div>
+                    <button>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup-learn-more-statistics">
+        <div class="cell">
+            <span>500+</span>
+            <p>Lives touched<br/>every month</p>
+        </div>
+        <div class="cell center">
+            <span>1,000+</span>
+            <p>Certified Medical<br/>Professionals</p>
+        </div>
+        <div class="cell">
+            <span>3,600+</span>
+            <p>Cities<br/>Nationwide</p>
+        </div>
+    </div>
+</div>
+
+<!-- Services Modal -->
+<div class="modal fade tc-modal" id="servicesModal" tabindex="-1" role="dialog" aria-labelledby="servicesModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    What service you are requesting?
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="house-call-doctor">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>House Call Doctor</p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="caregiver">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>
+                                    Caregivers <br>
+                                    <span>(Home Care/Aide)</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="default">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>Nurses</p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="default">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>Therapy</p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="default">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>Lab Tests</p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center p-0">
+                            <div class="service-item" data-link-type="default">
+                                <img src="img/Caregiver.png" alt="" class="img-fluid">
+                                <p>Imaging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-0">
+                            <a href="https://www.truecare24.com/get-started/?go=home">
+                                <button type="button" class="btn btn-link btn-block" data-dismiss="modal">Other</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- House Call doctor zip modal -->
+<div class="modal fade tc-modal" id="houseCallDoctorZipModal" tabindex="-1" role="dialog" aria-labelledby="houseCallDoctorZipModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    House Call Doctors
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 p-0 py-4">
+                    <input class="btn btn-block input-tc-white zip-code-input" maxlength="5" name="zip_code" placeholder="Enter ZIP Code">
+                    <span class="zip-code-message"></span>
+                    <button class="btn btn-block btn-tc-blue zip-code-button mt-2">Look Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Popups-->
+<div class="modal fade tc-modal" id="dangerQuestion" tabindex="-1" role="dialog" aria-labelledby="dangerQuestion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">
+                    Are you experiencing a life-threatening or severe condition?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 p-2">
+                            <button type="button" id="dangerButtonYes" class="btn btn-block btn-tc-light-blue">YES</button>
+                        </div>
+                        <div class="col-12 col-sm-6 p-2">
+                            <button type="button" id="dangerButtonNo" class="btn btn-block btn-tc-blue">NO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade tc-modal" id="dangerYes" tabindex="-1" role="dialog" aria-labelledby="dangerQuestion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">
+                    Call <span class="tc-blue-text">911</span> or go directly to an Emergency Department
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-2">
+                            <button type="button" class="btn btn-block btn-tc-blue" data-dismiss="modal">GOT IT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade tc-modal" id="dangerNoSorry" tabindex="-1" role="dialog" aria-labelledby="dangerQuestion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">
+                    <img src="assets/img/Sad.svg" class="d-block mx-auto mb-2" alt="Sad">
+                    Sorry, we are not serving this area yet
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 p-2">
+                            <button type="button" class="btn btn-block btn-tc-blue" data-dismiss="modal">GOT IT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add google API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUlKwREyODqMXwNaHJLFVVEiNt8c_Y1SU" async="" defer=""></script>
+<script>
+    jQuery_latest(document).ready(function() {
+//        jQuery_latest('#houseCallDoctorZipModal').modal('show');
+
+        jQuery_latest('#servicesModal .service-item').click(function () {
+            var link_type = jQuery_latest(this).attr('data-link-type');
+
+            if (link_type === 'house-call-doctor') {
+                // show zip code search modal
+                jQuery_latest('#servicesModal').modal('hide');
+                jQuery_latest('#houseCallDoctorZipModal').modal('show');
+            } else if (link_type === 'caregiver') {
+                window.location = 'https://www.truecare24.com/get-started/';
+            } else {
+                window.location = 'https://www.truecare24.com/get-started/?go=home';
+            }
+        });
+
+
+        jQuery_latest('.house-call-doctor-learn-more').click(function(event) {
+            event.preventDefault();
+            jQuery_latest('#houseCallDoctorZipModal').modal('show');
+        });
+
+        // House Call Doctor Scripts
+        const ZIP_REDIRECT_URL = 'https://www.truecare24.com/get-started/?step=2&go=home';
+        const ZIP_VERIFY_URL = 'https://www.truecare24.com/webapi/v1/providers/zeroTouchNearest/{lat}/{lng}/05141/Doctor/VT';
+
+        jQuery_latest('.zip-code-input').keyup(function () {
+            // force int values only
+            jQuery_latest(this).val(jQuery_latest(this).val().replace(/\D/g, ''));
+
+            jQuery_latest(this).closest('.zip-code-button').removeAttr('data-url');
+
+            var val = jQuery_latest(this).val();
+
+            if (val === '') {
+                return false;
+            }
+
+            var inputChanged = jQuery_latest(this);
+
+            if (val.length === 5) {
+                (new google.maps.Geocoder()).geocode({"address": "USA " + val}, function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        var components = results[0].address_components;
+
+                        var city, state, region, nbhood = "", lat, lng;
+
+                        lat = results[0].geometry.location.lat();
+                        lng = results[0].geometry.location.lng();
+
+                        for (var key in components) {
+                            if (components[key].types[0] === "locality") {
+                                city = components[key].long_name;
+                            }
+
+                            if (components[key].types[0] === "administrative_area_level_1") {
+                                state = components[key].short_name;
+                                region = components[key].long_name;
+                            }
+
+                            if (components[key].types[0] === "neighborhood") {
+                                nbhood = components[key].long_name;
+                            }
+                        }
+
+                        if (!city) {
+                            city = nbhood;
+                        }
+
+                        var data = {
+                            state: state,
+                            address: city + ", " + region,
+                            zip: val,
+                            lat: lat,
+                            lng: lng
+                        };
+
+                        if (city && state && region && lat && lng) {
+                            // saves data to session
+                            jQuery_latest.ajax("/wp-content/themes/jupiter/landing-page/lib/to-session.php", {
+                                type: "POST",
+                                data: data
+                            });
+                        } else {
+                            inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html("Please enter valid 5 digits US ZIP code");
+                            inputChanged.addClass('mb-1');
+                            inputChanged.siblings('button').addClass('mt-1');
+
+                            return false;
+                        }
+
+                        // verify on TC API
+                        var url = ZIP_VERIFY_URL.replace('{lat}', lat).replace('{lng}', lng);
+
+                        jQuery_latest.ajax({
+                            method: 'GET',
+                            url: url,
+                            success: function (response) {
+                                if (typeof response.result !== 'undefined' && response.result.length > 0) {
+                                    inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                        "<i class=\"fas fa-check icon-green\"></i> " + city + " " + region
+                                    );
+
+                                    inputChanged.siblings('.zip-code-button').attr('data-url', ZIP_REDIRECT_URL);
+                                    inputChanged.addClass('mb-1');
+                                    inputChanged.siblings('button').addClass('mt-1');
+                                } else {
+                                    inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                        "<i class=\"fas fa-times icon-red\"></i> " + city + " " + region
+                                    );
+                                    inputChanged.addClass('mb-1');
+                                    inputChanged.siblings('button').addClass('mt-1');
+                                }
+                            },
+                            error: function (error) {
+                                inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html(
+                                    "<i class=\"fas fa-times icon-red\"></i> " + city + " " + region
+                                );
+                                inputChanged.addClass('mb-1');
+                                inputChanged.siblings('button').addClass('mt-1');
+                            }
+                        });
+                    } else {
+                        inputChanged.siblings('.zip-code-message').css("display", "block").addClass("error").html("Please enter valid 5 digits US ZIP code");
+                        inputChanged.addClass('mb-1');
+                        inputChanged.siblings('button').addClass('mt-1');
+                    }
+                });
+            }
+        });
+
+        jQuery_latest('.zip-code-button').click(function () {
+            zipButtonClicked = jQuery_latest(this);
+
+            if (jQuery_latest(this).attr('data-url') !== '' && jQuery_latest(this).attr('data-url') !== 'undefined' && typeof jQuery_latest(this).attr('data-url') !== 'undefined') {
+                jQuery_latest('#dangerQuestion').modal('show');
+            } else {
+                jQuery_latest(this).siblings('.zip-code-message').css("display", "block").addClass("error").html("Please enter valid 5 digits US ZIP code");
+                jQuery_latest(this).siblings('input').addClass('mb-1');
+                jQuery_latest(this).addClass('mt-1');
+            }
+        });
+
+        jQuery_latest('#dangerButtonYes').click(function () {
+            jQuery_latest('#dangerQuestion').modal('hide');
+            jQuery_latest('#dangerYes').modal('show');
+        });
+
+        jQuery_latest('#dangerButtonNo').click(function () {
+            var zipCodeButton = zipButtonClicked;
+
+            if (zipCodeButton.attr('data-url') !== '' && zipCodeButton.attr('data-url') !== 'undefined' && typeof zipCodeButton.attr('data-url') !== 'undefined') {
+                window.location = zipCodeButton.attr('data-url');
+            } else {
+                jQuery_latest('#dangerQuestion').modal('hide');
+                jQuery_latest('#dangerNoSorry').modal('show');
+            }
+        });
+    });
+</script>
+<!-- Services Modal -->
+
+
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.min.js"></script>
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/jquery.dotdotdot.min.js"></script>
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/mixpanel.js?c=8206"></script>
+<script src="https://www.truecare24.com/wp-content/themes/jupiter/landing-page/js/index.js?c=8206"></script>
+</body>
+</html>
